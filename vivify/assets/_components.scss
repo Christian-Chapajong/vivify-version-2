@@ -1,0 +1,57 @@
+$colour_bodytxt: #000000;
+$colour_bg: #ffffff;
+
+$color_global_red_accent: #bd1d45;
+$color_announcement_background: #bd1d45;
+$color_global_white_button_text: #ffffff;
+$color_announcement_text: #ffffff;
+$color_announcement_icon: #ffffff;
+
+body {
+    background: #fff;
+    color: $colour_bodytxt;
+    margin: 0;
+}
+
+.bg {
+    background: $colour_bg;
+}
+
+.announcement-bar {
+    background-color: if(setting-value('announcement_bar_use_default_website_colors'), $color_global_red_accent, $color_announcement_background);
+    color: if(setting-value('announcement_bar_use_default_website_colors'), $color_global_white_button_text, $color_announcement_text);
+    border: 0;
+    padding: 1.2rem 0;
+    font-size: .945rem;
+    line-height: 1.1;
+    text-align: center;
+
+    &__inner {
+        position: relative;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+
+        &_close-button {
+            position: absolute;
+            top: 50%;
+            @include transform( translateY(-50%) );
+            right: 0;
+            color: if(setting-value('announcement_bar_use_default_website_colors'), $color_global_white_button_text, $color_announcement_icon);
+            background: none;
+            border: none;
+        }
+    }
+
+
+}
+.btn-close {
+    text-transform: lowercase;
+    font-size: .873rem;
+    font-weight: normal;
+    line-height: 1.1;
+    cursor: pointer;
+
+    span {
+        text-decoration: underline;
+    }
+}
