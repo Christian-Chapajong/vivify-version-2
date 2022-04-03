@@ -629,7 +629,7 @@ body {
     display: inline-block;
   }
 }
-.header__logo .header__logo-image {
+.header__logo > .header__logo-image {
   width: auto;
   max-width: 250px;
   margin: auto;
@@ -660,17 +660,17 @@ body {
 .header-text strong {
   text-transform: uppercase;
 }
-.header-nav-outer {
+.header__nav {
   border-top: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
   text-align: center;
   text-transform: uppercase;
 }
-.header-nav a {
+.header__nav-inner a {
   font-size: 0.945rem;
   color: #000000;
 }
-.header-nav .main-nav > li {
+.header__nav-inner .main-nav > li {
   display: inline-block;
   padding: 1.1rem;
 }
@@ -767,6 +767,77 @@ body {
   bottom: 0;
   left: 0;
   z-index: 2;
+}
+
+.button {
+  background: transparent;
+  font-size: 1.01rem;
+  border: 1px solid #000000;
+  padding: 1.5rem 3.27rem;
+  letter-spacing: 5px;
+  width: fit-content;
+  min-width: 170px;
+}
+.button span {
+  color: #000000;
+}
+
+.section-block {
+  padding: 3rem 0;
+}
+
+.featured-categories-slider {
+  font-size: 0.945rem;
+}
+.featured-categories-slider__featured-box {
+  margin-bottom: 45px;
+  margin-bottom: 3.2727272727rem;
+}
+.featured-categories-slider__shadow-box {
+  padding: 40px;
+  padding: 2.9090909091rem;
+  background-color: #f9f9f9;
+}
+.featured-categories-slider__heading {
+  background-color: #f9f9f9;
+  padding: 40px 35px;
+  padding: 2.9090909091rem 2.5454545455rem;
+  margin-bottom: 1.3rem;
+}
+.featured-categories-slider__heading h1 {
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0;
+  font-size: 2rem;
+}
+.featured-categories-slider__heading h1 + div {
+  margin-top: 1rem;
+}
+.featured-categories-slider__heading h1 a {
+  color: #000000;
+}
+.featured-categories-slider__heading p:last-of-type {
+  margin: 0;
+}
+.featured-categories-slider__arrow {
+  display: contents;
+  font-size: 60px;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+  top: auto;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+.featured-categories-slider__arrow.arrow-prev, .featured-categories-slider__arrow.arrow-next {
+  position: absolute;
+  bottom: 0;
+}
+.featured-categories-slider__button {
+  margin-left: 40px;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=style.css.map */
