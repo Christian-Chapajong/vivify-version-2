@@ -254,12 +254,12 @@
     </header>
     <!-- {% endblock %}-->
 
-    <section class="main-container flex flex-row md:flex-col">
-        <div class="featured-categories-slider section-block">
+    <section id="featured-categories-section" class="main-container section-block flex flex-row md:flex-col">
+        <div class="featured-categories-slider">
 			<!-- {% for category in featured_categories %} -->
             <div class="featured-categories-slider__featured-box grid md:grid-cols-12">
                 <div class="col-span-8">
-                    <div class="featured-categories-slider__shadow-box">
+                    <div class="featured-categories-slider__shadow-box shadow-box">
                         <a href="#">
                             <img src="../assets/images/featured-category-img.png">
                         </a>
@@ -289,7 +289,84 @@
             </div>
             
         </div>
+    </section>
 
+    <section id="featured-products-section" class="main-container section-block">
+        <div class="featured-products-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
+            <!-- Use of grid anticipates users not wanted to use text-snippet here
+            {% if gts.text_home_featured_title or gts.text_home_featured_paragraph %}-->
+            <div class="featured-products-grid__heading">
+                <div class="featured-products-grid__heading-inner">
+                    <h3 class="feautured-products-grid__heading-title">Favourites</h3>
+                    <p class="featured-products-grid__heading-description">
+                        Our first collection ETT, the Swedish word for one, uses a Swiss two-handed movement and is designed to be a careful, understated hybrid of the past and present. 
+                        <br><br>
+                        These are the best of the bunch! 
+                    </p>
+                </div>
+            </div>
+            <!-- {% endif %} -->
+            <!--- {% include item.twig with items: 'featured-product' %}-->
+            <div class="featured-products-grid__item">
+                <img class="featured-products-grid__item-image" src="../assets/images/giraffe-bag.png">
+                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                <p class="featured-products-grid__item-price">£255.00</p>
+            </div>
+            <div class="featured-products-grid__item">
+                <img class="featured-products-grid__item-image" src="../assets/images/green-balls.png">
+                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                <p class="featured-products-grid__item-price">£255.00</p>
+            </div>
+            <div class="featured-products-grid__item">
+                <img class="featured-products-grid__item-image" src="../assets/images/jigsaw.png">
+                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                <p class="featured-products-grid__item-price">£255.00</p>
+            </div>
+            <div class="featured-products-grid__item">
+                <img class="featured-products-grid__item-image" src="../assets/images/giraffe-bag.png">
+                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                <p class="featured-products-grid__item-price">£255.00</p>
+            </div>
+            <div class="featured-products-grid__item">
+                <img class="featured-products-grid__item-image" src="../assets/images/green-balls.png">
+                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                <p class="featured-products-grid__item-price">£255.00</sp>
+            </div>
+            <div class="featured-products-grid__item">
+                <img class="featured-products-grid__item-image" src="../assets/images/jigsaw.png">
+                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                <p class="featured-products-grid__item-price">£255.00</p>
+            </div>
+            <div class="featured-products-grid__item">
+                <img class="featured-products-grid__item-image" src="../assets/images/dad-set.png">
+                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                <p class="featured-products-grid__item-price">£255.00</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-with-text-overlay-section section-block ">
+        <div class="grid grid-col-12">
+            <div class="image-with-text-overlay col-span-12">
+                <div class="image-with-text-overlay__shadow-box shadow-box">
+                    <div class="image-with-text-overlay__image">
+                        <div class="image-with-text-overlay__text-overlay main-container">
+                            <div class="image-with-text-overlay__text-overlay-inner">
+                                <h2>This is an image</h2>
+                                <p>We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
+                                <div class="image-with-text-overlay__button button">
+                                    <a href=#>
+                                        <span class="text-top">Shop Now</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- <img src="../assets/images/slider-img.png"> -->
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 </html>
