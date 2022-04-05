@@ -2,7 +2,7 @@
 // _tools.scss
 //===========================
 
-// vertical centering
+// vert;ical centering
 //  .element p {
 //      @include vertical-align();
 //  }
@@ -1085,36 +1085,62 @@ body {
 .image-with-text-overlay {
 	&-section{
 		@media #{$sm} {
-			// @apply main-container
-			padding-left: 2.1818181818rem;
-			padding-right: 2.1818181818rem;
+        // @apply main-container
+        padding-left: 2.1818181818rem;
+        padding-right: 2.1818181818rem;
 		}
 
 	}
 	&__shadow-box {
 		@include rem(padding, 15px);
+
+    @media #{$md} {
+        @include rem(padding, 40px);
+    }
 	}
 	&__image {
-		position: relative;
-		min-height: 520px;
-		background: no-repeat center url("../images/slider-img.png");
-		background-size: cover;
+      position: relative;
+      min-height: 520px;
+      background: no-repeat center url("../images/image-with-text-overlay.png");
+      background-size: cover;
 	}
 	&__text-overlay{
-		position: absolute;
-		top: 100%;
-		@include rem(margin, 15px);
-		background-color: $color_global_content_background;
+      position: absolute;
+      top: 100%;
+      @include rem(margin, 15px);
+      background-color: $color_global_content_background;
 
-		&-inner {
-			@include rem(padding, 20px 0 30px);
-			
-			h2, p {
-				@include rem(margin-bottom, 15px);
-			}
+      @media #{$md} {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          max-width: 500px; //can later be a variable so users can change widths
+          margin: 0;
+          padding: 0;
+      }
 
-		}
+      &-inner {
+          @include rem(padding, 25px 0 30px);
+
+          @media #{$md} {
+              @include rem(padding, 60px);
+          }
+
+        
+          h2, p {
+              @include rem(margin-bottom, 15px);
+          }
+
+      }
 	}
 
-
+}
+.image-with-text {
+    &__text-inner{
+        padding-top: 30px;
+        
+        h2, p {
+          @include rem(margin-bottom, 15px);
+    }
+    }
 }
