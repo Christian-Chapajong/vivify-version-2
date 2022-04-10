@@ -7,6 +7,10 @@
     <title>Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/scss/style.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Slick.js -->
+    <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 </head>
 <body>
     <!-- {% block content %} -->
@@ -254,146 +258,407 @@
     </header>
     <!-- {% endblock %}-->
 
-    <section id="featured-categories-section" class="main-container section-block flex flex-row md:flex-col">
-        <div class="featured-categories-slider">
-			<!-- {% for category in featured_categories %} -->
-            <div class="featured-categories-slider__featured-box grid md:grid-cols-12">
-                <div class="col-span-8">
-                    <div class="featured-categories-slider__shadow-box shadow-box">
-                        <a href="#">
-                            <img src="../assets/images/featured-category-img.png">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-span-4 self-center">
-                    <div class="featured-categories-slider__heading">
-                        <h1>
-                            <a href="#">Toys & Games</a>
-                        </h1>
-                        <div class="hidden lg:block">
-                            <p>
-                                Every ingredient that Herbivore includes in their products is there for a specific, therapeutic reason. They do not use fillers of any kind, meaning that almost every ingredient in their products is an “active” ingredient.
-                            </p>
+
+    <main>
+        <section class="slider-image main-container section-block flex flex-row md:flex-col">
+            <div class="slider-image__wrapper">
+                <!-- {% for category in featured_categories %} -->
+                <div class="slider-image__featured-box grid md:grid-cols-12">
+                    <div class="col-span-8">
+                        <div class="slider-image__shadow-box shadow-box">
+                            <a href="#">
+                                <img src="../assets/images/featured-category-img.png">
+                            </a>
                         </div>
                     </div>
-                    <div class="featured-categories-slider__button button">
-                        <a href=#>
-                            <span class="text-top">Browse</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-between">
-                <button class="featured-categories-slider__arrow arrow-previous" style=""><i class="sw-icon-arrow1" aria-hidden="true"></i></button>
-                <button class="featured-categories-slider__arrow arrow-next" style=""><i class="sw-icon-arrow" aria-hidden="true"></i></button>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="featured-products-section" class="main-container section-block">
-        <div class="featured-products-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
-            <!-- Use of grid anticipates users not wanted to use text-snippet here
-            {% if gts.text_home_featured_title or gts.text_home_featured_paragraph %}-->
-            <div class="featured-products-grid__heading">
-                <div class="featured-products-grid__heading-inner">
-                    <h3 class="feautured-products-grid__heading-title">Favourites</h3>
-                    <p class="featured-products-grid__heading-description">
-                        Our first collection ETT, the Swedish word for one, uses a Swiss two-handed movement and is designed to be a careful, understated hybrid of the past and present. 
-                        <br><br>
-                        These are the best of the bunch! 
-                    </p>
-                </div>
-            </div>
-            <!-- {% endif %} -->
-            <!--- {% include item.twig with items: 'featured-product' %}-->
-            <div class="featured-products-grid__item">
-                <img class="featured-products-grid__item-image" src="../assets/images/giraffe-bag.png">
-                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                <p class="featured-products-grid__item-price">£255.00</p>
-            </div>
-            <div class="featured-products-grid__item">
-                <img class="featured-products-grid__item-image" src="../assets/images/green-balls.png">
-                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                <p class="featured-products-grid__item-price">£255.00</p>
-            </div>
-            <div class="featured-products-grid__item">
-                <img class="featured-products-grid__item-image" src="../assets/images/jigsaw.png">
-                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                <p class="featured-products-grid__item-price">£255.00</p>
-            </div>
-            <div class="featured-products-grid__item">
-                <img class="featured-products-grid__item-image" src="../assets/images/giraffe-bag.png">
-                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                <p class="featured-products-grid__item-price">£255.00</p>
-            </div>
-            <div class="featured-products-grid__item">
-                <img class="featured-products-grid__item-image" src="../assets/images/green-balls.png">
-                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                <p class="featured-products-grid__item-price">£255.00</sp>
-            </div>
-            <div class="featured-products-grid__item">
-                <img class="featured-products-grid__item-image" src="../assets/images/jigsaw.png">
-                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                <p class="featured-products-grid__item-price">£255.00</p>
-            </div>
-            <div class="featured-products-grid__item">
-                <img class="featured-products-grid__item-image" src="../assets/images/dad-set.png">
-                <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                <p class="featured-products-grid__item-price">£255.00</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="image-with-text-overlay-section section-block ">
-        <div class="grid grid-col-12">
-            <div class="image-with-text-overlay col-span-12">
-                <div class="image-with-text-overlay__shadow-box shadow-box">
-                    <div class="image-with-text-overlay__image">
-                        <div class="relative">
-                            <div class="image-with-text-overlay__text-overlay main-container">
-                                <div class="image-with-text-overlay__text-overlay-inner">
-                                    <h2>This is an image</h2>
-                                    <p>We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
-                                    <div class="image-with-text-overlay__button button">
-                                        <a href=#>
-                                            <span class="text-top">Shop Now</span>
-                                        </a>
-                                    </div>
-                                </div>
-    
+                    <div class="col-span-4 self-center">
+                        <div class="slider-image__heading">
+                            <h1>
+                                <a href="#">Toys & Games</a>
+                            </h1>
+                            <div class="hidden lg:block">
+                                <p>
+                                    Every ingredient that Herbivore includes in their products is there for a specific, therapeutic reason. They do not use fillers of any kind, meaning that almost every ingredient in their products is an “active” ingredient.
+                                </p>
                             </div>
                         </div>
-                    
+                        <div class="button-wrapper">
+                            <a href=#>
+                                <div class="slider-image__button button">
+                                    <span class="text-top">Browse</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <!-- <img src="../assets/images/slider-img.png"> -->
+                </div>
+                <div class="flex justify-between">
+                    <button class="slider-arrow slider-image__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>
+                    <button class="slider-arrow slider-image__arrow-next "><i class="sw-icon-arrow" aria-hidden="true"></i></button>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="featured-products-section" class="main-container section-block">
+            <div class="featured-products-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-16">
+                <!-- Use of grid anticipates users not wanted to use text-snippet here
+                {% if gts.text_home_featured_title or gts.text_home_featured_paragraph %}-->
+                <div class="featured-products-grid__heading col-span-2 md:col-span-1">
+                    <div class="featured-products-grid__heading-inner">
+                        <h3 class="feautured-products-grid__heading-title">Favourites</h3>
+                        <p class="featured-products-grid__heading-description">
+                            Our first collection ETT, the Swedish word for one, uses a Swiss two-handed movement and is designed to be a careful, understated hybrid of the past and present. 
+                            <br><br>
+                            These are the best of the bunch! 
+                        </p>
+                    </div>
+                </div>
+                <!-- {% endif %} -->
+                <!--- {% include item.twig with items: 'featured-product' %}-->
+                <div class="featured-products-grid__item">
+                    <img class="featured-products-grid__item-image" src="../assets/images/giraffe-bag.png">
+                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                    <p class="featured-products-grid__item-price">£255.00</p>
+                </div>
+                <div class="featured-products-grid__item">
+                    <img class="featured-products-grid__item-image" src="../assets/images/green-balls.png">
+                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                    <p class="featured-products-grid__item-price">£255.00</p>
+                </div>
+                <div class="featured-products-grid__item">
+                    <img class="featured-products-grid__item-image" src="../assets/images/jigsaw.png">
+                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                    <p class="featured-products-grid__item-price">£255.00</p>
+                </div>
+                <div class="featured-products-grid__item">
+                    <img class="featured-products-grid__item-image" src="../assets/images/giraffe-bag.png">
+                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                    <p class="featured-products-grid__item-price">£255.00</p>
+                </div>
+                <div class="featured-products-grid__item">
+                    <img class="featured-products-grid__item-image" src="../assets/images/green-balls.png">
+                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                    <p class="featured-products-grid__item-price">£255.00</sp>
+                </div>
+                <div class="featured-products-grid__item">
+                    <img class="featured-products-grid__item-image" src="../assets/images/jigsaw.png">
+                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                    <p class="featured-products-grid__item-price">£255.00</p>
+                </div>
+                <div class="featured-products-grid__item">
+                    <img class="featured-products-grid__item-image" src="../assets/images/dad-set.png">
+                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
+                    <p class="featured-products-grid__item-price">£255.00</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="image-with-text-section section-block">
-        <grid class="grid grid-col-12">
-            <div class="image-with-text-wrapper col-span-8">
-                <div class="image-with-text flex flex-col lg:flex-row">
-                    <div class="image-with-text__image shadow-box">
-                        <img src="../assets/images/image-with-text.png">
+        <section class="static-image section-block ">
+            <div class="grid grid-col-12">
+                <div class="static-image__overlay col-span-12">
+                    <div class="static-image__shadow-box shadow-box">
+                        <div class="static-image__image">
+                            <div class="static-image__text-overlay main-container hidden md:block">
+                                <div class="static-image__text-overlay-inner">
+                                    <h2 class="text-box-heading">This is an image</h2>
+                                    <p class="text-box-paragraph">We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
+                                    <div class="button-wrapper">
+                                        <a href=#>
+                                            <div class="static-image__button button">
+                                                <span class="text-top">Shop Now</span>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <img src="../assets/images/slider-img.png"> -->
                     </div>
-                    <div class="image-with-text__text main-container">
-                        <div class="image-with-text__text-inner">
-                            <h2>Trends</h2>
-                            <p>ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
-                            <div class="image-with-text__button button">
-                                <a href=#>
-                                    <span class="text-top">Shop Now</span>
+                    <div class="static-image__text-mobile main-container md:hidden">
+                        <div class="static-image__text-mobile-inner">
+                            <h2 class="text-box-heading">This is an image</h2>
+                            <p class="text-box-heading">We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
+                            <div class="button-wrapper">
+                                <div class="static-image__button button">
+                                    <a href=#>
+                                        <span class="text-top">Shop Now</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="image-with-text section-block">
+            <grid class="grid grid-col-12">
+                <div class="image-with-text__wrapper">
+                    <div class="image-with-text__row flex flex-col md:flex-row">
+                        <div class="image-with-text__image shadow-box">
+                            <img src="../assets/images/image-with-text.png">
+                        </div>
+                        <div class="image-with-text__text main-container md:flex">
+                            <div class="image-with-text__text-inner md:self-center md:pt-0">
+                                <h2 class="text-box-heading">Trends</h2>
+                                <p class="text-box-paragraph">ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
+                                <div class="button-wrapper">
+                                    <a href="#">
+                                        <div class="image-with-text__button button">
+                                            <span class="text-top">Shop Now</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </grid>
+        </section>
+
+        <section class="image-with-text-columns section-block">
+            <div class="grid lg:grid-cols-2 lg:gap-16">
+                <div class="image-with-text-columns__item flex flex-col md:flex-row">
+                    <div class="image-with-text-columns__item-image shadow-box">
+                        <img src="../assets/images/text-column-img-1.png">
+                    </div>
+                    <div class="image-with-text-columns__item-text">
+                        <div class="image-with-text-columns__item-text-inner">
+                            <h3 class="text-box-heading">FAQ</h3>
+                            <p class="text-box-paragraph">ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
+                            <a href="#" class="image-with-text-columns__read-more">
+                                Read more
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-with-text-columns__item flex flex-col md:flex-row">
+                    <div class="image-with-text-columns__item-image shadow-box">
+                        <img src="../assets/images/text-column-img-2.png">
+                    </div>
+                    <div class="image-with-text-columns__item-text">
+                        <div class="image-with-text-columns__item-text-inner">
+                            <h3 class="text-box-heading">Ethos</h3>
+                            <p class="text-box-paragraph">To us sustainability is a lifestyle and an ethos. We want to support independent businesses while introducing talented people to the UK. Of course we also want to do this in a responsible way by looking out for both the planet and the people who make our products.</p>
+                            <a href="#" class="image-with-text-columns__read-more">
+                                Read more
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery section-block">
+            <div class="grid grid-cols-2 md:grid-cols-4">
+                <div class="gallery__image">
+                    <img src="../assets/images/gallery-img-1.png">
+                </div>
+                <div class="gallery__image">
+                    <img src="../assets/images/gallery-img-2.png">
+                </div>
+                <div class="gallery__image">
+                    <img src="../assets/images/gallery-img-3.png">
+                </div>
+                <div class="gallery__image">
+                    <img src="../assets/images/gallery-img-4.png">
+                </div>
+            </div>
+        </section>
+
+        <section class="blog section-block">
+            <h2 class="md:text-center mb-8">Updates and product releases</h2>
+            <div class="blog__wrapper slider-wrapper">
+                <div class="blog__slider">
+                    <article class="blog__article">
+                        <div class="blog__article-image">
+                            <img src="../assets/images/drone.png">
+                        </div>
+                        <div class="blog__info text-center">
+                            <p class="blog__info-heading font-bold">This is another demonstration post</p>
+                            <p class="blog__info-date">2nd April 2020</p>
+                            <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
+                            <div class="button-wrapper mx-auto">
+                                <a href="#">
+                                    <div class="button">
+                                        <span class="text-top">Read</span>
+                                    </div>
                                 </a>
                             </div>
                         </div>
+                    </article>
+                    <article class="blog__article">
+                        <div class="blog__article-image">
+                            <img src="../assets/images/drone.png">
+                        </div>
+                        <div class="blog__info text-center">
+                            <p class="blog__info-heading font-bold">This is another demonstration post</p>
+                            <p class="blog__info-date">2nd April 2020</p>
+                            <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
+                            <div class="button-wrapper mx-auto">
+                                <a href="#">
+                                    <div class="button">
+                                        <span class="text-top">Read</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog__article">
+                        <div class="blog__article-image">
+                            <img src="../assets/images/drone.png">
+                        </div>
+                        <div class="blog__info text-center">
+                            <p class="blog__info-heading font-bold">This is another demonstration post</p>
+                            <p class="blog__info-date">2nd April 2020</p>
+                            <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
+                            <div class="button-wrapper mx-auto">
+                                <a href="#">
+                                    <div class="button">
+                                        <span class="text-top">Read</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+        </section>
 
+        <section class="testimonial section-block">
+            <h3 class="uppercase md:text-center text-box-heading">What our customers say</h3>
+            <div class="testimonial__wrapper slider-wrapper">
+                <div class="testimonial__slider">
+                    <article class="testimonial__item">
+                        <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
+                        <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
+                    </article>
+                    <article class="testimonial__item">
+                        <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
+                        <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
+                    </article>
+                    <article class="testimonial__item">
+                        <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
+                        <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
+                    </article>
+                </div>
+                <div class="flex justify-end">
+                    <div class="slick-dots"></div>
+                    <button class="slider-arrow testimonial__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>
+                    <button class="slider-arrow testimonial__arrow-next"><i class="sw-icon-arrow" aria-hidden="true"></i></button>
+                </div>
+
+            </div>
+            
+        </section>
+
+        <section class="video section-block">
+            <div class="video__thumbnail">
+                <div class="video__thumbnail-overlay">
+                    <div class="video__icon">
+                        <img class="mx-auto pb-1" src="../assets/images/video-icon.png">
+                        <p class="uppercase font-bold text-center">Play video</p>
                     </div>
                 </div>
             </div>
-        </grid>
-    </section>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter__inner mx-auto">
+                <h2 class="text-center">Stay in the know!</h2>
+                <form action="#" class="newsletter__form-wrapper flex justify-center">
+                    <div class="newsletter__form flex justify-between">
+                        <img class="self-center" src="../assets/images/envelope-icon.png">
+                        <input type="email" class="newsletter__form-email" placeholder="Enter your email address">
+                        <input type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                    </div>
+                </form>
+                <p>We'll use your email to be in touch with you regarding product updates, exclusive offers and other relevant marketing</p>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        $(".blog__slider").slick({
+            prevArrow: $(".prev"),
+            nextArrow: $(".next"),
+            infinite: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [
+                {
+                breakpoint: 1281,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: false
+                }
+                },
+                {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: false
+
+                }
+                },
+                {
+                breakpoint: 641,
+                settings: {
+                    slidesToShow: 1.25,
+                    slidesToScroll: 1.25,
+                    infinite: false
+
+                }
+                }
+            ]
+        });
+        $(".testimonial__slider").slick({
+            prevArrow: $(".testimonial__arrow-prev"),
+            nextArrow: $(".testimonial__arrow-next"),
+            infinite: true,
+            dots: true,
+            arrows: true,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [
+                {
+                breakpoint: 1281,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+                },
+                {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: false
+
+                }
+                },
+                {
+                breakpoint: 641,
+                settings: {
+                    slidesToShow: 1.25,
+                    slidesToScroll: 1.25,
+                    infinite: false
+
+                }
+                }
+            ]
+        });
+    </script>
 </body>
 </html>

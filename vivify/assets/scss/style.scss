@@ -177,6 +177,9 @@ $color_announcement_icon: #ffffff;
 $logo_width: 250px; //default value (min: 80px, max: 450px)
 $logo_width_mobile: 250px; //default value (min: 80px, max: 450px)
 
+$color_testimonial_dots: #e8e8e8;
+$color_testimonial_dots-active: #adadad;
+
 
 //===========================
 // fonts
@@ -565,7 +568,7 @@ h2 {
 		font-weight: bold;
 	}
 h3 { 
-		font-size: 1.3rem; 
+		font-size: 1.875rem; 
 		font-weight: bold;
 	}
 h4 { 
@@ -594,7 +597,9 @@ a {
 				color: if(setting-value('website_colours_use_default_website_colors'), $color_global_red_accent, $color_website_accent);
 		}
 }
-
+p {
+	line-height: 22px;
+}
 // no highlight outline
 
 :focus {
@@ -681,33 +686,31 @@ body {
 }
 
 .header {
+	@media #{$lg} {
+
+		&__inner {
+			vertical-align: middle;
+
+			@media #{$sm} {
+					@include rem(margin-left, -#{map-get($page_margins, 'small')} );
+					@include rem(margin-right, -#{map-get($page_margins, 'small')} );
+					@include rem(padding-left, map-get($page_margins, 'small') );
+
+			}
 
 
-		@media #{$lg} {
 
-				&__inner {
-						vertical-align: middle;
+			> * {
+					// display: inline-block;
+					vertical-align: middle;
 
-						@media #{$sm} {
-								@include rem(margin-left, -#{map-get($page_margins, 'small')} );
-								@include rem(margin-right, -#{map-get($page_margins, 'small')} );
-								@include rem(padding-left, map-get($page_margins, 'small') );
-
-						}
-
- 
-
-						> * {
-								// display: inline-block;
-								vertical-align: middle;
-
-								& + *:not(.account-dropdown):not(.logo-text):not(.header__basket) {
-										margin-left: 1.5rem;
-										margin-left: 2.5vw;
-								}
-						}
-				}
+					& + *:not(.account-dropdown):not(.logo-text):not(.header__basket) {
+							margin-left: 1.5rem;
+							margin-left: 2.5vw;
+					}
+			}
 		}
+	}
 
 		&__menu-toggle {
 				@include rem(font-size, 21px);
@@ -973,7 +976,10 @@ body {
 				}
 		}
 }
-.button{  
+.button-wrapper {
+	width: fit-content;
+
+	.button{  
 		background: transparent;
 		font-size: 1.01rem;
 		border: 1px solid $color_global_black_text;
@@ -981,34 +987,50 @@ body {
 		letter-spacing: 5px;
 		width: fit-content;
 		min-width: 170px;
-	text-transform: uppercase;
+		text-transform: uppercase;
 
 		span {
 				color: $colour_bodytxt;
 		}
 }
+}
+
 .section-block{
 		margin: 5rem 0;
 }
 .shadow-box{
-		@include rem(padding, 30px);
+		@include rem(padding, 15px);
 		background-color: $color_home_category_background;
+		height: fit-content;
+
 
 		@media #{$md} {
-				@include rem(padding, 40px);
+			@include rem(padding, 40px);
 		}
 
 		img{
-				width: 100%
+			width: 100%
 		}
 }
-
+.slider-arrow {
+	display: contents;
+	font-size: 60px;
+	color: $colour_bodytxt;
+	padding: 0;
+	margin: 0;
+	top: auto;
+	@include transform( none );
+}
 //Featured Slider
-.featured-categories-slider{
+.slider-image{
 		// font-size: .945rem;
 
 		&__featured-box{
-				@include rem(margin-bottom, 45px);
+			@include rem(margin-bottom, 45px);
+		}
+
+		&__shadow-box {
+			@include rem(padding, 30px)
 		}
 	
 		&__heading {
@@ -1017,46 +1039,32 @@ body {
 			margin-bottom: 1.3rem;
 
 			h1 {
-					font-weight: 900;
-					line-height: 1.2;
-					margin: 0;
-					font-size: 2rem;
+				font-weight: 900;
+				line-height: 1.2;
+				margin: 0;
+				font-size: 2rem;
 
-					& + div {
-							margin-top: 1rem;
-					}
+				& + div {
+						margin-top: 1rem;
+				}
 
-					a {
-							color: if(setting-value('home_page_use_default_website_colors'), $color_global_black_text, $color_home_category_title);
-					}
+				a {
+						color: if(setting-value('home_page_use_default_website_colors'), $color_global_black_text, $color_home_category_title);
+				}
 			}
 
 			p:last-of-type {
-					margin: 0;
+				margin: 0;
 			}
-	}
+		}
 
-	&__arrow {
-			display: contents;
-			font-size: 60px;
-			color: $colour_bodytxt;
-			padding: 0;
-			margin: 0;
-			top: auto;
-			@include transform( none );
 
-			&.arrow-prev,
-			&.arrow-next {
-					position: absolute;
-					bottom: 0;
+
+		&__button{
+			@media #{$md} {
+				margin-left: 40px;
 			}
-	}
-
-	&__button{
-      @media #{$md} {
-          margin-left: 40px;
-      }
-	}
+		}
 }
 
 // Featured Products
@@ -1065,82 +1073,290 @@ body {
 				@include vertical-align(relative, false);
 
 				h3 {
-						text-transform: uppercase;
-						margin-bottom: 2rem;
+					text-transform: uppercase;
+					margin-bottom: 2rem;
 				}
 		}
 		&__item{
 				&-name, &-price{
-						text-align: center;
-						margin-top: .75rem;
-						font-weight: 700;
+					text-align: center;
+					margin-top: .75rem;
+					font-weight: 700;
 				}
 				&-price{
-						text-decoration: underline;
+					text-decoration: underline;
 				}
 		}
 }
-
+.text-box-heading, .text-box-paragraph {
+	@include rem(margin-bottom, 15px);
+}
 //image with text overlay
-.image-with-text-overlay {
-	&-section{
-		@media #{$sm} {
-        // @apply main-container
-        padding-left: 2.1818181818rem;
-        padding-right: 2.1818181818rem;
-		}
-
+.static-image {
+	@media #{$sm} {
+		// @apply main-container
+		padding-left: 2.1818181818rem;
+		padding-right: 2.1818181818rem;
 	}
 	&__shadow-box {
 		@include rem(padding, 15px);
 
-    @media #{$md} {
-        @include rem(padding, 40px);
-    }
+		@media #{$md} {
+			@include rem(padding, 40px);
+    	}
 	}
 	&__image {
-      position: relative;
-      min-height: 520px;
-      background: no-repeat center url("../images/image-with-text-overlay.png");
-      background-size: cover;
+		position: relative;
+		min-height: 520px;
+		background: no-repeat center url("../images/image-with-text-overlay.png");
+		background-size: cover;
 	}
-	&__text-overlay{
-      position: absolute;
-      top: 100%;
-      @include rem(margin, 15px);
-      background-color: $color_global_content_background;
+	&__text{
+		&-mobile {
+			@include rem(margin,  0 15px);
+			background-color: $color_global_content_background;
+		}
 
-      @media #{$md} {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          max-width: 500px; //can later be a variable so users can change widths
-          margin: 0;
-          padding: 0;
-      }
 
-      &-inner {
-          @include rem(padding, 25px 0 30px);
+     	&-overlay {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			max-width: 500px; //can later be a variable so users can change widths
+			margin: 0;
+			padding: 0;
+			background-color: $color_global_content_background;
 
-          @media #{$md} {
-              @include rem(padding, 60px);
-          }
+      	}
 
-        
-          h2, p {
-              @include rem(margin-bottom, 15px);
-          }
+		&-overlay-inner, &-mobile-inner {
+			@include rem(padding, 25px 0 30px);
 
-      }
+			@media #{$md} {
+				@include rem(padding, 60px);
+			}
+		}
 	}
-
 }
+
+// Image with text
 .image-with-text {
-    &__text-inner{
+	@media #{$md} {
+		&__wrapper {
+			@include rem(margin, 0 75px);
+		}
+		&__image, &__text {
+			width: 50%;
+		}
+	}
+	@media #{$lg} {
+		&__wrapper {
+			@include rem(margin, 0 200px)
+		}
+	}
+
+    &__text-inner {
         padding-top: 30px;
         
         h2, p {
           @include rem(margin-bottom, 15px);
-    }
-    }
+    	}
+	}
+}
+// Text Column
+.image-with-text-columns{
+	@include rem(margin, 0 15px);
+
+
+	@media #{$md} {
+		// @apply main container
+		padding-left: 2.1818181818rem;
+		padding-right: 2.1818181818rem;
+
+		&__item{
+			height: fit-content;
+
+			&-image.shadow-box {
+				@include rem(padding, 20px);
+			}
+
+			&-image {
+				width: 60%;
+			}
+
+			&-text {
+				width: 40%;
+				height: max-content;
+				align-self: center;
+			}	
+		}
+	}
+
+	&__item:first-child {
+		margin-bottom: 30px;
+	}
+
+	&__item-text{
+		background-color: $color_global_content_background;
+		
+
+
+		&-inner{
+			@include rem(padding, 15px 15px 35px);
+
+		}
+	}
+
+	&__read-more{
+		color: $colour_bodytxt;
+		text-decoration: underline;
+		font-weight: bold;
+		line-height: 22px;
+	}
+}
+
+// Gallery
+.gallery {
+	&__image {
+		img {
+			width: 100%;
+		}
+	}
+}
+.slider-wrapper{
+	overflow: hidden; 
+}
+.slick-track{
+	display: flex;
+	justify-content: center;
+
+}
+.blog{
+	@include rem(padding, 0 15px);
+	&__article {
+		width: fit-content !important;
+		@include rem(margin-right, 15px);
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@media #{$lg} {
+			@include rem(margin-right, 60px);
+		}
+		&-image{
+			@include rem(margin-bottom, 30px)
+		}
+	}
+	&__info {
+		&-date {
+			font-size: 12px;
+		}
+		&-date, &-preview {
+			@include rem(margin-bottom, 20px)
+		}
+	}
+}
+
+.testimonial {
+	@include rem(padding, 30px 15px);
+	background-color: $color_global_content_background;
+
+	&__item {
+		background-color: $color_global_yellow_accent;
+		@include rem(padding, 20px 30px);
+		@include rem(margin-right, 30px);
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.slick-dots {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 1rem 0;
+		
+		list-style-type: none;
+		
+		li {
+			margin: 0 0.25rem;
+		}
+	
+		button {
+			display: block;
+			width: 1rem;
+			height: 1rem;
+			padding: 0;
+			
+			border: none;
+			border-radius: 100%;
+			background-color: $color_testimonial_dots;
+			
+			text-indent: -9999px;
+		}
+	
+		li.slick-active button {
+			background-color: $color_testimonial_dots-active;
+		}
+	}
+	&__arrow-prev i{
+		margin-right: 30px;
+	}
+}
+
+.video {
+	&__thumbnail {
+		min-height: 500px;
+		position: relative;
+		background: no-repeat center url("../images/video-thumbnail.png");
+		background-size: cover;
+		&-image {
+			width: 100%;
+		}
+
+		&-overlay {
+			position: absolute;
+			top: 0;	
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+	}
+	&__icon {
+		z-index: 2;
+		@include vertical-align(relative, false);
+		p {
+			color: $white;
+		}
+	}
+}
+.newsletter {
+	@include rem(padding, 30px 15px);
+	background-color: $color_global_yellow_accent;
+	&__inner {
+		max-width: 560px;
+	}
+	&__form {
+		
+		width: 100%;
+		border-bottom: 2px solid $black ;
+		@include rem(margin-bottom, 30px);
+		
+		img {
+			padding-right: 10px;
+		}
+		
+		&-email {
+			background-color: transparent;
+			border: none;
+			&::placeholder{
+				color: $color_global_black_text;
+			}
+		}
+		.sw-icon-arrow {
+			font-size: 35px;
+			vertical-align: middle;
+			
+		}
+	}
 }
