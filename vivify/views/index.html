@@ -34,7 +34,7 @@
         <div class="sr-only">
             <a href="#content">Skip to Main Content</a>
         </div>
-        <div class="header main-container">
+        <div class="header">
             <div class="grid lg:grid-cols-3 collapse">
                 <div class="header__inner order-2 lg:order-1 flex flex-row items-center">
                     <!-- {# burger menu button #} -->
@@ -69,7 +69,7 @@
                         </a>
                     <!-- {% endif %} -->
                     <!-- {# mobile basket link #} -->
-                    <div class="header-mobile-right lg:hidden float-right">
+                    <div class="header-mobile-right lg:hidden ml-auto flex items-stretch">
                         <!-- {# wishlist button #} -->
                         <a class="header__wishlist" href="/wishlist">
                             <!-- {{ theme.sw_icon('heart', 'my wishlist') }} -->
@@ -83,7 +83,7 @@
                                 GBP
                             </a>
                         <!-- {% endif %} -->
-                        <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
+                        <a class="header__basket self-stretch"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                             <!-- {{ theme.sw_icon('shopping-basket', 'shopping basket') }} -->
                             <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
                             <span class="sr-only">shopping basket</span>
@@ -104,7 +104,7 @@
                     </a>
                 </div>
 
-                <div class="header__inner order-3 lg:order-3 flex flex-row items-center justify-end">
+                <div class="header__inner order-3 hidden lg:flex flex-row items-center justify-end">
                 <!-- {# header snippet #} -->
                         <!-- {% if gts.text_header %} -->
                         <span class="header-text">
@@ -568,21 +568,157 @@
             </div>
         </section>
 
-        <section class="newsletter">
+        <section class="newsletter section-block">
             <div class="newsletter__inner mx-auto">
                 <h2 class="text-center">Stay in the know!</h2>
                 <form action="#" class="newsletter__form-wrapper flex justify-center">
-                    <div class="newsletter__form flex justify-between">
+                    <div class="newsletter__form flex">
                         <img class="self-center" src="../assets/images/envelope-icon.png">
                         <input type="email" class="newsletter__form-email" placeholder="Enter your email address">
-                        <input type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                        <input class="ml-auto" type="submit" value=""><button class="sw-icon-arrow"></button></input>
                     </div>
                 </form>
-                <p>We'll use your email to be in touch with you regarding product updates, exclusive offers and other relevant marketing</p>
+                <p class="text-center">We'll use your email to be in touch with you regarding product updates, exclusive offers and other relevant marketing</p>
             </div>
 
         </section>
     </main>
+
+    <footer>
+        <div class="grid grid-cols-1 lg:grid-cols-6">
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">
+                    Info
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#" class="footer__menu-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">
+                    Legals
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#" class="footer__menu-link">Delivery</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Terms</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Refunds</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">
+                    Customers
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#" class="footer__menu-link">Your bag</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Your Wishlist</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Your Account</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">
+                    Connect with us
+                </h4>
+                <ul>
+                    <form class="footer__email-form mb-5">
+                        <input type="email" class="footer__email-input" placeholder="Email address">
+                        <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                    </form>
+                    <ul class="footer__social-icons">
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-facebook-logo"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="footer__contact lg:order-first lg:col-span-2">
+                <p class="footer__contact-telephone">
+                    <span class="footer__contact-label">Tel:</span>
+                    <a class="underline" href="tel:0330 111 2024">0330 111 2024</a>
+                </p>
+                <p class="footer__contact-email">
+                    <span class="footer__contact-label">Email:</span>
+                    <a class="underline" href="mailto:vivify-demo-1@ecommercethemes.uk">vivify-demo-1@ecommercethemes.uk</a>
+                </p>
+                <address class="footer__contact-address">
+                    Suite 3, 17 Wrens Court, Sutton Coldfield, B72 1RT
+                </address>
+            </div>
+            <div class="footer__copy">
+                <p>
+                    Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
+                </p>
+            </div>
+            <ul class="footer__payment-list">
+                <li>
+                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
+                </li>
+                <li>
+                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_mastercard.png" alt="Mastercard">
+                </li>
+                <li>
+                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_visa.png" alt="Visa">
+                </li>
+                <li>
+                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_maestro.png" alt="Maestro">
+                </li>
+            </ul>
+            
+
+        </div>
+    </footer>
 
     <script>
         $(".blog__slider").slick({

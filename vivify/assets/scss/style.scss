@@ -168,6 +168,10 @@ $color_global_content_background: #f9f9f9;
 $color_global_black_icons: #000000;
 $color_global_light_grey_borders: #e8e8e8;
 $color_home_category_background: #f3f3f3;
+$color_global_footer_background: #4d4d4d;
+$color_footer_newsletter_background: #626262;
+$color_footer_social_icons: #adadad;
+$color_footer_copyright_statement: #adadad;
 
 $color_announcement_background: #bd1d45;
 $color_global_white_button_text: #ffffff;
@@ -686,31 +690,36 @@ body {
 }
 
 .header {
-	@media #{$lg} {
-
+		@media #{$lg} {
+			// @apply main-container
+			padding-left: 2.1818181818rem;
+			padding-right: 2.1818181818rem;
+		}
 		&__inner {
 			vertical-align: middle;
-
-			@media #{$sm} {
-					@include rem(margin-left, -#{map-get($page_margins, 'small')} );
-					@include rem(margin-right, -#{map-get($page_margins, 'small')} );
-					@include rem(padding-left, map-get($page_margins, 'small') );
-
+			&:first-child {
+				background-color: $color_global_yellow_accent;
+				padding-left: 1.4545454545rem;
 			}
 
-
+			@media #{$lg} {
+				&:first-child {
+					background-color: $white;
+					padding-left: 0;
+				}
+			}
 
 			> * {
 					// display: inline-block;
 					vertical-align: middle;
 
-					& + *:not(.account-dropdown):not(.logo-text):not(.header__basket) {
+					& + *:not(.account-dropdown):not(.logo-text):not(.header__basket):not(.header-mobile-right) {
 							margin-left: 1.5rem;
 							margin-left: 2.5vw;
 					}
 			}
+
 		}
-	}
 
 		&__menu-toggle {
 				@include rem(font-size, 21px);
@@ -736,17 +745,11 @@ body {
 						@include rem(font-size, 22px);
 						color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_wishlist);
 		
-						// @include is-active {
-						//     color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_wishlist);
-						// }
 				}
 		
 				&__account-toggle {
 						color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_account);
 		
-						// @include is-active {
-						//     color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_account);
-						// }
 				}
 		
 				&__currency-toggle {
@@ -754,47 +757,29 @@ body {
 						@include rem(font-size, 14px);
 						font-weight: 700;
 		
-						// @include is-active {
-						//     color: if(setting-value('header_use_default_website_colors'), $color_global_black_text, $color_header_currency);
-						// }
 				}
 		
 				&__search-toggle {
 						color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_search_icon);
-		
-						// @include is-active {
-						//     color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_search_icon);
-						// }
-		
-						// @media #{$m-down} {
-						//     @include rem(font-size, 23px);
-						//     margin-left: 1.5rem;
-						//     vertical-align: top;
-						// }
+	
 				}
 
 				&__basket {
-				color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_basket);
-				@include rem(font-size, 28px);
+					@include rem(font-size, 28px);
+					background-color: $colour_main;
+					color: $white;
+					padding: 0 1.25rem;
 
-				// @include is-active {
-				//     color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_basket);
-				// }
+					@media #{$lg} {
+						background-color: transparent;
+						color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_basket);
+						padding: 0;
+					}
 
-				// @media #{$m-down} {
-				//     background-color: $colour_main;
-				//     color: $white !important;
-				//     padding: 0 1.25rem;
-
-				//     @include is-active {
-				//         color: $white;
-				//     }
-				// }
-
-				// @media #{$l-up} {
-				//     margin-left: 0 !important;
-				// }
-		}
+					@media #{$lg} {
+						margin-left: 0 !important;
+					}
+				}
 
 		&__logo {
 				@include rem(padding, 10px 0);
@@ -886,6 +871,12 @@ body {
 								margin-left: 1.5rem;
 						}
 				}
+				a:not(.header__basket){
+					align-self: center;
+				}
+				.header__basket i{
+					vertical-align: -webkit-baseline-middle;
+				}
 		}
 
 		&-menu {
@@ -976,6 +967,10 @@ body {
 				}
 		}
 }
+//===================================================================================================================//
+
+
+//===================================================================================================================//
 .button-wrapper {
 	width: fit-content;
 
@@ -1357,6 +1352,94 @@ body {
 			font-size: 35px;
 			vertical-align: middle;
 			
+		}
+	}
+}
+footer {
+	@include rem(padding, 30px 15px);
+	background-color: $color_global_footer_background;
+	.footer {
+		&__menu {
+			margin-bottom: 1rem;
+			&-title {
+				text-transform: uppercase;
+				font-weight: bold;
+				margin-bottom: 1.75rem;
+				color: $white;
+			}
+			&-link {
+				color: $white;
+				margin-bottom: 1rem;
+				display: block;
+			}
+
+		}
+
+		&__email-form {
+			@include rem(padding, 10px);
+			background-color: $color_footer_newsletter_background;
+	
+			.footer__email-input {
+				background-color: transparent;
+				border: none;
+				&::placeholder{
+					color: $white;
+				}
+			}
+			.sw-icon-arrow {
+				font-size: 35px;
+				vertical-align: middle;
+				color: $white;
+			}
+		}
+
+		&__social-icons {
+			li {
+				display: inline-block;
+				margin-right: 1rem;
+				i {
+					@include rem(font-size, 18px);
+					color: $color_footer_social_icons;
+				}
+			}
+		}
+		&__contact {
+			color: $white;
+			margin-bottom: 1rem;
+
+			p {
+				margin-bottom: .1454545455rem;
+			}
+			
+			a {
+				color: $white;
+			}
+
+			&-label {
+				display: inline-block;
+				min-width: 55px;
+				min-width: 4rem;
+				padding-right: .7272727273rem;
+				position: relative;
+				top: 1px;
+			}
+		}
+		&__copy {
+			color: $color_footer_copyright_statement;
+			margin-bottom: 1rem;
+		}
+		&__payment-list {
+			li {
+				display: inline-block;
+				margin-right: 0.2rem;
+				&:last-child {
+					margin-right: 0;
+				}
+				img {
+					height: 23px;
+					width: auto;
+				}
+			}
 		}
 	}
 }
