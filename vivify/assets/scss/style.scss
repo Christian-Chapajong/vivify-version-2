@@ -181,7 +181,7 @@ $color_announcement_icon: #ffffff;
 $logo_width: 250px; //default value (min: 80px, max: 450px)
 $logo_width_mobile: 250px; //default value (min: 80px, max: 450px)
 
-$color_testimonial_dots: #e8e8e8;
+$color_slider_dots: #e8e8e8;
 $color_testimonial_dots-active: #adadad;
 
 
@@ -1318,7 +1318,7 @@ body {
 				
 				border: none;
 				border-radius: 100%;
-				background-color: $color_testimonial_dots;
+				background-color: $color_slider_dots;
 				
 				text-indent: -9999px;
 			}
@@ -1401,6 +1401,23 @@ body {
 		}
 	}
 }
+.social-icons {
+	li {
+		display: inline-block;
+		margin-right: 1rem;
+		margin-bottom: .5rem;
+		i {
+			@include rem(font-size, 18px);
+			color: $color_footer_social_icons;
+		}
+	}
+	&_black {
+		@include rem(margin-top, 15px);
+		li i {
+			color: $black;
+		}
+	}
+}
 footer {
 	@include rem(padding, 30px 15px);
 	background-color: $color_global_footer_background;
@@ -1439,17 +1456,6 @@ footer {
 			}
 		}
 
-		&__social-icons {
-			li {
-				display: inline-block;
-				margin-right: 1rem;
-				margin-bottom: .5rem;
-				i {
-					@include rem(font-size, 18px);
-					color: $color_footer_social_icons;
-				}
-			}
-		}
 		&__contact {
 			color: $white;
 			margin-bottom: 1rem;
@@ -1509,14 +1515,31 @@ footer {
 	}
 }
 .cart-button {
-	background-color: #ffe256;
+	background-color: $color_global_yellow_accent;
     color: #000;
     margin: 0;
 	padding: 1.3rem;
 }
+.play-video {
+	@include rem(margin-top, 10px);
+}
 .product {
 	a {
 		display: block;
+	}
+	.slick-dots {
+		padding: 0 20px;
+	}
+	.slick-dots li button{
+		border-radius: 50%;
+		background-color: $color_slider_dots;
+		color: transparent;
+		height: 12px;
+		width: 12px;
+		padding: 0;
+	}
+	li.slick-active button {
+		background-color: $color_global_yellow_accent;
 	}
 	&__price {
 		font-size: 1.3rem;
@@ -1532,9 +1555,15 @@ footer {
 	}
 	&__vendor, &__product-name, &__description-link {
 		@include rem(margin-bottom, 10px);
-	} 
+	}
+
 	&__form-outer {
-		@include rem(margin-left, 60px)
+		@include rem(margin-top, 15px);
+
+		@media #{$md} {
+			@include rem(margin-left, 60px);
+			margin-top: 0;
+		}
 	}
 	&-form {
 		&__field {
@@ -1558,5 +1587,9 @@ footer {
 				border: 1px solid #eeeeee;
 			}
 		}
+	}
+	&__deal {
+		background-color: $color_global_yellow_accent;
+		@include rem(padding, 5px);
 	}
 }

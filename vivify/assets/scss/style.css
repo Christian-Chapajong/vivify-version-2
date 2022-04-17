@@ -1154,6 +1154,24 @@ body {
   vertical-align: middle;
 }
 
+.social-icons li {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+.social-icons li i {
+  font-size: 18px;
+  font-size: 1.2857142857rem;
+  color: #adadad;
+}
+.social-icons_black {
+  margin-top: 15px;
+  margin-top: 1.0714285714rem;
+}
+.social-icons_black li i {
+  color: #000;
+}
+
 footer {
   padding: 30px 15px;
   padding: 2.1428571429rem 1.0714285714rem;
@@ -1189,16 +1207,6 @@ footer .footer__email-form .sw-icon-arrow {
   font-size: 35px;
   vertical-align: middle;
   color: #fff;
-}
-footer .footer__social-icons li {
-  display: inline-block;
-  margin-right: 1rem;
-  margin-bottom: 0.5rem;
-}
-footer .footer__social-icons li i {
-  font-size: 18px;
-  font-size: 1.2857142857rem;
-  color: #adadad;
 }
 footer .footer__contact {
   color: #fff;
@@ -1260,8 +1268,27 @@ footer .footer__payment-list li img {
   padding: 1.3rem;
 }
 
+.play-video {
+  margin-top: 10px;
+  margin-top: 0.7142857143rem;
+}
+
 .product a {
   display: block;
+}
+.product .slick-dots {
+  padding: 0 20px;
+}
+.product .slick-dots li button {
+  border-radius: 50%;
+  background-color: #e8e8e8;
+  color: transparent;
+  height: 12px;
+  width: 12px;
+  padding: 0;
+}
+.product li.slick-active button {
+  background-color: #ffe256;
 }
 .product__price {
   font-size: 1.3rem;
@@ -1281,8 +1308,15 @@ footer .footer__payment-list li img {
   margin-bottom: 0.7142857143rem;
 }
 .product__form-outer {
-  margin-left: 60px;
-  margin-left: 4.2857142857rem;
+  margin-top: 15px;
+  margin-top: 1.0714285714rem;
+}
+@media screen and (min-width: 48rem) {
+  .product__form-outer {
+    margin-left: 60px;
+    margin-left: 4.2857142857rem;
+    margin-top: 0;
+  }
 }
 .product-form__field {
   background: #f9f9f9;
@@ -1308,6 +1342,11 @@ footer .footer__payment-list li img {
   padding: 0.3571428571rem 1.0714285714rem;
   background-color: #fff;
   border: 1px solid #eeeeee;
+}
+.product__deal {
+  background-color: #ffe256;
+  padding: 5px;
+  padding: 0.3571428571rem;
 }
 
 /*# sourceMappingURL=style.css.map */
