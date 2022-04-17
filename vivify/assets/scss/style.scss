@@ -189,15 +189,18 @@ $color_testimonial_dots-active: #adadad;
 // fonts
 //===========================
 
+
+                
 // families
 
-$sofia: sofia-pro, sans-serif;
+$sofia: 'Sofia Pro', sans-serif;
 $museo: 'museo_sans', sans-serif;
 $proxima-font-family: 'proxima-nova', sans-serif;
 $icon: 'sw-icons' !important;
 
 
 // faces
+@import url('http://fonts.cdnfonts.com/css/sofia-pro');
 
 @font-face {
 		font-family: 'museo_sans';
@@ -566,10 +569,12 @@ html, body {
 h1 { 
 		font-size: 2rem;
 		font-weight: bold;
+		margin-bottom: 0.5rem;
 	}
 h2 { 
 		font-size: 3.125rem;
 		font-weight: bold;
+		margin-bottom: 0.5rem;
 	}
 h3 { 
 		font-size: 1.875rem; 
@@ -1063,7 +1068,7 @@ body {
 }
 
 // Featured Products
-.featured-products-grid {
+.product-cards-grid {
 		&__heading-inner{
 				@include vertical-align(relative, false);
 
@@ -1072,7 +1077,7 @@ body {
 					margin-bottom: 2rem;
 				}
 		}
-		&__item{
+		&__card{
 				&-name, &-price{
 					text-align: center;
 					margin-top: .75rem;
@@ -1254,8 +1259,16 @@ body {
 
 .testimonial {
 	@include rem(padding, 30px 15px);
+	
+	@media #{$md} {
+		@include rem(padding, 50px 0);
+	}
 	background-color: $color_global_content_background;
-
+	&__title {
+		@media #{$md} {
+			@include rem(margin-bottom, 50px);			
+		}
+	}
 	&__item {
 		background-color: $color_global_yellow_accent;
 		@include rem(padding, 20px 30px);
@@ -1263,38 +1276,64 @@ body {
 		&:last-child {
 			margin-right: 0;
 		}
-	}
-	.slick-dots {
-		display: flex;
-		justify-content: center;
-		margin: 0;
-		padding: 1rem 0;
-		
-		list-style-type: none;
-		
-		li {
-			margin: 0 0.25rem;
+
+		@media #{$md} {
+			@include rem(padding, 50px);
+			@include rem(margin-right, 160px);
 		}
-	
-		button {
-			display: block;
-			width: 1rem;
-			height: 1rem;
-			padding: 0;
-			
-			border: none;
-			border-radius: 100%;
-			background-color: $color_testimonial_dots;
-			
-			text-indent: -9999px;
-		}
-	
-		li.slick-active button {
-			background-color: $color_testimonial_dots-active;
+
+		&-quote {
+			@include rem(margin-bottom, 15px);
+
+			@media #{$md} {
+				@include rem(margin-bottom, 30px);
+			}
 		}
 	}
+	&__nav {
+		position: relative;
+
+		@media #{$md} {
+			@include rem(padding, 0 40px);
+		}
+		.slick-dots {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0;
+			padding: 1rem 0;
+			order: 2;
+			
+			list-style-type: none;
+			
+			li {
+				margin: 0 0.25rem;
+			}
+		
+			button {
+				display: block;
+				width: 1rem;
+				height: 1rem;
+				padding: 0;
+				
+				border: none;
+				border-radius: 100%;
+				background-color: $color_testimonial_dots;
+				
+				text-indent: -9999px;
+			}
+		
+			li.slick-active button {
+				background-color: $color_testimonial_dots-active;
+			}
+		}
+	}
+
 	&__arrow-prev i{
-		margin-right: 30px;
+		order: 1;
+	}
+	&__arrow-next i {
+		order: 3;
 	}
 }
 
@@ -1327,12 +1366,18 @@ body {
 }
 .newsletter {
 	@include rem(padding, 30px 15px);
+
+	@media #{$md} {
+		@include rem(padding, 50px 0);
+	}
 	background-color: $color_global_yellow_accent;
 	&__inner {
 		max-width: 560px;
+		h2 {
+			@include rem(margin-bottom, 30px);
+		}
 	}
 	&__form {
-		
 		width: 100%;
 		border-bottom: 2px solid $black ;
 		@include rem(margin-bottom, 30px);
@@ -1342,6 +1387,7 @@ body {
 		}
 		
 		&-email {
+			width: 100%;
 			background-color: transparent;
 			border: none;
 			&::placeholder{
@@ -1397,6 +1443,7 @@ footer {
 			li {
 				display: inline-block;
 				margin-right: 1rem;
+				margin-bottom: .5rem;
 				i {
 					@include rem(font-size, 18px);
 					color: $color_footer_social_icons;
@@ -1432,6 +1479,7 @@ footer {
 			li {
 				display: inline-block;
 				margin-right: 0.2rem;
+				margin-bottom: 0.2rem;
 				&:last-child {
 					margin-right: 0;
 				}
@@ -1439,6 +1487,75 @@ footer {
 					height: 23px;
 					width: auto;
 				}
+			}
+		}
+	}
+}
+
+//================== Product page ====================== //
+.wishlist-button {
+	@include rem(font-size, 18px);
+	color: $black;
+}
+.number-toggle {
+	margin-right: 1rem;
+	button, input {
+		width: 40px;
+		background-color: $white;
+		text-align: center;
+	}
+	button {
+		font-size: .5rem;
+	}
+}
+.cart-button {
+	background-color: #ffe256;
+    color: #000;
+    margin: 0;
+	padding: 1.3rem;
+}
+.product {
+	a {
+		display: block;
+	}
+	&__price {
+		font-size: 1.3rem;
+	}
+	&__vendor {
+		color: $black;
+	}
+	&__product-name {
+		@include rem(font-size, 18px);
+	}
+	&__description-link {
+		color: $black;
+	}
+	&__vendor, &__product-name, &__description-link {
+		@include rem(margin-bottom, 10px);
+	} 
+	&__form-outer {
+		@include rem(margin-left, 60px)
+	}
+	&-form {
+		&__field {
+			background: $color_global_content_background;
+			@include rem(margin-top, 10px); margin-top: .7272727273rem;
+			@include rem(padding, 15px 20px);
+		}
+		&__field-name {
+			@include rem(margin-bottom, 10px);
+		}
+		&__option {
+			@include rem(padding, 10px)
+		}
+		&__variant-button {
+			input {
+				display: none;
+			}
+			span {
+				@include rem(padding, 5px 15px);
+				background-color: $white;
+				border: 1px solid #eeeeee;
 			}
 		}
 	}

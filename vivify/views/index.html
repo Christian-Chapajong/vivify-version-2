@@ -299,14 +299,14 @@
             </div>
         </section>
 
-        <section id="featured-products-section" class="main-container section-block">
-            <div class="featured-products-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-16">
+        <section class="main-container section-block">
+            <div class="product-cards-grid grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-16 lg:grid-cols-4">
                 <!-- Use of grid anticipates users not wanted to use text-snippet here
                 {% if gts.text_home_featured_title or gts.text_home_featured_paragraph %}-->
-                <div class="featured-products-grid__heading col-span-2 md:col-span-1">
-                    <div class="featured-products-grid__heading-inner">
-                        <h3 class="feautured-products-grid__heading-title">Favourites</h3>
-                        <p class="featured-products-grid__heading-description">
+                <div class="products-cards-grid__heading sm:col-span-2 md:col-span-1">
+                    <div class="product-cards-grid__heading-inner">
+                        <h3>Favourites</h3>
+                        <p class="product-cards-grid__heading-description">
                             Our first collection ETT, the Swedish word for one, uses a Swiss two-handed movement and is designed to be a careful, understated hybrid of the past and present. 
                             <br><br>
                             These are the best of the bunch! 
@@ -315,40 +315,40 @@
                 </div>
                 <!-- {% endif %} -->
                 <!--- {% include item.twig with items: 'featured-product' %}-->
-                <div class="featured-products-grid__item">
-                    <img class="featured-products-grid__item-image" src="../assets/images/giraffe-bag.png">
-                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                    <p class="featured-products-grid__item-price">£255.00</p>
+                <div class="product-cards-grid__card">
+                    <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                    <p class="product-cards-grid__card-price">£255.00</p>
                 </div>
-                <div class="featured-products-grid__item">
-                    <img class="featured-products-grid__item-image" src="../assets/images/green-balls.png">
-                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                    <p class="featured-products-grid__item-price">£255.00</p>
+                <div class="product-cards-grid__card">
+                    <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
+                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                    <p class="product-cards-grid__card-price">£255.00</p>
                 </div>
-                <div class="featured-products-grid__item">
-                    <img class="featured-products-grid__item-image" src="../assets/images/jigsaw.png">
-                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                    <p class="featured-products-grid__item-price">£255.00</p>
+                <div class="product-cards-grid__card">
+                    <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
+                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                    <p class="product-cards-grid__card-price">£255.00</p>
                 </div>
-                <div class="featured-products-grid__item">
-                    <img class="featured-products-grid__item-image" src="../assets/images/giraffe-bag.png">
-                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                    <p class="featured-products-grid__item-price">£255.00</p>
+                <div class="product-cards-grid__card">
+                    <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                    <p class="product-cards-grid__card-price">£255.00</p>
                 </div>
-                <div class="featured-products-grid__item">
-                    <img class="featured-products-grid__item-image" src="../assets/images/green-balls.png">
-                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                    <p class="featured-products-grid__item-price">£255.00</sp>
+                <div class="product-cards-grid__card">
+                    <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
+                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                    <p class="product-cards-grid__card-price">£255.00</sp>
                 </div>
-                <div class="featured-products-grid__item">
-                    <img class="featured-products-grid__item-image" src="../assets/images/jigsaw.png">
-                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                    <p class="featured-products-grid__item-price">£255.00</p>
+                <div class="product-cards-grid__card">
+                    <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
+                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                    <p class="product-cards-grid__card-price">£255.00</p>
                 </div>
-                <div class="featured-products-grid__item">
-                    <img class="featured-products-grid__item-image" src="../assets/images/dad-set.png">
-                    <p class="featured-products-grid__item-name">Giraffe bag containing a small giraffe</p>
-                    <p class="featured-products-grid__item-price">£255.00</p>
+                <div class="product-cards-grid__card">
+                    <img class="product-cards-grid__card-image" src="../assets/images/dad-set.png">
+                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                    <p class="product-cards-grid__card-price">£255.00</p>
                 </div>
             </div>
         </section>
@@ -410,10 +410,7 @@
                                         </div>
                                     </a>
                                 </div>
-
-                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -531,7 +528,7 @@
         </section>
 
         <section class="testimonial section-block">
-            <h3 class="uppercase md:text-center text-box-heading">What our customers say</h3>
+            <h3 class="testimonial__title uppercase md:text-center text-box-heading">What our customers say</h3>
             <div class="testimonial__wrapper slider-wrapper">
                 <div class="testimonial__slider">
                     <article class="testimonial__item">
@@ -547,11 +544,7 @@
                         <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
                     </article>
                 </div>
-                <div class="flex justify-end">
-                    <div class="slick-dots"></div>
-                    <button class="slider-arrow testimonial__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>
-                    <button class="slider-arrow testimonial__arrow-next"><i class="sw-icon-arrow" aria-hidden="true"></i></button>
-                </div>
+                <div class="testimonial__nav flex justify-between"> <!-- flex justify-end --></div>
 
             </div>
             
@@ -701,7 +694,7 @@
                     Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
                 </p>
             </div>
-            <ul class="footer__payment-list">
+            <ul class="footer__payment-list text-right md:col-start-6">
                 <li>
                     <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
                 </li>
@@ -758,21 +751,22 @@
             ]
         });
         $(".testimonial__slider").slick({
-            prevArrow: $(".testimonial__arrow-prev"),
-            nextArrow: $(".testimonial__arrow-next"),
-            infinite: true,
+            prevArrow: '<button class="slider-arrow testimonial__arrow-prev"><i class="sw-icon-arrow1" aria-hidden="true"></i></button>',
+            nextArrow: '<button class="slider-arrow testimonial__arrow-next"><i class="sw-icon-arrow" aria-hidden="true"></i></button>',
+            infinite: false,
             dots: true,
             arrows: true,
             speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            appendDots: '.testimonial__nav',
+            appendArrows: '.testimonial__nav',
+            slidesToShow: 2,
+            slidesToScroll: 0.5,
             responsive: [
                 {
                 breakpoint: 1281,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true
+                    slidesToShow: 2,
+                    slidesToScroll: 0.5,
                 }
                 },
                 {
@@ -780,7 +774,6 @@
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    infinite: false
 
                 }
                 },
@@ -789,8 +782,6 @@
                 settings: {
                     slidesToShow: 1.25,
                     slidesToScroll: 1.25,
-                    infinite: false
-
                 }
                 }
             ]

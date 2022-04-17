@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/scss/style.css">
+</head>
+<body>
+    <noscript>
+        <div class="callout primary">
+            <p>
+            JavaScript appears to be disabled in your browser. JavaScript must be enabled in order to utilise the full functionalilty of this website.
+            </p>
+        </div>
+    </noscript>
+    <header class="relative">
+        <div class="sr-only">
+            <a href="#content">Skip to Main Content</a>
+        </div>
+        <div class="header">
+            <div class="grid lg:grid-cols-3 collapse">
+                <div class="header__inner order-2 lg:order-1 flex flex-row items-center">
+                    <!-- {# burger menu button #} -->
+                    <a class="header__menu-toggle" data-toggle="offCanvasMobile">
+                        <!-- {{ theme.sw_icon('pause-sign', 'menu') }} -->
+                        <i class="sw-icon-pause-sign" aria-hidden="true"></i>
+                        <span class="sr-only">menu</span>
+                    </a>
+                    <!-- {# search toggle #} -->
+                    <a class="header__search-toggle" data-toggle="header-search">
+                        <!-- {{ theme.sw_icon('musica-searcher', 'search') }} -->
+                        <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
+                        <span class="sr-only">search</span>
+                    </a>
+                    <!-- {# wishlist button #} -->
+                    <a class="header__wishlist hidden lg:inline-block" href="/wishlist">
+                        <!-- {{ theme.sw_icon('heart', 'my wishlist') }} -->
+                        <i class="sw-icon-heart" aria-hidden="true"></i>
+                        <span class="sr-only">my wishlist</span>
+                    </a>
+                    <!-- {# account menu toggle #} -->
+                    <a class="header__account-toggle hidden lg:inline-block" data-toggle="account-dropdown">
+                        <!-- {{ theme.sw_icon('person', 'open account menu') }} -->
+                        <i class="sw-icon-person" aria-hidden="true"></i>
+                        <span class="sr-only">open account menu</span>
+                    </a>
+                    <!-- {# currency toggle #} -->
+                    <!-- {% if global.features.apps.currencies %} -->
+                        <a class="header__currency-toggle hidden lg:inline-block" data-toggle="offCanvasCurrency">
+                            <!-- {{ global.currency.name }} -->
+                            GBP
+                        </a>
+                    <!-- {% endif %} -->
+                    <!-- {# mobile basket link #} -->
+                    <div class="header-mobile-right lg:hidden ml-auto flex items-stretch">
+                        <!-- {# wishlist button #} -->
+                        <a class="header__wishlist" href="/wishlist">
+                            <!-- {{ theme.sw_icon('heart', 'my wishlist') }} -->
+                            <i class="sw-icon-heart" aria-hidden="true"></i>
+                            <span class="sr-only">my wishlist</span>
+                        </a>
+                        <!-- {# currency toggle #} -->
+                        <!-- {% if global.features.apps.currencies %} -->
+                            <a class="header__currency-toggle" data-toggle="offCanvasCurrency">
+                                <!-- {{ global.currency.name }} -->
+                                GBP
+                            </a>
+                        <!-- {% endif %} -->
+                        <a class="header__basket self-stretch"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
+                            <!-- {{ theme.sw_icon('shopping-basket', 'shopping basket') }} -->
+                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                            <span class="sr-only">shopping basket</span>
+                        </a>
+                    </div>
+                    <!-- {{ block('header_account_dropdown') }} -->
+                </div>
+
+                <div class="header__inner order-1 lg:order-2 text-center">
+                    <!-- {# logo container #} -->
+                    <!-- {{ block('header_logo') }} 
+                    Taken from header.twig: -->
+                    <a href="/" class="header__logo">
+                        <img src="" alt="" class="header__logo-image">
+                        <span class="header__logo-text">
+                            Vivify
+                        </span>
+                    </a>
+                </div>
+
+                <div class="header__inner order-3 hidden lg:flex flex-row items-center justify-end">
+                <!-- {# header snippet #} -->
+                        <!-- {% if gts.text_header %} -->
+                        <span class="header-text">
+                            <strong>Free shipping</strong> - on all orders over £35
+                        </span>
+                    <!-- {% endif %} -->
+                    <!-- {# basket link #} -->
+                    <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
+                        <a class="header__basket" data-toggle="offCanvasBasket" aria-expanded="false" aria-controls="offCanvasBasket">
+                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                            <span class="sr-only">shopping basket</span>
+                        </a>
+                    </a>
+                </div>
+            </div> 
+        </div>
+        <!-- {{ block('header_navigation') }} -->
+        <div class="header__nav hidden lg:block">
+            <nav class="main-container">
+                <div class="header__nav-inner">
+                    <button type="button" class="mobile-menu-toggle lg:hidden" data-toggle="offCanvasMobile">
+                        <!-- {{ theme.sw_icon('bars') }} -->
+                        <i class="sw-icon-bars" aria-hidden="true"></i>
+                        <span class="sr-only">menu</span>
+                        Menu
+                    </button>
+                    <div class="header_mobile_right lg:hidden">
+                        <a class="header__mobile-basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
+                            <!-- {{ theme.sw_icon('shopping-bag', 'Shopping Basket') }} -->
+                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                            <span class="sr-only">shopping basket</span>
+                            <span class="hidden lg:block">Shopping basket</span>
+                            <!-- <span class="basket-count">{{ global.basket.items }}</span> -->
+                        </a>
+                        <button type="button" class="mobile-search-toggle" data-toggle="header-search">
+                            <!-- {{ theme.sw_icon('glass', 'Search') }} -->
+                            <i class="sw-icon-glass" aria-hidden="true"></i>
+                            <span class="sr-only">search</span>
+                        </button>
+                        <!-- {% if global.features.apps.currencies %}
+                            {% include 'partials/currency_dropdown.twig' with { 'size': 'small' } %}
+                        {% endif %} -->
+                    </div>
+                    <!-- {# Render main navigation #} -->
+                    <div id="main-nav-wrapper" class="main-nav-wrapper{{ theme_config.nav_style == 1 ? ' click-drop' : '' }} hidden lg:block" data-toggler=".lg:block">
+                        <ul class="main-nav flex flex-col justify-center lg:flex-row menu"
+                            data-responsive-menu="accordion large-dropdown"
+                            data-close-on-click-inside
+                        >
+                            <!-- {# Render home link #} -->
+                            <li class="main-nav-home-link">
+                                <a href="/"{% if global.current_path == '/' %} class="active"{% endif %}>
+                                    Home
+                                </a>
+                            </li>
+                            <!-- {# Render category links #} -->
+                            <!-- {% for category in global.categories|slice(0, category_limit|default(20)) %}
+                                <li{% if theme_config.nav_style == 1 %} data-id="{{ category.id }}" class="{{ category.categories ? 'parent-with-sub' }}"{% endif %}>
+                                    <a href="{{ category.url }}" {% if category.url in global.current_url %}class="active" {% endif %}>
+                                        {{ category.title }}
+                                    </a>
+                                    {% if category.categories and not theme_config.nav_style == 1 %} -->
+                                        <ul class="main-nav menu flex flex-col lg:flex-row is-dropdown-submenu">
+                                            <!-- {% for subcategory in category.categories %} -->
+                                                <li>
+                                                    <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
+                                                        Cool Tools
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
+                                                        <!-- {{ subcategory.title }} -->
+                                                        Gadgets
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
+                                                        <!-- {{ subcategory.title }} -->
+                                                        Gifts
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
+                                                        <!-- {{ subcategory.title }} -->
+                                                        Toys & Games
+                                                    </a>
+                                                </li>
+                                            <!-- {% endfor %} -->
+                                    <!-- {% endif %} -->
+                                </li>
+                            <!-- {% endfor %} 
+                            {% if global.categories|length > category_limit|default(20) %}
+                                <li>
+                                    <a href="/categories">
+                                        View All
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {# category link list #}
+                            {% set category_add_list = global.theme.settings.list_category_add %}
+                            {% if category_add_list and category_add_list.links %}
+                                {# Render custom links #}
+                                {% for link in category_add_list.links %
+                                    <li {% if loop.first %} id="list_category_add"{% endif %}>
+                                        <a href="{{ link.url }}">
+                                            {{ link.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
+                            {# Render brand links #}
+                            {% if global.brands %} -->
+                                <li {% if theme_config.nav_style == 1 %} data-id="brands" class="parent-with-sub"{% endif %}>
+                                    <a href="/brands" {% if global.current_path == '/brands' %}class="active" {% endif %}>
+                                        Brands
+                                    </a> 
+                                    <!-- {% if not theme_config.nav_style == 1 %}
+                                        <ul class="vertical menu is-dropdown-submenu">
+                                            {% for brand in global.brands|slice(0, brand_limit|default(20)) %}
+                                                <li>
+                                                    <a href="{{ brand.url }}" {% if brand.url in global.current_path %}class="active" {% endif %}>
+                                                        {{ brand.title }}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                            {% if global.brands|length > brand_limit|default(20) %} 
+                                                <li>
+                                                    <a href="/brands">
+                                                        View All
+                                                    </a>
+                                                </li>
+                                            {% endif %} -->
+                                        </ul>
+                                    <!-- {% endif %} -->
+                                </li>
+                            <!-- {% endif %}
+                            {# Render blog link #}
+                            {% if global.features.apps.blog %} -->
+                                <li>
+                                    <a href="/blog"{% if global.current_path == '/blog' %} class="active"{% endif %}>
+                                        Blog
+                                    </a>
+                                </li>
+                            <!-- {% endif %} -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- {{ block('header_search') }} -->
+    </header>
+    <!-- {% endblock %}-->
+    <main>
+        <section class="main-container section-block">
+            <div class="product flex flex-col md:flex-row">
+                <div class="product__image md:w-3/5">
+                    <div class="product__image-nav"></div>
+                    <img src="../assets/images/product-img.png">
+                </div>
+                <div class="product__form-outer md:w-2/5">
+                    <div class="product__info flex justify-between">
+                        <div class="product__info-text">
+                            <a class="product__vendor capitalize underline">Armani Collezioni</a>
+                            <h1 class="product__product-name">The letter J supply 'Something Wonderful'</h1>
+                            <a class="product__description-link capitalize underline">view details</a>
+                        </div>
+                        <a href="#" class="wishlist-button" data-remove="" data-add="">
+                            <i class="sw-icon-heart wishlist-button" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="product__price-info">
+                        <span class="product__price font-black">£380.00</span>
+                        <span class="product__savings">(<span class="underline">bulk savings</span>)</span>
+                        <span class="product__deal">3for2</span>
+                    </div>
+                    <form class="product-form" action="#">
+                        <div class="product-form__field">
+                            <p class="product-form__field-name">Size</p>
+                            <div class="product-form__option-container">
+                                <label class="product-form__variant-button">
+                                    <input type="radio" name="group0" value="19432351" class="variant-button__input required" aria-required="true">
+                                    <span class="variant-button__inner">small</span>
+                                </label>
+                                <label class="product-form__variant-button">
+                                    <input type="radio" name="group0" value="19432351" class="variant-button__input required" aria-required="true">
+                                    <span class="variant-button__inner">large</span>
+                                <label class="product-form__variant-button">
+                                    <input type="radio" name="group0" value="19432351" class="variant-button__input required" aria-required="true">
+                                    <span class="variant-button__inner">extra large</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="product-form__field">
+                            <p class="product-form__field-name">Colour</p>
+                            <select name="value[]" class="product-form__option w-full block required" aria=required="true">
+                                <option value="">Please select...</option>
+                                <option value="">blue</option>
+                                <option value="">grey</option>
+                                <option value="">red</option>
+                            </select>
+                        </div>
+                        <div class="product-form__field">
+                            <p class="product-form__field-name">Mobile phone charger</p>
+                            <input id="mobile-phone-charger"type="radio" name="" value="" class="required" aria-required="true">
+                            <label for="mobile-phone-charger">Yes (£10.00)</label>
+                        </div>
+                        <div class="product-form__field">
+                            <p class="product-form__field-name">Customisation field label</p>
+                            <textarea class="w-full"></textarea>
+                        </div>
+                        <div class="product-form__field">
+                            <p class="product-form__field-name">QTY (Minimum order quantity 6. Mximum order quantity 12)</p>
+                            <div class="flex">
+                                <div class="number-toggle flex">
+                                    <button class="number-toggle__down">
+                                        <i aria-hidden="true" class="sw-icon-minus"></i>
+                                    </button>
+                                    <input type="text" name="quantity" value="1" class="quantity-input">
+                                    <button class="number-toggle__up">
+                                        <i aria-hidden="true" class="sw-icon-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="cart-button button w-full uppercase">Add to your bag</button>
+
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+    
+    
+            </div>
+        </section>
+    </main>
+    
+
+    <footer>
+        <div class="grid grid-cols-1 lg:grid-cols-6">
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">
+                    Info
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#" class="footer__menu-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">
+                    Legals
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#" class="footer__menu-link">Delivery</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Terms</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Refunds</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">
+                    Customers
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#" class="footer__menu-link">Your bag</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Your Wishlist</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__menu-link">Your Account</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">
+                    Connect with us
+                </h4>
+                <ul>
+                    <form class="footer__email-form mb-5">
+                        <input type="email" class="footer__email-input" placeholder="Email address">
+                        <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                    </form>
+                    <ul class="footer__social-icons">
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-facebook-logo"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="sw-icon-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="footer__contact lg:order-first lg:col-span-2">
+                <p class="footer__contact-telephone">
+                    <span class="footer__contact-label">Tel:</span>
+                    <a class="underline" href="tel:0330 111 2024">0330 111 2024</a>
+                </p>
+                <p class="footer__contact-email">
+                    <span class="footer__contact-label">Email:</span>
+                    <a class="underline" href="mailto:vivify-demo-1@ecommercethemes.uk">vivify-demo-1@ecommercethemes.uk</a>
+                </p>
+                <address class="footer__contact-address">
+                    Suite 3, 17 Wrens Court, Sutton Coldfield, B72 1RT
+                </address>
+            </div>
+            <div class="footer__copy">
+                <p>
+                    Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
+                </p>
+            </div>
+            <ul class="footer__payment-list text-right md:col-start-6">
+                <li>
+                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
+                </li>
+                <li>
+                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_mastercard.png" alt="Mastercard">
+                </li>
+                <li>
+                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_visa.png" alt="Visa">
+                </li>
+                <li>
+                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_maestro.png" alt="Maestro">
+                </li>
+            </ul>
+            
+
+        </div>
+    </footer>
+
+</body>
+</html>
