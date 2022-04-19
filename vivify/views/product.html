@@ -245,10 +245,10 @@
     <!-- {% endblock %}-->
     <main>
         <section class="main-container section-block">
-            <div class="product flex flex-col md:flex-row">
-                <div class="product__image h-max md:w-3/5">
+            <div class="product grid sm:grid-cols-1 lg:grid-cols-5">
+                <div class="product__image h-max lg:col-span-3">
                     <div class="product__image-inner flex">
-                        <ul class="slick-dots hidden md:block md:self-center" role="tablist">
+                        <ul class="slick-dots hidden lg:block lg:self-center" role="tablist">
                             <li aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation20" id="slick-slide20">
                                 <button type="button" data-role="none" role="button" tabindex="0">1</button>
                             </li>
@@ -266,6 +266,9 @@
                             </li>
                          </ul>
                          <div class="product__image-wrapper">
+                            <button class="zoom-in">
+                                <svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px"><image  x="0px" y="0px" width="32px" height="32px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBBMXFxMjsXwzAAAEDklEQVRo3sWZTWhUVxTHf5mZNMQxVJvU1oBZ6ARjAiIE6gdopbUBqXRVEKGuDCVQA1pJwI+loljFtkil0oC0LrRKNy0KdiE0bdJCIygWJllUmhKlSVsSJ4mJJpkuQsK9971733kfU8/d3DPv/M//fz/e/XhThsTK2chWmljLSrIsY5wJhuknTw/djItyRLQMu7jKOEVrecot9pItBXkF7zPooFbLYz7h1WTp9/BQSL5QCnRSngx5Ld+HJF8o99kQn76F4Yj0RYo8oS0MWZnnl318Tto3tp97DDDGGFmqqKeJ9ZbIcxyiGK31h5jzaVUPbdT6RC9nN98x44O4RCoK/T4f+htsCkDl6PIR8Wl4+hZPmj95R4htps8j4WA4+lr+MhLcpCYEvoLzniVqcxgB5ovXZZlgLjvArJbjgXyF3GPQf+HzfkjsAyPPKRms0lj1bkZo/YKd1jJNk5OA2o2pF2bsTcvQbQylAKJvOdKZb7N6prSpuCoIsMt47+12UYnrc8Sd1DIeCxJwVQvfkoCAah4rkQOuCZ3iBd5W/F56Yg4AwD9cVrx61rkEvKa9q18mQO/N84ZLwDbN/zYhAb8wrHjb7IEpGhVvgKGEBBS5rXhN9sAMDYp31yfiolLfqtTrtCfHGTRw99i9WM+RYcYmYUiZryd82yIpzR7cu9rzV2z0KaoU798EOt8/11K7gCWKN5mgAP264hAwpXgVCQqo1LyCXYD6aFmCAvRco7awDCPKjWaNT8QdpV6n7JOT5JUnEx6cmmuOMbvSa8pcvYPbpHsBQJcSO2gPS2ntWM9yQefKbLtS/9Ul4CfFS9OSEH0DqxXP0VspfuSZ4u9NSMB7mvezO/iWMlozzjOcdA7oZ8wRMq4egK8UP83hBNrfykrFu27fB+Yvp1mGeHHxl1k2WltXx8uL9Qlt+qpWQ55qxX+dH4IUn9A2jr6YK+JlLVuvBFJDQQOdj0HfauyTO2WwTgN2ICL9Dqa1PHkpsJz7GnCW/ZHoC0ZDinRKwRt4YkBPu14fH2s1Wh9aQpsH2k29EFtjTD29dEglnPVApzgZeFOspJ2/A45sQgllXPIBF/iMTZbbTQPHeSQ6NXbYKHVL8THtvpHD3OYuA4wyShVLWUsj27UtJ8g6+UgWeJCnwrNw2CKeC5t58LwlZDkVoR/ySUqY//4nF9HLTrwrakwJsIpj9AckHOGCcv1MXAJAI/v5mt+Mle4PvuEob3rWy45SSJi3NCtYTTNreMn5Ga+EEqT2oUDCkdJKkPRC6/OWME0u+hfRYOthkrecEWkqSilAIqFamCmGuQdiKj5BPAkPSzsE8+YaiBuhMsUw27qwJX5qqfkNxJn/jx7MU/McZ2P8LRLRclzgd6YZ4srCH1r/AcpO92RlWBXYAAAAAElFTkSuQmCC" /></svg>
+                            </button>
                             <img src="../assets/images/product-img.png">
                          </div>
                     </div>
@@ -276,7 +279,7 @@
                     
   
                 </div>
-                <div class="product__form-outer md:w-2/5">
+                <div class="product__form-outer lg:col-span-2">
                     <div class="product__info flex justify-between">
                         <div class="product__info-text">
                             <a class="product__vendor capitalize underline">Armani Collezioni</a>
@@ -329,7 +332,7 @@
                             <textarea class="w-full"></textarea>
                         </div>
                         <div class="product-form__field">
-                            <p class="product-form__field-name">QTY (Minimum order quantity 6. Mximum order quantity 12)</p>
+                            <p class="product-form__field-name">QTY (Minimum order quantity 6. Maximum order quantity 12)</p>
                             <div class="flex">
                                 <div class="number-toggle flex">
                                     <button class="number-toggle__down">
@@ -380,11 +383,72 @@
                             </a>
                         </li>
                     </ul>
+                    <svg class="rewards-icon inline-block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="30px"> <image  x="0px" y="0px" width="25px" height="30px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAMAAAAQhsnYAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACzVBMVEW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUW9HUX////8+mlLAAAA7XRSTlMAFHXf4G0KEg9Au/yeIxhgrY5pVXnXv3Bembe1Yy7a8+b19uz53CqB+/Tp4tjW4eh+DsbUpnJJLyxHbqHQDGbPhTkNAQYDCzTMaDVr8Z87H06Nm5qKb0obnO/dcz4QVMr37n8i5LFqHhV766UTZwgCULnysqeEBONinbhcB4BGPWT4Nvp8pLrRrrTlWFNWXU/tmKsWy4jZ/qgm0sKRIL1R8JM6IUuDvDGWBRHbX0hh1TIrzmUtdnTNMLYalSi+yDOLUoz93nc8wYZ6cZInfeqHHKxEsJfnOFtZwKpXxdPDqZTJTSSJN2w/oEyPeEUnQsuSAAAAAWJLR0Tuz7fSNwAAAAd0SU1FB+YEExYOFCcXKr8AAASpSURBVEjHhVX5W5RVFD6ADMsEiCjDIgwgxLANsrhguDGxJNCYhoCJsjUBDYwhjcUSyqJG7CoYiLGIpiKgSSogkZSWmmK5hrRZUej5H7r3W2bmQ3o4P3zPue99n3PvPec95wN40YyMTeaZimAOMzOnXwtLRBS/ZEV9a+v/49rMn2+7wG7hImTMXuJg7OjkvHh2rosroUjd3JEzjyWe5Ov18qxkbxlL8vH18w+QB/qwK9nS2bhBwXTPPSR02fIVVlYrw1a9Es7wg1fPQl7jQcKsXbc+QgGvRkREAkRFe8eQw3xeeyHshljyrrj41yNBuXHZG5s2v5mwJREU65OSEbe+tc3IgJqyffOOVMS0dGvISHDOZC87723VO5CVnUPSGPKug5rnRua60V2pJE+z8z1dMhDzdy1X5JnGUTfHVMOR1QXM3vtaWLAbBeb1AWjSGa8giCNHfEiXhWqw8eVIqfmc41YEZk7USSrm71EiRkz+CEr9+Ijpe/Zy3tYysEhDLK/QPdCBRKzURu3juftT4ADvfyzSxiNWfaIjV2diWg3USnlCAkAdV0CU1kB1Pe6u5rnF68pxbZZGF2yXkiS+gSs+NioOHkLZYe7O2u1N2HwEPqU6cvdraT3qQtG2kmPhJvSspjY4Qr6fsbkrayUK84a6dsT6jrrOLj5G4obj3nKCbYFu8twTJ5m++Jzkoj0XYptJDSWnBCqoMSF6UYGKxCm3PU2Ak2fIWWlFYEwvGNBj0E6as4wQjaGXJA/7+gl07jzxkntBwtbMRhdbcXYHRZol8AWRE8ZcIJhogBwi/RJ62DpcvMSTEy+zDdMDC0ke2weYMwcbPFE2BGWsLpJzeXIYW9CqaHAUY7njIIsOFyJe0a4eYfbSVik48kaWHBNVbI+4b5iPocpHk69gVMxI52seveTK9OBV6JRjvqnu2bW+ONYNXd/QTddh0Lh8m35NC+rrdC3PgO/G0NdBR/6+HLFFCTdIt2BL/8qbpDukBZ236AP3DoBVAMnyDzxX1EBDlCjM40ld8q97sZqosr+NOFZpprnD6JnP//hduvT9EZSVnsJO8QzNgONLqPfTIN+v95idkX5QXr1vyA20bYMH5xk3yZy/x4PQTHJrtOyElIfOOWKWKb59+dFpsHhMD3D7+ZpeBNYTTEWe2AWB8tHQlUl//5bWezVKSCliKp5ZOxhpIK+dceysGO0UQd7BFaWlLll5EGVxs4qt+ENDKbYV8tectK2+QLUIZi4TR/159JdbBlq84aF/Vf3Ir0OHR39r/D3OICtLdZMAog/hHNa3TVeU0bG5yM2b+NT9YTIXF/E+NzjGG4W4V/bdZjyR3SdEnZ4yM1QVJ0A9/gSjid4uqJAK4NQB+sZzwcIQI5zMlceE+P6/6DjyEGD1f/OT2EagEyzviICpRcIAB8b5JGX9I0yS/F+wkcsMEb9qfa3CmvS4zD3/zGJ42iMZqOhuCOHy2aHWk4PucHEuTj+TxK6xa+Nw8+ePGTh8ylAy0U8Y0H4qD4T2nP4iUp8J4FMq+rvwDYOZphgluOWwEFTSmT2teIEMGeEo7Z0J1gXiZAbMYkU+leqZmGi6vke/+g96ft7UKTL+UgAAAABJRU5ErkJggg==" /></svg>
+                    <span>You’ll earn <span class="rewards-highlight font-bold">324 reward points</span> with this purchase.</span>
                 </div>
-    
-    
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 section-block">
+                <div class="product-description">
+                    <span class="product__price product__price_large block font-black">£380.00</span>
+                    <div class="product-tabs">
+                        <ul class="product-tabs__tabs">
+                            <li class="product-tabs__tab-title active"><a href="#">Details</a></li>
+                            <li class="product-tabs__tab-title"><a href="#">Specification</a></li>
+                        </ul>
+                        <div class="product-tabs__content">
+                            <div class="product-tabs__content-panel">
+                                <p>Designed with care in Sweden and crafted in Pforzheim, Germany using thoughtfully sourced, high-grade components. Movement from the world-renowned Swiss manufacturer Ronda and a 316L steel case produced with a careful combination of brushed and polished finishes. 
+                                    <br><br>
+                                    <ul class="list-disc list-inside">
+                                        <li>Prices in GBP. Converted to EUR at checkout.</li>
+                                        <li>Swiss Ronda 502 movement</li>
+                                        <li>Sapphire crystal w. anti-reflective coating</li>
+                                        <li>Water resistant to 3 ATM</li>
+                                        <li>316L stainless steel case</li>
+                                        <li>Enhanced PVD coating</li>
+                                        <li>Italian full grain leather strap</li>
+                                    </ul>
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="product-recommendations">
+                    <div class="product-recommendations__heading-wrapper">
+                        <h2 class="product-recommendations__heading uppercase inline-block font-black">You may also like</h2>
+                        <button class="product-recommendations__arrow float-right align-middle">
+                            <i class="sw-icon-arrow"></i>
+                        </button>
+                    </div>
+                    <div class="product-cards-grid grid grid-cols-2 gap-4">
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/dad-set.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price">£255.00</p>
+                        </div>
+                    </div>
+                </section>
+                
             </div>
         </section>
+
     </main>
     
 
@@ -453,7 +517,7 @@
                         <input type="email" class="footer__email-input" placeholder="Email address">
                         <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
                     </form>
-                    <ul class="social-icons">
+                    <ul class="social-icons text-right">
                         <li>
                             <a href="#">
                                 <i class="sw-icon-facebook-logo"></i>
@@ -505,7 +569,7 @@
                     Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
                 </p>
             </div>
-            <ul class="footer__payment-list text-right md:col-start-6">
+            <ul class="footer__payment-list text-right lg:col-start-6">
                 <li>
                     <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
                 </li>

@@ -241,7 +241,6 @@ $icon: 'sw-icons' !important;
 [class^="sw-icon-"], [class*=" sw-icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'sw-icons' !important;
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -1081,7 +1080,6 @@ body {
 				&-name, &-price{
 					text-align: center;
 					margin-top: .75rem;
-					font-weight: 700;
 				}
 				&-price{
 					text-decoration: underline;
@@ -1407,12 +1405,13 @@ body {
 		margin-right: 1rem;
 		margin-bottom: .5rem;
 		i {
-			@include rem(font-size, 18px);
+			font-size: 1.3rem;
 			color: $color_footer_social_icons;
 		}
 	}
 	&_black {
-		@include rem(margin-top, 15px);
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 		li i {
 			color: $black;
 		}
@@ -1499,6 +1498,132 @@ footer {
 }
 
 //================== Product page ====================== //
+.product {
+	a {
+		display: block;
+	}
+	.slick-dots {
+		padding: 0 20px;
+	}
+	.slick-dots li button{
+		border-radius: 50%;
+		background-color: $color_slider_dots;
+		color: transparent;
+		height: 12px;
+		width: 12px;
+		padding: 0;
+	}
+	&__image-wrapper{
+		position: relative;
+	}
+	li.slick-active button {
+		background-color: $color_global_yellow_accent;
+	}
+	&__price {
+		font-size: 1.3rem;
+
+		&_large {
+			font-size: 3.5rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+	&__vendor {
+		color: $black;
+	}
+	&__product-name {
+		@include rem(font-size, 18px);
+	}
+	&__description-link {
+		color: $black;
+	}
+	&__vendor, &__product-name, &__description-link {
+		@include rem(margin-bottom, 10px);
+	}
+
+	&__form-outer {
+		margin-top: 3rem;
+
+		@media #{$lg} {
+			margin-left: 4rem;
+			margin-top: 0;
+		}
+	}
+	&-form {
+		&__field {
+			background: $color_global_content_background;
+			@include rem(margin-top, 10px); margin-top: .7272727273rem;
+			@include rem(padding, 15px 20px);
+		}
+		&__field-name {
+			@include rem(margin-bottom, 10px);
+		}
+		&__option {
+			@include rem(padding, 10px)
+		}
+		&__variant-button {
+			input {
+				display: none;
+			}
+			span {
+				@include rem(padding, 5px 15px);
+				display: inline-block;
+				background-color: $white;
+				border: 1px solid #eeeeee;
+				margin-bottom: .3rem;
+			}
+		}
+	}
+	&__deal {
+		background-color: $color_global_yellow_accent;
+		@include rem(padding, 5px);
+	}
+	&-tabs {
+		color: $black;
+
+		&__tabs {
+			@include rem(margin-bottom, 30px);
+
+			li{
+				display: inline-block;
+
+				a {
+					color: #adadad;
+					font-size: 1.09rem;
+					font-weight: 400;
+					line-height: 1;
+					padding: .75rem 1rem .75rem 0;
+					position: relative;
+				}
+				&.active a {
+					color: $black;
+
+					&::after {
+						background: $black;
+						content: "";
+						display: block;
+						height: 1px;
+						left: 0;
+						position: absolute;
+						top: 100%;
+						width: 23px;
+					}
+				}
+			}
+		}
+
+	}
+	&-recommendations {
+		&__heading-wrapper{
+			margin: 1.4rem 0;
+		}
+		&__heading {
+			font-size: 1.8rem;
+		}
+		&__arrow {
+			font-size: 2.5rem;
+		}
+	}
+}
 .wishlist-button {
 	@include rem(font-size, 18px);
 	color: $black;
@@ -1523,73 +1648,19 @@ footer {
 .play-video {
 	@include rem(margin-top, 10px);
 }
-.product {
-	a {
-		display: block;
+.rewards{
+	&-icon {
+		font-size: 1.8rem;
+		margin-right: 1.2rem;
 	}
-	.slick-dots {
-		padding: 0 20px;
+	&-highlight{
+		color: $color_global_red_accent;
 	}
-	.slick-dots li button{
-		border-radius: 50%;
-		background-color: $color_slider_dots;
-		color: transparent;
-		height: 12px;
-		width: 12px;
-		padding: 0;
-	}
-	li.slick-active button {
-		background-color: $color_global_yellow_accent;
-	}
-	&__price {
-		font-size: 1.3rem;
-	}
-	&__vendor {
-		color: $black;
-	}
-	&__product-name {
-		@include rem(font-size, 18px);
-	}
-	&__description-link {
-		color: $black;
-	}
-	&__vendor, &__product-name, &__description-link {
-		@include rem(margin-bottom, 10px);
-	}
-
-	&__form-outer {
-		@include rem(margin-top, 15px);
-
-		@media #{$md} {
-			@include rem(margin-left, 60px);
-			margin-top: 0;
-		}
-	}
-	&-form {
-		&__field {
-			background: $color_global_content_background;
-			@include rem(margin-top, 10px); margin-top: .7272727273rem;
-			@include rem(padding, 15px 20px);
-		}
-		&__field-name {
-			@include rem(margin-bottom, 10px);
-		}
-		&__option {
-			@include rem(padding, 10px)
-		}
-		&__variant-button {
-			input {
-				display: none;
-			}
-			span {
-				@include rem(padding, 5px 15px);
-				background-color: $white;
-				border: 1px solid #eeeeee;
-			}
-		}
-	}
-	&__deal {
-		background-color: $color_global_yellow_accent;
-		@include rem(padding, 5px);
-	}
+}
+.zoom-in {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: $color_global_yellow_accent;
+	padding: .6rem;
 }
