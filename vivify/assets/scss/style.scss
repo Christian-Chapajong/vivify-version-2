@@ -1623,6 +1623,15 @@ footer {
 			font-size: 2.5rem;
 		}
 	}
+
+	&__slider-arrow {
+		font-size: 2rem;
+		@include vertical-align(absolute, false);
+
+		&_right {
+			right: 0;
+		}
+	}
 }
 .wishlist-button {
 	@include rem(font-size, 18px);

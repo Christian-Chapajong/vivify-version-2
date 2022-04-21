@@ -1362,6 +1362,18 @@ footer .footer__payment-list li img {
 .product-recommendations__arrow {
   font-size: 2.5rem;
 }
+.product__slider-arrow {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.product__slider-arrow_right {
+  right: 0;
+}
 
 .wishlist-button {
   font-size: 18px;
