@@ -25,26 +25,41 @@
                 <div class="header__inner order-2 lg:order-1 flex flex-row items-center">
                     <!-- {# burger menu button #} -->
                     <a class="header__menu-toggle" data-toggle="offCanvasMobile">
-                        <!-- {{ theme.sw_icon('pause-sign', 'menu') }} -->
-                        <i class="sw-icon-pause-sign" aria-hidden="true"></i>
+                        <svg height="21" viewBox="-45 0 327 327" width="21">
+                            <path d="m158 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"/><path d="m8 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"/>
+                        </svg>
                         <span class="sr-only">menu</span>
                     </a>
                     <!-- {# search toggle #} -->
                     <a class="header__search-toggle" data-toggle="header-search">
-                        <!-- {{ theme.sw_icon('musica-searcher', 'search') }} -->
-                        <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
+                        <svg version="1.1" id="Capa_1" width="18" height="18" viewBox="0 0 118.783 118.783" >
+                            <path d="M115.97,101.597L88.661,74.286c4.64-7.387,7.333-16.118,7.333-25.488c0-26.509-21.49-47.996-47.998-47.996
+		S0,22.289,0,48.798c0,26.51,21.487,47.995,47.996,47.995c10.197,0,19.642-3.188,27.414-8.605l26.984,26.986
+		c1.875,1.873,4.333,2.806,6.788,2.806c2.458,0,4.913-0.933,6.791-2.806C119.72,111.423,119.72,105.347,115.97,101.597z
+		 M47.996,81.243c-17.917,0-32.443-14.525-32.443-32.443s14.526-32.444,32.443-32.444c17.918,0,32.443,14.526,32.443,32.444
+		S65.914,81.243,47.996,81.243z"/>
+                       </svg>
+                       <!-- <i class="sw-icon-musica-searcher" aria-hidden="true"></i> -->
                         <span class="sr-only">search</span>
                     </a>
                     <!-- {# wishlist button #} -->
                     <a class="header__wishlist hidden lg:inline-block" href="/wishlist">
-                        <!-- {{ theme.sw_icon('heart', 'my wishlist') }} -->
-                        <i class="sw-icon-heart" aria-hidden="true"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" id="Icons" viewBox="0 0 64 64" width="21" height="21">
+                            <path d="M45.5,4A18.53,18.53,0,0,0,32,9.86,18.5,18.5,0,0,0,0,22.5C0,40.92,29.71,59,31,59.71a2,2,0,0,0,2.06,0C34.29,59,64,40.92,64,22.5A18.52,18.52,0,0,0,45.5,4ZM32,55.64C26.83,52.34,4,36.92,4,22.5a14.5,14.5,0,0,1,26.36-8.33,2,2,0,0,0,3.27,0A14.5,14.5,0,0,1,60,22.5C60,36.91,37.17,52.33,32,55.64Z"/>
+                        </svg>
+                        <!-- <i class="sw-icon-heart" aria-hidden="true"></i> -->
                         <span class="sr-only">my wishlist</span>
                     </a>
                     <!-- {# account menu toggle #} -->
                     <a class="header__account-toggle hidden lg:inline-block" data-toggle="account-dropdown">
-                        <!-- {{ theme.sw_icon('person', 'open account menu') }} -->
-                        <i class="sw-icon-person" aria-hidden="true"></i>
+                        <svg viewBox="0 0 512 512" height="21" width="21">
+                                <path d="M437.02,330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521,243.251,404,198.548,404,148
+                                    C404,66.393,337.607,0,256,0S108,66.393,108,148c0,50.548,25.479,95.251,64.262,121.962
+                                    c-36.21,12.495-69.398,33.136-97.281,61.018C26.629,379.333,0,443.62,0,512h40c0-119.103,96.897-216,216-216s216,96.897,216,216
+                                    h40C512,443.62,485.371,379.333,437.02,330.98z M256,256c-59.551,0-108-48.448-108-108S196.449,40,256,40
+                                    c59.551,0,108,48.448,108,108S315.551,256,256,256z"/>
+                        </svg>
+                        <!-- <i class="sw-icon-person" aria-hidden="true"></i> -->
                         <span class="sr-only">open account menu</span>
                     </a>
                     <!-- {# currency toggle #} -->
@@ -265,9 +280,17 @@
                                 <button type="button" data-role="none" role="button" tabindex="0">5</button>
                             </li>
                          </ul>
+                         
                          <div class="product__image-wrapper">
                             <button class="zoom-in">
-                                <svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px"><image  x="0px" y="0px" width="32px" height="32px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBBMXFxMjsXwzAAAEDklEQVRo3sWZTWhUVxTHf5mZNMQxVJvU1oBZ6ARjAiIE6gdopbUBqXRVEKGuDCVQA1pJwI+loljFtkil0oC0LrRKNy0KdiE0bdJCIygWJllUmhKlSVsSJ4mJJpkuQsK9971733kfU8/d3DPv/M//fz/e/XhThsTK2chWmljLSrIsY5wJhuknTw/djItyRLQMu7jKOEVrecot9pItBXkF7zPooFbLYz7h1WTp9/BQSL5QCnRSngx5Ld+HJF8o99kQn76F4Yj0RYo8oS0MWZnnl318Tto3tp97DDDGGFmqqKeJ9ZbIcxyiGK31h5jzaVUPbdT6RC9nN98x44O4RCoK/T4f+htsCkDl6PIR8Wl4+hZPmj95R4htps8j4WA4+lr+MhLcpCYEvoLzniVqcxgB5ovXZZlgLjvArJbjgXyF3GPQf+HzfkjsAyPPKRms0lj1bkZo/YKd1jJNk5OA2o2pF2bsTcvQbQylAKJvOdKZb7N6prSpuCoIsMt47+12UYnrc8Sd1DIeCxJwVQvfkoCAah4rkQOuCZ3iBd5W/F56Yg4AwD9cVrx61rkEvKa9q18mQO/N84ZLwDbN/zYhAb8wrHjb7IEpGhVvgKGEBBS5rXhN9sAMDYp31yfiolLfqtTrtCfHGTRw99i9WM+RYcYmYUiZryd82yIpzR7cu9rzV2z0KaoU798EOt8/11K7gCWKN5mgAP264hAwpXgVCQqo1LyCXYD6aFmCAvRco7awDCPKjWaNT8QdpV6n7JOT5JUnEx6cmmuOMbvSa8pcvYPbpHsBQJcSO2gPS2ntWM9yQefKbLtS/9Ul4CfFS9OSEH0DqxXP0VspfuSZ4u9NSMB7mvezO/iWMlozzjOcdA7oZ8wRMq4egK8UP83hBNrfykrFu27fB+Yvp1mGeHHxl1k2WltXx8uL9Qlt+qpWQ55qxX+dH4IUn9A2jr6YK+JlLVuvBFJDQQOdj0HfauyTO2WwTgN2ICL9Dqa1PHkpsJz7GnCW/ZHoC0ZDinRKwRt4YkBPu14fH2s1Wh9aQpsH2k29EFtjTD29dEglnPVApzgZeFOspJ2/A45sQgllXPIBF/iMTZbbTQPHeSQ6NXbYKHVL8THtvpHD3OYuA4wyShVLWUsj27UtJ8g6+UgWeJCnwrNw2CKeC5t58LwlZDkVoR/ySUqY//4nF9HLTrwrakwJsIpj9AckHOGCcv1MXAJAI/v5mt+Mle4PvuEob3rWy45SSJi3NCtYTTNreMn5Ga+EEqT2oUDCkdJKkPRC6/OWME0u+hfRYOthkrecEWkqSilAIqFamCmGuQdiKj5BPAkPSzsE8+YaiBuhMsUw27qwJX5qqfkNxJn/jx7MU/McZ2P8LRLRclzgd6YZ4srCH1r/AcpO92RlWBXYAAAAAElFTkSuQmCC" /></svg>
+                                <!-- /icon/zoom-in -->
+                                <svg class="icon-zoom-in" width="32" height="32" viewBox="0 0 490.8 490.8">
+                                        <path d="M364.8,299.55c46.3-75.8,36.9-176.3-28.6-241.9c-76.8-76.8-201.8-76.8-278.6,0s-76.8,201.8,0,278.5
+                                            c65.5,65.5,166,74.9,241.9,28.6L412,477.25c18,18,47.3,18,65.3,0s18-47.3,0-65.3L364.8,299.55z M295.5,295.55
+                                            c-54.4,54.4-142.8,54.4-197.1,0c-54.4-54.4-54.4-142.8,0-197.1c54.4-54.4,142.8-54.4,197.1,0
+                                            C349.8,152.75,349.8,241.15,295.5,295.55z M220,171.95h59.4v45.3H220v59.4h-45.3v-59.4h-59.3v-45.3h59.4v-59.4h45.3v59.4H220z"/>
+                                </svg>
+                                <!-- /icon/zoom-in -->
                             </button>
                             <button class="product__slider-arrow product__slider-arrow_left lg:hidden">
                                 <i class="sw-icon-left-chevron"></i>
@@ -329,7 +352,7 @@
                         </div>
                         <div class="product-form__field">
                             <p class="product-form__field-name">Mobile phone charger</p>
-                            <input id="mobile-phone-charger"type="radio" name="" value="" class="required" aria-required="true">
+                            <input id="mobile-phone-charger"type="checkbox" name="" value="">
                             <!-- Make this a checkbox-->
                             <label for="mobile-phone-charger">Yes (£10.00)</label>
                         </div>
@@ -459,8 +482,8 @@
     
 
     <footer>
-        <div class="grid grid-cols-1 lg:grid-cols-6">
-            <div class="footer__menu">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+            <div class="footer__menu lg:col-span-2">
                 <h4 class="footer__menu-title">
                     Info
                 </h4>
@@ -479,7 +502,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="footer__menu">
+            <div class="footer__menu lg:col-span-2">
                 <h4 class="footer__menu-title">
                     Legals
                 </h4>
@@ -498,7 +521,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="footer__menu">
+            <div class="footer__menu lg:col-span-2">
                 <h4 class="footer__menu-title">
                     Customers
                 </h4>
@@ -514,16 +537,16 @@
                     </li>
                 </ul>
             </div>
-            <div class="footer__menu">
+            <div class="footer__menu lg:col-span-3 lg:text-right">
                 <h4 class="footer__menu-title">
                     Connect with us
                 </h4>
                 <ul>
-                    <form class="footer__email-form mb-5">
+                    <form class="footer__email-form flex">
                         <input type="email" class="footer__email-input" placeholder="Email address">
                         <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
                     </form>
-                    <ul class="social-icons text-right">
+                    <ul class="social-icons">
                         <li>
                             <a href="#">
                                 <i class="sw-icon-facebook-logo"></i>
@@ -557,7 +580,7 @@
                     </ul>
                 </ul>
             </div>
-            <div class="footer__contact lg:order-first lg:col-span-2">
+            <div class="footer__contact lg:order-first lg:col-span-3">
                 <p class="footer__contact-telephone">
                     <span class="footer__contact-label">Tel:</span>
                     <a class="underline" href="tel:0330 111 2024">0330 111 2024</a>
@@ -570,12 +593,12 @@
                     Suite 3, 17 Wrens Court, Sutton Coldfield, B72 1RT
                 </address>
             </div>
-            <div class="footer__copy">
+            <div class="footer__copy lg:col-span-6">
                 <p>
                     Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
                 </p>
             </div>
-            <ul class="footer__payment-list text-right lg:col-start-6">
+            <ul class="footer__payment-list lg:col-span-6 lg:text-right">
                 <li>
                     <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
                 </li>

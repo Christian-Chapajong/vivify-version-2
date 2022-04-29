@@ -529,7 +529,7 @@ body {
   font-size: 1.5rem;
   color: #000000;
 }
-.header__menu-toggle i {
+.header__menu-toggle svg {
   display: inline-block;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -1191,7 +1191,14 @@ footer .footer__menu-link {
 footer .footer__email-form {
   padding: 10px;
   padding: 0.7142857143rem;
+  max-width: 60%;
+  margin-bottom: 1.25rem;
   background-color: #626262;
+}
+@media screen and (min-width: 64rem) {
+  footer .footer__email-form {
+    max-width: 100%;
+  }
 }
 footer .footer__email-form .footer__email-input {
   background-color: transparent;
@@ -1210,7 +1217,12 @@ footer .footer__contact {
   margin-bottom: 1rem;
 }
 footer .footer__contact p {
-  margin-bottom: 0.1454545455rem;
+  margin-bottom: 0.4rem;
+}
+@media screen and (min-width: 64rem) {
+  footer .footer__contact p {
+    margin-bottom: 1rem;
+  }
 }
 footer .footer__contact a {
   color: #fff;
