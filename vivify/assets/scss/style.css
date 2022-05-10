@@ -444,6 +444,22 @@ hr {
   color: #000000;
 }
 
+.icon {
+  display: inline-block;
+}
+.icon_pause {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.icon_magnifying-glass {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+.icon_zoom-in {
+  height: 2.3rem;
+  width: 2.3rem;
+}
+
 body {
   background: #fff;
   color: #000000;
@@ -529,8 +545,7 @@ body {
   font-size: 1.5rem;
   color: #000000;
 }
-.header__menu-toggle .pause-icon {
-  display: inline-block;
+.header__menu-toggle .icon_pause {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);

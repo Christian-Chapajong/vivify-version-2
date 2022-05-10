@@ -226,7 +226,8 @@ $icon: 'sw-icons' !important;
 		font-style: normal;
 }
 
-// icons
+// icons 
+
 
 @font-face {
 	font-family: 'sw-icons';
@@ -636,6 +637,28 @@ hr {
 		}
 }
 
+// SVG sprites
+.icon {
+	display: inline-block;
+
+	&_pause {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+
+	&_magnifying-glass {
+		height: 1.3rem;
+		width: 1.3rem;
+	}
+
+	&_zoom-in {
+		height: 2.3rem;
+		width: 2.3rem;
+	}
+
+
+}
+
 //===========================
 // _components.scss
 //===========================
@@ -733,8 +756,7 @@ body {
 				//        color: if(setting-value('header_use_default_website_colors'), $color_global_black_icons, $color_header_menu);
 				//    }
 		
-				.pause-icon {
-						display: inline-block;
+				.icon_pause {
 						@include transform( rotate(90deg) );
 				}
 				}
