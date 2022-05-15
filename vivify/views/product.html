@@ -46,8 +46,8 @@
                     <!-- {# wishlist button #} -->
                     <a class="header__wishlist hidden lg:inline-block" href="/wishlist">
                         <!-- Heart icon -->
-                        <svg class="heart-icon" height="21" width="21" viewBox="0 0 64 64" >
-                            <path d="M45.5,4A18.53,18.53,0,0,0,32,9.86,18.5,18.5,0,0,0,0,22.5C0,40.92,29.71,59,31,59.71a2,2,0,0,0,2.06,0C34.29,59,64,40.92,64,22.5A18.52,18.52,0,0,0,45.5,4ZM32,55.64C26.83,52.34,4,36.92,4,22.5a14.5,14.5,0,0,1,26.36-8.33,2,2,0,0,0,3.27,0A14.5,14.5,0,0,1,60,22.5C60,36.91,37.17,52.33,32,55.64Z"/>
+                        <svg class="icon icon_heart">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#love" />
                         </svg>
                         <!-- Heart icon -->
                         <span class="sr-only">my wishlist</span>
@@ -55,8 +55,8 @@
                     <!-- {# account menu toggle #} -->
                     <a class="header__account-toggle hidden lg:inline-block" data-toggle="account-dropdown">
                         <!-- User icon -->
-                        <svg class="user-icon" viewBox="0 0 512 512" height="21" width="21">
-                                <path d="M437.02,330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521,243.251,404,198.548,404,148 C404,66.393,337.607,0,256,0S108,66.393,108,148c0,50.548,25.479,95.251,64.262,121.962 c-36.21,12.495-69.398,33.136-97.281,61.018C26.629,379.333,0,443.62,0,512h40c0-119.103,96.897-216,216-216s216,96.897,216,216 h40C512,443.62,485.371,379.333,437.02,330.98z M256,256c-59.551,0-108-48.448-108-108S196.449,40,256,40 c59.551,0,108,48.448,108,108S315.551,256,256,256z"/>
+                        <svg class="icon icon_user">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#user" />
                         </svg>
                         <!-- User icon -->
                         <span class="sr-only">open account menu</span>
@@ -73,8 +73,8 @@
                         <!-- {# wishlist button #} -->
                         <a class="header__wishlist" href="/wishlist">
                             <!-- Heart icon -->
-                            <svg class="heart-icon" viewBox="0 0 512 512" height="21" width="21">
-                                <path d="M437.02,330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521,243.251,404,198.548,404,148 C404,66.393,337.607,0,256,0S108,66.393,108,148c0,50.548,25.479,95.251,64.262,121.962 c-36.21,12.495-69.398,33.136-97.281,61.018C26.629,379.333,0,443.62,0,512h40c0-119.103,96.897-216,216-216s216,96.897,216,216 h40C512,443.62,485.371,379.333,437.02,330.98z M256,256c-59.551,0-108-48.448-108-108S196.449,40,256,40 c59.551,0,108,48.448,108,108S315.551,256,256,256z"/>
+                            <svg class="icon icon_heart">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#love" />
                             </svg>
                             <!-- Heart icon -->
                             <span class="sr-only">my wishlist</span>
@@ -89,8 +89,8 @@
                         <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                             <!-- {{ theme.sw_icon('shopping-basket', 'shopping basket') }} -->
                             <!-- Shopping basket icon -->
-                            <svg class="shopping-basket-icon" height="28" width="28" viewBox="0 0 475.293 475.293" >
-                                <path d="m475.293 178.235h-80.708l-84.791-141.32c-4.206-7.02-13.33-9.312-20.379-5.091-7.035 4.221-9.312 13.344-5.091 20.379l75.619 126.032h-244.592l75.619-126.033c4.221-7.035 1.944-16.158-5.091-20.379-7.064-4.221-16.158-1.929-20.379 5.091l-84.791 141.32h-80.709v29.706h32.237l37.734 201.283c3.945 21.076 22.366 36.364 43.805 36.364h247.742c21.438 0 39.859-15.288 43.79-36.349l37.747-201.298h32.239c-.001 0-.001-29.705-.001-29.705zm-99.184 225.535c-1.305 7.02-7.441 12.112-14.592 12.112h-247.741c-7.151 0-13.286-5.091-14.606-12.126l-36.719-195.816h350.392s-36.734 195.83-36.734 195.83z"/>
+                            <svg class="icon icon_shopping-basket">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
                             </svg>
                             <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
@@ -122,8 +122,8 @@
                     <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                         <a class="header__basket" data-toggle="offCanvasBasket" aria-expanded="false" aria-controls="offCanvasBasket">
                             <!-- Shopping basket icon -->
-                            <svg class="shopping-basket=icon" height="28" width="28" viewBox="0 0 475.293 475.293" >
-                                <path d="m475.293 178.235h-80.708l-84.791-141.32c-4.206-7.02-13.33-9.312-20.379-5.091-7.035 4.221-9.312 13.344-5.091 20.379l75.619 126.032h-244.592l75.619-126.033c4.221-7.035 1.944-16.158-5.091-20.379-7.064-4.221-16.158-1.929-20.379 5.091l-84.791 141.32h-80.709v29.706h32.237l37.734 201.283c3.945 21.076 22.366 36.364 43.805 36.364h247.742c21.438 0 39.859-15.288 43.79-36.349l37.747-201.298h32.239c-.001 0-.001-29.705-.001-29.705zm-99.184 225.535c-1.305 7.02-7.441 12.112-14.592 12.112h-247.741c-7.151 0-13.286-5.091-14.606-12.126l-36.719-195.816h350.392s-36.734 195.83-36.734 195.83z"/>
+                            <svg class="icon icon_shopping-basket">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
                             </svg>
                             <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
@@ -139,8 +139,8 @@
                     <button type="button" class="mobile-menu-toggle lg:hidden" data-toggle="offCanvasMobile">
                         <!-- {{ theme.sw_icon('bars') }} -->
                         <!-- Pause icon -->
-                        <svg class="pause-icon" height="21" width="21" viewBox="-45 0 327 327">
-                            <path d="m158 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"/><path d="m8 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0"/>
+                        <svg class="icon icon_pause">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#pause" />
                         </svg>
                         <!-- Pause icon -->
                         <span class="sr-only">menu</span>
@@ -150,8 +150,8 @@
                         <a class="header__mobile-basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                             <!-- {{ theme.sw_icon('shopping-bag', 'Shopping Basket') }} -->
                             <!-- Shopping basket icon -->
-                            <svg class="shopping-basket=icon" height="28" width="28" viewBox="0 0 475.293 475.293" >
-                                <path d="m475.293 178.235h-80.708l-84.791-141.32c-4.206-7.02-13.33-9.312-20.379-5.091-7.035 4.221-9.312 13.344-5.091 20.379l75.619 126.032h-244.592l75.619-126.033c4.221-7.035 1.944-16.158-5.091-20.379-7.064-4.221-16.158-1.929-20.379 5.091l-84.791 141.32h-80.709v29.706h32.237l37.734 201.283c3.945 21.076 22.366 36.364 43.805 36.364h247.742c21.438 0 39.859-15.288 43.79-36.349l37.747-201.298h32.239c-.001 0-.001-29.705-.001-29.705zm-99.184 225.535c-1.305 7.02-7.441 12.112-14.592 12.112h-247.741c-7.151 0-13.286-5.091-14.606-12.126l-36.719-195.816h350.392s-36.734 195.83-36.734 195.83z"/>
+                            <svg class="icon icon_shopping-basket">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
                             </svg>
                             <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
@@ -161,8 +161,8 @@
                         <button type="button" class="mobile-search-toggle" data-toggle="header-search">
                             <!-- {{ theme.sw_icon('glass', 'Search') }} -->
                             <!-- Search icon -->
-                            <svg class="search-icon" width="18" height="18" viewBox="0 0 118.783 118.783" >
-                                <path d="M115.97,101.597L88.661,74.286c4.64-7.387,7.333-16.118,7.333-25.488c0-26.509-21.49-47.996-47.998-47.996 S0,22.289,0,48.798c0,26.51,21.487,47.995,47.996,47.995c10.197,0,19.642-3.188,27.414-8.605l26.984,26.986 c1.875,1.873,4.333,2.806,6.788,2.806c2.458,0,4.913-0.933,6.791-2.806C119.72,111.423,119.72,105.347,115.97,101.597z M47.996,81.243c-17.917,0-32.443-14.525-32.443-32.443s14.526-32.444,32.443-32.444c17.918,0,32.443,14.526,32.443,32.444 S65.914,81.243,47.996,81.243z"/>
+                            <svg class="icon icon_magnifying-glass">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#magnifying-glass" />
                             </svg>
                             <!-- Search icon -->
                             <span class="sr-only">search</span>
@@ -325,8 +325,8 @@
                          </div>
                     </div>
                     <div class="play-video text-right">
-                        <svg class="play-video-icon" height="16" width="16" viewBox="0 0 16 16">
-                            <path d="M0 2v12h16V2H0zm3 11H1v-2h2v2zm0-4H1V7h2v2zm0-4H1V3h2v2zm9 8H4V3h8v10zm3 0h-2v-2h2v2zm0-4h-2V7h2v2zm0-4h-2V3h2v2zM6 5v6l4-3z"/>
+                        <svg class="icon icon_multimedia-player">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#mutimedia-player" />
                         </svg>
                         <span class="underline">Play video</span>
                     </div>
@@ -340,8 +340,8 @@
                         </div>
                         <a href="#" class="wishlist-button" data-remove="" data-add="">
                             <!-- Heart icon -->
-                            <svg class="heart-icon" height="18" width="18" viewBox="0 0 64 64" >
-                                <path d="M45.5,4A18.53,18.53,0,0,0,32,9.86,18.5,18.5,0,0,0,0,22.5C0,40.92,29.71,59,31,59.71a2,2,0,0,0,2.06,0C34.29,59,64,40.92,64,22.5A18.52,18.52,0,0,0,45.5,4ZM32,55.64C26.83,52.34,4,36.92,4,22.5a14.5,14.5,0,0,1,26.36-8.33,2,2,0,0,0,3.27,0A14.5,14.5,0,0,1,60,22.5C60,36.91,37.17,52.33,32,55.64Z"/>
+                            <svg class="icon icon_love">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#love" />
                             </svg>
                             <!-- Heart icon -->
                         </a>
