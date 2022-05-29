@@ -640,8 +640,11 @@ hr {
 // SVG sprites
 .icon {
 	display: inline-block;
+	// Base height and width
+	height: 1.2rem; 
+	width: 1.2rem;
 
-	&_pause {
+	&_pause, &_love, &_user {
 		height: 1.5rem;
 		width: 1.5rem;
 	}
@@ -655,6 +658,22 @@ hr {
 		height: 2.3rem;
 		width: 2.3rem;
 	}
+
+	&_minus, &_plus {
+		height: .5rem;
+		width: .5rem;
+	}
+	
+	&_shopping-basket {
+		height: 2rem;
+		width: 2rem;
+		vertical-align: -webkit-baseline-middle;
+
+		@media #{$lg} {
+			vertical-align: middle;
+		}
+	}
+
 
 
 }
@@ -791,7 +810,8 @@ body {
 				}
 
 				&__basket {
-					@include rem(font-size, 28px);
+					display: flex;
+					align-items: center;
 					background-color: $colour_main;
 					color: $white;
 					padding: 0 1.25rem;
@@ -889,20 +909,19 @@ body {
 		&-mobile-right {
 				@include rem(height, 55px);
 
+				> *:not(.header__basket) {
+					display: inline-block;
+					vertical-align: middle;
+				} 
 				> * {
-						display: inline-block;
-						vertical-align: middle;
-
-						& + * {
-								margin-left: 1.5rem;
-						}
+					margin-left: 1.5rem;
 				}
 				a:not(.header__basket){
 					align-self: center;
 				}
-				.header__basket .shopping-basket-icon{
-					display: inline-block;
-				}
+				// .header__basket .shopping-basket-icon{
+				// 	display: inline-block;
+				// }
 		}
 
 		&-menu {
@@ -1379,6 +1398,14 @@ body {
 	&__icon {
 		z-index: 2;
 		@include vertical-align(relative, false);
+
+		.icon_video-camera {
+			padding-bottom: .25rem;
+			width: 5rem;
+			height: 5rem;
+			fill: $white;
+		}
+
 		p {
 			color: $white;
 		}
@@ -1402,8 +1429,10 @@ body {
 		border-bottom: 2px solid $black ;
 		@include rem(margin-bottom, 30px);
 		
-		img {
-			padding-right: 10px;
+		.icon_envelope {
+			margin-right: 10px;
+			width: 2.5rem;
+			height: 2.5rem;
 		}
 		
 		&-email {
@@ -1432,17 +1461,17 @@ body {
 		}
 
 		svg {
-			height: 1.2rem;
-			width: 1.2rem;
+			height: 1.5rem;
+			width: 1.5rem;
 			display: inline-block;
-			color: $color_footer_social_icons;
+			fill: $color_footer_social_icons;
 		}
 	}
 	&_black {
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 		li svg {
-			color: $black;
+			fill: $black;
 		}
 	}
 }
@@ -1540,8 +1569,10 @@ footer {
 
 //================== Product page ====================== //
 .product {
+	// font-weight: 300;
+
 	.slick-dots {
-		padding: 0 20px;
+		padding: 0 2.5rem;
 	}
 	.slick-dots li button{
 		border-radius: 50%;
@@ -1568,32 +1599,41 @@ footer {
 	&__vendor {
 		color: $black;
 	}
+	h1.product__product-name {
+		font-weight: 400;
+	}
 	&__product-name {
 		@include rem(font-size, 18px);
+		margin: .75rem 0 .75rem;
 	}
 	&__description-link {
 		color: $black;
 	}
-	&__vendor, &__product-name, &__description-link {
-		@include rem(margin-bottom, 10px);
+	&__price-info {
+		margin: .75rem 0 1rem;
+
+		* {
+			margin-right: .3rem;
+		}
 	}
+
 
 	&__form-outer {
 		margin-top: 3rem;
 
 		@media #{$lg} {
-			margin-left: 4rem;
+			// margin-left: 4rem;
 			margin-top: 0;
 		}
 	}
 	&-form {
 		&__field {
 			background: $color_global_content_background;
-			@include rem(margin-top, 10px); margin-top: .7272727273rem;
+			margin-top: .5rem;
 			@include rem(padding, 15px 20px);
 		}
 		&__field-name {
-			@include rem(margin-bottom, 10px);
+			margin-bottom: .3rem;
 		}
 		&__option {
 			@include rem(padding, 10px)
@@ -1609,6 +1649,28 @@ footer {
 				border: 1px solid #eeeeee;
 				margin-bottom: .3rem;
 			}
+		}
+		.checkbox-round {
+			width: 18px;
+			height: 18px;
+			background-color: white;
+			border-radius: 50%;
+			vertical-align: middle;
+			border: 3px solid #adadad;
+			appearance: none;
+			-webkit-appearance: none;
+			outline: none;
+			cursor: pointer;
+			margin-right: .75rem;
+		}
+		
+		.checkbox-round:checked {
+			background-color: $color_global_yellow_accent;
+		}
+
+		.customisation-field-input {
+			padding: 1rem;
+			outline: 1px solid #eee;
 		}
 	}
 	&__deal {
@@ -1626,7 +1688,7 @@ footer {
 
 				a {
 					color: #adadad;
-					font-size: 1.09rem;
+					font-size: 1.1rem;
 					font-weight: 400;
 					line-height: 1;
 					padding: .75rem 1rem .75rem 0;
@@ -1674,6 +1736,7 @@ footer {
 .wishlist-button {
 	@include rem(font-size, 18px);
 	color: $black;
+	height: fit-content;
 }
 .number-toggle {
 	margin-right: 1rem;
@@ -1701,8 +1764,10 @@ footer {
 }
 .rewards{
 	&-icon {
-		font-size: 1.8rem;
 		margin-right: 1.2rem;
+		height: 2.3rem;
+		width: 2rem;
+		fill: #bd1d45;
 	}
 	&-highlight{
 		color: $color_global_red_accent;
@@ -1715,3 +1780,13 @@ footer {
 	background-color: $color_global_yellow_accent;
 	padding: .6rem;
 }
+.underline {
+	text-underline-offset: 2px;
+}
+
+
+
+
+  
+  
+  

@@ -39,26 +39,39 @@
                 <div class="header__inner order-2 lg:order-1 flex flex-row items-center">
                     <!-- {# burger menu button #} -->
                     <a class="header__menu-toggle" data-toggle="offCanvasMobile">
-                        <!-- {{ theme.sw_icon('pause-sign', 'menu') }} -->
-                        <i class="sw-icon-pause-sign" aria-hidden="true"></i>
+                        <!-- Pause icon -->
+                        <svg class="icon icon_pause">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#pause" />
+                        </svg>
+                        <!-- Pause icon -->
                         <span class="sr-only">menu</span>
                     </a>
                     <!-- {# search toggle #} -->
                     <a class="header__search-toggle" data-toggle="header-search">
-                        <!-- {{ theme.sw_icon('musica-searcher', 'search') }} -->
-                        <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
+                        <!-- Search icon -->
+                        <svg class="icon icon_magnifying-glass">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#magnifying-glass" />
+                        </svg>
+
+                        <!-- Search icon -->
                         <span class="sr-only">search</span>
                     </a>
                     <!-- {# wishlist button #} -->
                     <a class="header__wishlist hidden lg:inline-block" href="/wishlist">
-                        <!-- {{ theme.sw_icon('heart', 'my wishlist') }} -->
-                        <i class="sw-icon-heart" aria-hidden="true"></i>
+                        <!-- Heart icon -->
+                        <svg class="icon icon_love">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#love" />
+                        </svg>
+                        <!-- Heart icon -->
                         <span class="sr-only">my wishlist</span>
                     </a>
                     <!-- {# account menu toggle #} -->
                     <a class="header__account-toggle hidden lg:inline-block" data-toggle="account-dropdown">
-                        <!-- {{ theme.sw_icon('person', 'open account menu') }} -->
-                        <i class="sw-icon-person" aria-hidden="true"></i>
+                        <!-- User icon -->
+                        <svg class="icon icon_user">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#user" />
+                        </svg>
+                        <!-- User icon -->
                         <span class="sr-only">open account menu</span>
                     </a>
                     <!-- {# currency toggle #} -->
@@ -72,8 +85,11 @@
                     <div class="header-mobile-right lg:hidden ml-auto flex items-stretch">
                         <!-- {# wishlist button #} -->
                         <a class="header__wishlist" href="/wishlist">
-                            <!-- {{ theme.sw_icon('heart', 'my wishlist') }} -->
-                            <i class="sw-icon-heart" aria-hidden="true"></i>
+                            <!-- Heart icon -->
+                            <svg class="icon icon_love">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#love" />
+                            </svg>
+                            <!-- Heart icon -->
                             <span class="sr-only">my wishlist</span>
                         </a>
                         <!-- {# currency toggle #} -->
@@ -83,9 +99,13 @@
                                 GBP
                             </a>
                         <!-- {% endif %} -->
-                        <a class="header__basket self-stretch"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
+                        <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                             <!-- {{ theme.sw_icon('shopping-basket', 'shopping basket') }} -->
-                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                            <!-- Shopping basket icon -->
+                            <svg class="icon icon_shopping-basket">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
+                            </svg>
+                            <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
                         </a>
                     </div>
@@ -114,7 +134,11 @@
                     <!-- {# basket link #} -->
                     <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                         <a class="header__basket" data-toggle="offCanvasBasket" aria-expanded="false" aria-controls="offCanvasBasket">
-                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                            <!-- Shopping basket icon -->
+                            <svg class="icon icon_shopping-basket">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
+                            </svg>
+                            <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
                         </a>
                     </a>
@@ -127,21 +151,33 @@
                 <div class="header__nav-inner">
                     <button type="button" class="mobile-menu-toggle lg:hidden" data-toggle="offCanvasMobile">
                         <!-- {{ theme.sw_icon('bars') }} -->
-                        <i class="sw-icon-bars" aria-hidden="true"></i>
+                        <!-- Pause icon -->
+                        <svg class="icon icon_pause">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#pause" />
+                        </svg>
+                        <!-- Pause icon -->
                         <span class="sr-only">menu</span>
                         Menu
                     </button>
                     <div class="header_mobile_right lg:hidden">
                         <a class="header__mobile-basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                             <!-- {{ theme.sw_icon('shopping-bag', 'Shopping Basket') }} -->
-                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                            <!-- Shopping basket icon -->
+                            <svg class="icon icon_shopping-basket">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
+                            </svg>
+                            <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
                             <span class="hidden lg:block">Shopping basket</span>
                             <!-- <span class="basket-count">{{ global.basket.items }}</span> -->
                         </a>
                         <button type="button" class="mobile-search-toggle" data-toggle="header-search">
                             <!-- {{ theme.sw_icon('glass', 'Search') }} -->
-                            <i class="sw-icon-glass" aria-hidden="true"></i>
+                            <!-- Search icon -->
+                            <svg class="icon icon_magnifying-glass">
+                                <use href="../assets/icons/Vivify-SVG-sprite.svg#magnifying-glass" />
+                            </svg>
+                            <!-- Search icon -->
                             <span class="sr-only">search</span>
                         </button>
                         <!-- {% if global.features.apps.currencies %}
@@ -258,7 +294,6 @@
     </header>
     <!-- {% endblock %}-->
 
-
     <main>
         <section class="slider-image main-container section-block flex flex-row md:flex-col">
             <div class="slider-image__wrapper">
@@ -318,37 +353,37 @@
                 <div class="product-cards-grid__card">
                     <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
                     <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price">£255.00</p>
+                    <p class="product-cards-grid__card-price underline">£255.00</p>
                 </div>
                 <div class="product-cards-grid__card">
                     <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
                     <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price">£255.00</p>
+                    <p class="product-cards-grid__card-price underline">£255.00</p>
                 </div>
                 <div class="product-cards-grid__card">
                     <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
                     <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price">£255.00</p>
+                    <p class="product-cards-grid__card-price underline">£255.00</p>
                 </div>
                 <div class="product-cards-grid__card">
                     <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
                     <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price">£255.00</p>
+                    <p class="product-cards-grid__card-price underline">£255.00</p>
                 </div>
                 <div class="product-cards-grid__card">
                     <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
                     <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price">£255.00</sp>
+                    <p class="product-cards-grid__card-price underline">£255.00</sp>
                 </div>
                 <div class="product-cards-grid__card">
                     <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
                     <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price">£255.00</p>
+                    <p class="product-cards-grid__card-price underline">£255.00</p>
                 </div>
                 <div class="product-cards-grid__card">
                     <img class="product-cards-grid__card-image" src="../assets/images/dad-set.png">
                     <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price">£255.00</p>
+                    <p class="product-cards-grid__card-price underline">£255.00</p>
                 </div>
             </div>
         </section>
@@ -544,7 +579,7 @@
                         <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
                     </article>
                 </div>
-                <div class="testimonial__nav flex justify-between"> <!-- flex justify-end --></div>
+                <div class="testimonial__nav flex justify-between"></div>
 
             </div>
             
@@ -553,8 +588,12 @@
         <section class="video section-block">
             <div class="video__thumbnail">
                 <div class="video__thumbnail-overlay">
-                    <div class="video__icon">
-                        <img class="mx-auto pb-1" src="../assets/images/video-icon.png">
+                    <div class="video__icon text-center">
+                        <!-- video-camera icon -->
+                        <svg class="icon icon_video-camera">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#video-camera"></use>
+                        </svg>
+                        <!-- video-camera icon -->
                         <p class="uppercase font-bold text-center">Play video</p>
                     </div>
                 </div>
@@ -566,7 +605,11 @@
                 <h2 class="text-center">Stay in the know!</h2>
                 <form action="#" class="newsletter__form-wrapper flex justify-center">
                     <div class="newsletter__form flex">
-                        <img class="self-center" src="../assets/images/envelope-icon.png">
+                        <!-- Envelope icon -->
+                        <svg class="icon icon_envelope self-center">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#envelope" />
+                        </svg>
+                        <!-- Envelope icon -->
                         <input type="email" class="newsletter__form-email" placeholder="Enter your email address">
                         <input class="ml-auto" type="submit" value=""><button class="sw-icon-arrow"></button></input>
                     </div>
@@ -578,8 +621,8 @@
     </main>
 
     <footer>
-        <div class="grid grid-cols-1 lg:grid-cols-6">
-            <div class="footer__menu">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+            <div class="footer__menu lg:col-span-2">
                 <h4 class="footer__menu-title">
                     Info
                 </h4>
@@ -598,7 +641,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="footer__menu">
+            <div class="footer__menu lg:col-span-2">
                 <h4 class="footer__menu-title">
                     Legals
                 </h4>
@@ -617,7 +660,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="footer__menu">
+            <div class="footer__menu lg:col-span-2">
                 <h4 class="footer__menu-title">
                     Customers
                 </h4>
@@ -633,50 +676,74 @@
                     </li>
                 </ul>
             </div>
-            <div class="footer__menu">
+            <div class="footer__menu lg:col-span-3 lg:text-right">
                 <h4 class="footer__menu-title">
                     Connect with us
                 </h4>
                 <ul>
-                    <form class="footer__email-form mb-5">
+                    <form class="footer__email-form flex">
                         <input type="email" class="footer__email-input" placeholder="Email address">
                         <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
                     </form>
-                    <ul class="social-icons text-right">
+                    <ul class="social-icons">
                         <li>
                             <a href="#">
-                                <i class="sw-icon-facebook-logo"></i>
+                                <!-- Facebook icon -->
+                                <svg class="icon icon_facebook">
+                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#facebook" />
+                                </svg>
+                                <!-- Facebook icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="sw-icon-twitter"></i>
+                                <!-- Twitter icon -->
+                                <svg class="icon icon_twitter">
+                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#twitter" />
+                                </svg>
+                                <!-- Twitter icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="sw-icon-linkedin"></i>
+                                <!-- Linkedin icon -->
+                                <svg class="icon icon_linkedin">
+                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#linkedin" />
+                                </svg>
+                                <!-- Linkedin icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="sw-icon-pinterest"></i>
+                                <!-- Pinterest icon -->
+                                <svg class="icon icon_pinterest">
+                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#pinterest" />
+                                </svg>
+                                <!-- Linkedin icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="sw-icon-youtube"></i>
+                                <!-- Youtube icon -->
+                                <svg class="icon icon_youtube">
+                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#youtube" />
+                                </svg>
+                                <!-- Youtube icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="sw-icon-instagram"></i>
+                                <!-- Instagram icon -->
+                                <svg class="icon icon_instagram">
+                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#instagram" />
+                                </svg>
+                                <!-- Instagram icon -->
                             </a>
                         </li>
                     </ul>
                 </ul>
             </div>
-            <div class="footer__contact lg:order-first lg:col-span-2">
+            <div class="footer__contact lg:order-first lg:col-span-3">
                 <p class="footer__contact-telephone">
                     <span class="footer__contact-label">Tel:</span>
                     <a class="underline" href="tel:0330 111 2024">0330 111 2024</a>
@@ -689,12 +756,12 @@
                     Suite 3, 17 Wrens Court, Sutton Coldfield, B72 1RT
                 </address>
             </div>
-            <div class="footer__copy">
+            <div class="footer__copy lg:col-span-6">
                 <p>
                     Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
                 </p>
             </div>
-            <ul class="footer__payment-list text-right lg:col-start-6">
+            <ul class="footer__payment-list lg:col-span-6 lg:text-right">
                 <li>
                     <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
                 </li>
@@ -709,7 +776,6 @@
                 </li>
             </ul>
             
-
         </div>
     </footer>
 
