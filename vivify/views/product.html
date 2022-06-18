@@ -190,7 +190,7 @@
                                         {{ category.title }}
                                     </a>
                                     {% if category.categories and not theme_config.nav_style == 1 %} -->
-                                        <ul class="main-nav menu flex flex-col lg:flex-row is-dropdown-submenu">
+                                        <ul class="main-nav flex flex-col lg:flex-row">
                                             <!-- {% for subcategory in category.categories %} -->
                                                 <li>
                                                     <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
@@ -282,8 +282,8 @@
     <!-- {% endblock %}-->
     <main>
         <div class="main-container section-block">
-            <div class="product grid grid-cols-1 lg:gap-x-16 lg:grid-cols-2">
-                <section class="product__image h-max">
+            <div class="product grid grid-cols-1 lg:gap-x-16 lg:grid-cols-9">
+                <section class="product__image h-max col-span-5">
                     <div class="product__image-inner flex">
                         <ul class="slick-dots hidden lg:block lg:self-center" role="tablist">
                             <li aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation20" id="slick-slide20">
@@ -332,7 +332,7 @@
                     </div>
                 </section>
 
-                <section class="product__form-outer ">
+                <section class="product__form-outer col-span-4">
                     <div class="product__info flex justify-between">
                         <div class="product__info-text">
                             <a class="product__vendor capitalize underline">Armani Collezioni</a>
@@ -472,14 +472,18 @@
                         </li>
                     </ul>
                     
-                    <!-- Premium badge icon -->
-                    <svg class="icon icon_premium-badge rewards-icon">
-                        <use href="../assets/icons/Vivify-SVG-sprite.svg#premium-badge" />
-                    </svg>
-                    <!-- Premium badge icon -->
-                    <span>You’ll earn <span class="rewards-highlight font-bold">324 reward points</span> with this purchase.</span>
+                    <div class="rewards">
+                        <!-- Premium badge icon -->
+                        <svg class="icon icon_premium-badge rewards-icon">
+                            <use href="../assets/icons/Vivify-SVG-sprite.svg#premium-badge" />
+                        </svg>
+                        <!-- Premium badge icon -->
+                        <span>You’ll earn <span class="rewards-highlight font-bold">324 reward points</span> with this purchase.</span>
+                    </div>
                 </section>
+            </div>
 
+            <div class="grid grid-cols-1 lg:gap-x-12 lg:grid-cols-2 section-block">
                 <section class="product-description">
                     <span class="product__price product__price_large block font-black">£380.00</span>
                     <div class="product-tabs">
@@ -537,13 +541,13 @@
                     </div>
                 </section>
             </div>
-        </section>
+        </div>
 
     </main>
     
 
     <footer>
-        <div class="grid grid-cols-1 lg:grid-cols-12">
+        <div class="footer__grid grid grid-cols-1 lg:grid-cols-12">
             <div class="footer__menu lg:col-span-2">
                 <h4 class="footer__menu-title">
                     Info
@@ -697,9 +701,8 @@
                     <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_maestro.png" alt="Maestro">
                 </li>
             </ul>
-            
-
         </div>
+        
     </footer>
 
 </body>

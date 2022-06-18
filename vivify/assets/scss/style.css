@@ -392,7 +392,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 0.945rem;
   font-weight: bold;
 }
 
@@ -412,6 +412,7 @@ address {
 
 a {
   color: #bd1d45;
+  display: inline-block;
 }
 a:hover, a:focus, a:active, a.active {
   outline: none;
@@ -1211,30 +1212,46 @@ body {
 }
 
 footer {
-  padding: 30px 15px;
-  padding: 2.1428571429rem 1.0714285714rem;
+  padding: 30px 0;
+  padding: 2.1428571429rem 0;
   background-color: #4d4d4d;
+  font-size: 0.945rem;
 }
-footer .footer__menu {
-  margin-bottom: 1rem;
+footer .social-icons li {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+@media screen and (min-width: 64rem) {
+  footer .social-icons li {
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+}
+footer .footer__grid .footer__menu, footer .footer__grid .footer__contact, footer .footer__grid .footer__copy, footer .footer__grid .footer__payment-list {
+  padding-left: 2.18rem;
+  padding-right: 2.18rem;
 }
 footer .footer__menu-title {
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
   color: #fff;
+}
+footer .footer__menu ul {
+  margin-bottom: 1rem;
 }
 footer .footer__menu-link {
   color: #fff;
-  margin-bottom: 1rem;
+  padding: 0.5rem 0;
   display: block;
 }
 footer .footer__email-form {
-  padding: 10px;
-  padding: 0.7142857143rem;
+  padding: 0.4rem 1rem;
   max-width: 60%;
   margin-bottom: 1.25rem;
   background-color: #626262;
+  font-size: 0.873rem;
 }
 @media screen and (min-width: 64rem) {
   footer .footer__email-form {
@@ -1279,6 +1296,14 @@ footer .footer__contact-label {
 footer .footer__copy {
   color: #adadad;
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 64rem) {
+  footer .footer__copy {
+    margin-bottom: 0;
+  }
+}
+footer .footer__copy a {
+  color: #adadad;
 }
 footer .footer__payment-list li {
   display: inline-block;
@@ -1326,13 +1351,15 @@ footer .footer__payment-list li img {
 .product__product-name {
   font-size: 18px;
   font-size: 1.2857142857rem;
-  margin: 0.75rem 0 0.75rem;
 }
 .product__description-link {
   color: #000;
 }
+.product__vendor, .product__product-name, .product__description-link {
+  margin-bottom: 0.75rem;
+}
 .product__price-info {
-  margin: 0.75rem 0 1rem;
+  margin-bottom: 1rem;
 }
 .product__price-info * {
   margin-right: 0.3rem;
@@ -1347,9 +1374,12 @@ footer .footer__payment-list li img {
 }
 .product-form__field {
   background: #f9f9f9;
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 15px 20px;
   padding: 1.0714285714rem 1.4285714286rem;
+}
+.product-form__field:last-child {
+  margin-bottom: 1rem;
 }
 .product-form__field-name {
   margin-bottom: 0.3rem;
@@ -1481,6 +1511,9 @@ footer .footer__payment-list li img {
   display: inline-block;
 }
 
+.rewards {
+  margin-bottom: 0.75rem;
+}
 .rewards-icon {
   margin-right: 1.2rem;
   height: 2.3rem;

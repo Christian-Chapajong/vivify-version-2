@@ -581,7 +581,7 @@ h3 {
 		font-weight: bold;
 	}
 h4 { 
-		font-size: 1rem;
+		font-size: 0.945rem;
 		font-weight: bold;
 	}
 h5 { 
@@ -601,7 +601,7 @@ address {
 
 a {
 		color: if(setting-value('website_colours_use_default_website_colors'), $color_global_red_accent, $color_website_accent);
-
+		display: inline-block; //allows links to have width, height, margin, padding
 		@include is-active {
 				color: if(setting-value('website_colours_use_default_website_colors'), $color_global_red_accent, $color_website_accent);
 		}
@@ -1476,32 +1476,56 @@ body {
 	}
 }
 footer {
-	@include rem(padding, 30px 15px);
+	@include rem(padding, 30px 0);
 	background-color: $color_global_footer_background;
+	font-size: .945rem;
+
+	.social-icons li {
+		margin-left: 0;
+		margin-right: 1rem;
+
+		@media #{$lg} {
+			margin-bottom: 0;
+			margin-right: 0;
+			margin-left: 1rem;
+		}
+		
+	}
+
 	.footer {
+		&__grid { 
+			.footer__menu, .footer__contact, .footer__copy, .footer__payment-list {
+				padding-left: 2.18rem;
+				padding-right: 2.18rem;
+			}
+		}
 		&__menu {
-			margin-bottom: 1rem;
-
-
 			&-title {
 				text-transform: uppercase;
 				font-weight: bold;
-				margin-bottom: 1.75rem;
+				margin-bottom: 1rem;
 				color: $white;
+
 			}
+
+			ul {
+				margin-bottom: 1rem;
+			}
+
 			&-link {
 				color: $white;
-				margin-bottom: 1rem;
+				padding: 0.5rem 0;
 				display: block;
 			}
 
 		}
 
 		&__email-form {
-			@include rem(padding, 10px);
+			padding: .4rem 1rem;
 			max-width: 60%;
 			margin-bottom: 1.25rem;
 			background-color: $color_footer_newsletter_background;
+			font-size: 0.873rem;
 
 			@media #{$lg} {
 				max-width: 100%;
@@ -1549,6 +1573,14 @@ footer {
 		&__copy {
 			color: $color_footer_copyright_statement;
 			margin-bottom: 1rem;
+
+			@media #{$lg} {
+				margin-bottom: 0;
+			}
+
+			a {
+				color: $color_footer_copyright_statement;
+			}
 		}
 		&__payment-list {
 			li {
@@ -1604,13 +1636,15 @@ footer {
 	}
 	&__product-name {
 		@include rem(font-size, 18px);
-		margin: .75rem 0 .75rem;
 	}
 	&__description-link {
 		color: $black;
 	}
+	&__vendor, &__product-name, &__description-link {
+		margin-bottom: .75rem;
+	}
 	&__price-info {
-		margin: .75rem 0 1rem;
+		margin-bottom: 1rem;
 
 		* {
 			margin-right: .3rem;
@@ -1629,8 +1663,11 @@ footer {
 	&-form {
 		&__field {
 			background: $color_global_content_background;
-			margin-top: .5rem;
+			margin-bottom: .5rem;
 			@include rem(padding, 15px 20px);
+		}
+		&__field:last-child {
+			margin-bottom: 1rem;
 		}
 		&__field-name {
 			margin-bottom: .3rem;
@@ -1763,6 +1800,8 @@ footer {
 	}
 }
 .rewards{
+	margin-bottom: .75rem;
+
 	&-icon {
 		margin-right: 1.2rem;
 		height: 2.3rem;

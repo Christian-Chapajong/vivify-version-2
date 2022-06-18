@@ -203,7 +203,7 @@
                                         {{ category.title }}
                                     </a>
                                     {% if category.categories and not theme_config.nav_style == 1 %} -->
-                                        <ul class="main-nav menu flex flex-col lg:flex-row is-dropdown-submenu">
+                                        <ul class="main-nav flex flex-col lg:flex-row">
                                             <!-- {% for subcategory in category.categories %} -->
                                                 <li>
                                                     <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
@@ -621,7 +621,7 @@
     </main>
 
     <footer>
-        <div class="grid grid-cols-1 lg:grid-cols-12">
+        <div class="footer__grid grid grid-cols-1 lg:grid-cols-12">
             <div class="footer__menu lg:col-span-2">
                 <h4 class="footer__menu-title">
                     Info
@@ -775,8 +775,8 @@
                     <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_maestro.png" alt="Maestro">
                 </li>
             </ul>
-            
         </div>
+        
     </footer>
 
     <script>
