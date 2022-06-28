@@ -1,4 +1,7 @@
 @import url("http://fonts.cdnfonts.com/css/sofia-pro");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @font-face {
   font-family: "museo_sans";
   src: url("../fonts/museo_sans_700_normal.eot");
