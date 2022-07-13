@@ -8,8 +8,8 @@
     "tailwindcss": "^3.1.4"
   },
   "scripts": {
-    "build": "tailwindcss -i ./assets/scss/style.css -o ./assets/scss/style.css",
-    "watch": "tailwindcss -i ./assets/scss/style.css -o ./assets/scss/style.css --watch"
+    "build": "tailwindcss -i ./assets/scss/style.scss -o ./assets/scss/style.css",
+    "watch": "tailwindcss -i ./assets/scss/style.scss -o ./assets/scss/style.css --watch"
   },
   "keywords": [],
   "author": "",

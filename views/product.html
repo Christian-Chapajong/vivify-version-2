@@ -27,37 +27,28 @@
                     <!-- {# burger menu button #} -->
                     <a class="header__menu-toggle" data-toggle="offCanvasMobile">
                         <!-- Pause icon -->
-                        <svg class="icon icon_pause">
-                            <use href="../assets/icons/Vivify-SVG-sprite.svg#pause" />
-                        </svg>
+                        <i class="sw-icon-pause-sign" aria-hidden="true"></i>
                         <!-- Pause icon -->
                         <span class="sr-only">menu</span>
                     </a>
                     <!-- {# search toggle #} -->
                     <a class="header__search-toggle" data-toggle="header-search">
                         <!-- Search icon -->
-                        <svg class="icon icon_magnifying-glass">
-                            <use href="../assets/icons/Vivify-SVG-sprite.svg#magnifying-glass" />
-                        </svg>
-
+                        <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
                         <!-- Search icon -->
                         <span class="sr-only">search</span>
                     </a>
                     <!-- {# wishlist button #} -->
                     <a class="header__wishlist hidden lg:inline-block" href="/wishlist">
                         <!-- Heart icon -->
-                        <svg class="icon icon_love">
-                            <use href="../assets/icons/Vivify-SVG-sprite.svg#love" />
-                        </svg>
+                        <i class="sw-icon-heart" aria-hidden="true"></i>
                         <!-- Heart icon -->
                         <span class="sr-only">my wishlist</span>
                     </a>
                     <!-- {# account menu toggle #} -->
                     <a class="header__account-toggle hidden lg:inline-block" data-toggle="account-dropdown">
                         <!-- User icon -->
-                        <svg class="icon icon_user">
-                            <use href="../assets/icons/Vivify-SVG-sprite.svg#user" />
-                        </svg>
+                        <i class="sw-icon-user" aria-hidden="true"></i>
                         <!-- User icon -->
                         <span class="sr-only">open account menu</span>
                     </a>
@@ -73,9 +64,7 @@
                         <!-- {# wishlist button #} -->
                         <a class="header__wishlist" href="/wishlist">
                             <!-- Heart icon -->
-                            <svg class="icon icon_love">
-                                <use href="../assets/icons/Vivify-SVG-sprite.svg#love" />
-                            </svg>
+                            <i class="sw-icon-heart" aria-hidden="true"></i>
                             <!-- Heart icon -->
                             <span class="sr-only">my wishlist</span>
                         </a>
@@ -89,9 +78,7 @@
                         <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                             <!-- {{ theme.sw_icon('shopping-basket', 'shopping basket') }} -->
                             <!-- Shopping basket icon -->
-                            <svg class="icon icon_shopping-basket">
-                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
-                            </svg>
+                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
                             <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
                         </a>
@@ -105,7 +92,7 @@
                     Taken from header.twig: -->
                     <a href="/" class="header__logo">
                         <img src="" alt="" class="header__logo-image">
-                        <span class="header__logo-text">
+                        <span class="header__logo-text font-sans">
                             Vivify
                         </span>
                     </a>
@@ -122,9 +109,7 @@
                     <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                         <a class="header__basket" data-toggle="offCanvasBasket" aria-expanded="false" aria-controls="offCanvasBasket">
                             <!-- Shopping basket icon -->
-                            <svg class="icon icon_shopping-basket">
-                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
-                            </svg>
+                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
                             <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
                         </a>
@@ -139,9 +124,7 @@
                     <button type="button" class="mobile-menu-toggle lg:hidden" data-toggle="offCanvasMobile">
                         <!-- {{ theme.sw_icon('bars') }} -->
                         <!-- Pause icon -->
-                        <svg class="icon icon_pause">
-                            <use href="../assets/icons/Vivify-SVG-sprite.svg#pause" />
-                        </svg>
+                        <i class="sw-icon-pause" aria-hidden="true"></i>
                         <!-- Pause icon -->
                         <span class="sr-only">menu</span>
                         Menu
@@ -150,9 +133,7 @@
                         <a class="header__mobile-basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
                             <!-- {{ theme.sw_icon('shopping-bag', 'Shopping Basket') }} -->
                             <!-- Shopping basket icon -->
-                            <svg class="icon icon_shopping-basket">
-                                <use href="../assets/icons/Vivify-SVG-sprite.svg#shopping-basket" />
-                            </svg>
+                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
                             <!-- Shopping basket icon -->
                             <span class="sr-only">shopping basket</span>
                             <span class="hidden lg:block">Shopping basket</span>
@@ -161,9 +142,7 @@
                         <button type="button" class="mobile-search-toggle" data-toggle="header-search">
                             <!-- {{ theme.sw_icon('glass', 'Search') }} -->
                             <!-- Search icon -->
-                            <svg class="icon icon_magnifying-glass">
-                                <use href="../assets/icons/Vivify-SVG-sprite.svg#magnifying-glass" />
-                            </svg>
+                            <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
                             <!-- Search icon -->
                             <span class="sr-only">search</span>
                         </button>
@@ -306,28 +285,20 @@
                          <div class="product__image-wrapper">
                             <button class="zoom-in">
                                 <!-- zoom in icon -->
-                                <svg class="icon icon_zoom-in">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#zoom-in" />
-                                </svg>
+                                <i class="sw-icon-plus-zoom" aria-hidden="true"></i>
                                 <!-- zoom in icon -->
                             </button>
                             <button class="product__slider-arrow product__slider-arrow_left lg:hidden">
-                                <svg class="left-chevron-icon" height="28" width="28" viewBox="0 0 256 256">
-                                    <polygon points="207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128"/>
-                                </svg>
+                                <i class="sw-icon-left-chevron"></i>
                             </button>
                             <button class="product__slider-arrow product__slider-arrow_right lg:hidden">
-                                <svg class="right-chevron-icon" height="28" width="28" viewBox="0 0 256 256">
-                                    <polygon points="79.093,0 48.907,30.187 146.72,128 48.907,225.813 79.093,256 207.093,128"/>
-                                </svg>
+                                <i class="sw-icon-right-chevron"></i>
                             </button>
                             <img src="../assets/images/product-img.png">
                          </div>
                     </div>
                     <div class="play-video text-right">
-                        <svg class="icon icon_multimedia-player">
-                            <use href="../assets/icons/Vivify-SVG-sprite.svg#multimedia-player" />
-                        </svg>
+                        <i class="sw-icon-play align-middle inline-block"></i>
                         <span class="underline">Play video</span>
                     </div>
                 </section>
@@ -340,9 +311,7 @@
                         </div>
                         <a href="#" class="wishlist-button" data-remove="" data-add="">
                             <!-- Heart icon -->
-                            <svg class="icon icon_love">
-                                <use href="../assets/icons/Vivify-SVG-sprite.svg#love" />
-                            </svg>
+                            <i class="sw-icon-heart"></i>
                             <!-- Heart icon -->
                         </a>
                     </div>
@@ -393,17 +362,13 @@
                                 <div class="number-toggle flex">
                                     <button class="number-toggle__down">
                                         <!-- Minus icon -->
-                                        <svg class="icon icon_minus">
-                                            <use href="../assets/icons/Vivify-SVG-sprite.svg#minus" />
-                                        </svg>
+                                        <i class="sw-icon-minus" aria-hidden="true"></i>
                                         <!-- Minus icon -->
                                     </button>
                                     <input type="text" name="quantity" value="1" class="quantity-input">
                                     <button class="number-toggle__up">
                                         <!-- Plus icon -->
-                                        <svg class="icon icon_plus">
-                                            <use href="../assets/icons/Vivify-SVG-sprite.svg#plus" />
-                                        </svg>
+                                        <i class="sw-icon-plus" aria-hidden="true"></i>
                                         <!-- Plus icon -->
                                     </button>
                                 </div>
@@ -419,54 +384,42 @@
                         <li>
                             <a href="#">
                                 <!-- Facebook icon -->
-                                <svg class="icon icon_facebook">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#facebook" />
-                                </svg>
+                                <i class="sw-icon-facebook-logo" aria-hidden="true"></i>
                                 <!-- Facebook icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Twitter icon -->
-                                <svg class="icon icon_twitter">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#twitter" />
-                                </svg>
+                                <i class="sw-icon-twitter" aria-hidden="true"></i>
                                 <!-- Twitter icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Linkedin icon -->
-                                <svg class="icon icon_linkedin">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#linkedin" />
-                                </svg>
+                                <i class="sw-icon-linkedin" aria-hidden="true"></i>
                                 <!-- Linkedin icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Pinterest icon -->
-                                <svg class="icon icon_pinterest">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#pinterest" />
-                                </svg>
+                                <i class="sw-icon-pinterest" aria-hidden="true"></i>
                                 <!-- Pinterest icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Youtube icon -->
-                                <svg class="icon icon_youtube">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#youtube" />
-                                </svg>
+                                <i class="sw-icon-youtube" aria-hidden="true"></i>
                                 <!-- Youtube icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Instagram icon -->
-                                <svg class="icon icon_instagram">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#instagram" />
-                                </svg>
+                                <i class="sw-icon-instagram" aria-hidden="true"></i>
                                 <!-- Instagram icon -->
                             </a>
                         </li>
@@ -474,9 +427,7 @@
                     
                     <div class="rewards">
                         <!-- Premium badge icon -->
-                        <svg class="icon icon_premium-badge rewards-icon">
-                            <use href="../assets/icons/Vivify-SVG-sprite.svg#premium-badge" />
-                        </svg>
+                        <i class="sw-icon-premium-badge inline-block" aria-hidden="true"></i>
                         <!-- Premium badge icon -->
                         <span>You’ll earn <span class="rewards-highlight font-bold">324 reward points</span> with this purchase.</span>
                     </div>
@@ -615,54 +566,42 @@
                         <li>
                             <a href="#">
                                 <!-- Facebook icon -->
-                                <svg class="icon icon_facebook">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#facebook" />
-                                </svg>
+                                <i class="sw-icon-facebook-logo" aria-hidden="true"></i>
                                 <!-- Facebook icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Twitter icon -->
-                                <svg class="icon icon_twitter">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#twitter" />
-                                </svg>
+                                <i class="sw-icon-twitter" aria-hidden="true"></i>
                                 <!-- Twitter icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Linkedin icon -->
-                                <svg class="icon icon_linkedin">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#linkedin" />
-                                </svg>
+                                <i class="sw-icon-linkedin" aria-hidden="true"></i>
                                 <!-- Linkedin icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Pinterest icon -->
-                                <svg class="icon icon_pinterest">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#pinterest" />
-                                </svg>
+                                <i class="sw-icon-pinterest" aria-hidden="true"></i>
                                 <!-- Linkedin icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Youtube icon -->
-                                <svg class="icon icon_youtube">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#youtube" />
-                                </svg>
+                                <i class="sw-icon-youtube" aria-hidden="true"></i>
                                 <!-- Youtube icon -->
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <!-- Instagram icon -->
-                                <svg class="icon icon_instagram">
-                                    <use href="../assets/icons/Vivify-SVG-sprite.svg#instagram" />
-                                </svg>
+                                <i class="sw-icon-instagram" aria-hidden="true"></i>
                                 <!-- Instagram icon -->
                             </a>
                         </li>
@@ -704,6 +643,5 @@
         </div>
         
     </footer>
-
 </body>
 </html>
