@@ -1357,6 +1357,8 @@ $page_margins: (
     @include rem(font-size, $base-font-size + px);
     line-height: 1.2;
     font-family: "Sofia Pro", sans-serif !important; 
+    height: 100%;
+    overflow-x: hidden;
   }
 }
 // headings
@@ -1408,6 +1410,16 @@ a {
       $color_website_accent
     );
   }
+  @include is-active {
+    color: $color_global_red_accent
+  }
+}
+a:hover {
+  color: if(
+    setting-value("website_colours_use_default_website_colors"),
+    $color_global_red_accent,
+    $color_website_accent
+  ) !important;
 }
 p {
   line-height: 22px;
@@ -1556,6 +1568,67 @@ body {
     text-decoration: underline;
   }
 }
+
+.off-canvas, .content {
+  -webkit-transition: -webkit-transform ease .5s ;
+  transition: -webkit-transform ease .5s;
+  transition: transform ease .5s ;
+  transition: transform ease .5s, -webkit-transform ease .5s;
+}
+.off-canvas{
+  top: 0;
+  background: #fff;
+  border: 0;
+  box-shadow: none;
+  padding: 1.5rem 40px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  overflow-y: auto;
+  transform: translateX(0);
+
+  @media #{$md} {
+    width: 550px;
+    padding-top: 100px;
+  }
+
+  &__sub-list a {
+    color: #000;
+    @include rem(font-size, 18px);
+    padding: .5rem 0;
+    text-transform: none;
+  }
+}
+
+.off-canvas-overlay {
+  background-color: hsla(0,1%,54%,.45);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  -webkit-transition: opacity .5s ease, visibility .5s ease;
+  transition: opacity .5s ease, visibility .5s ease;
+  pointer-events: none; //possible to click through to underlying elements
+}
+.push-menu-left{
+  transform: translateX(-100%);
+
+  @media #{$md} {
+    transform: translateX(-550px);
+
+  }
+}
+.push-content-right{
+  transform: translateX(550px);
+}
+
 
 .header {
   @media #{$lg} {
@@ -1764,9 +1837,6 @@ body {
       .main-nav > li {
         display: inline-block;
         padding: 1.1rem;
-        // & > a {
-        //     padding: 1.1rem;
-        // }
       }
     }
   }

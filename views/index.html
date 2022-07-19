@@ -13,739 +13,791 @@
     <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 </head>
 <body>
-    <!-- {% block content %} -->
-    <noscript>
-        <div class="callout primary">
-            <p>
-            JavaScript appears to be disabled in your browser. JavaScript must be enabled in order to utilise the full functionalilty of this website.
-            </p>
-        </div>
-    </noscript>
-    <div class="announcement-bar main-container m-0">
-        <div class="announcement-bar__inner">
-            <!-- <span>{{ theme.text_snippet('announce') }}</span> -->
-            <span>Here is where you can write a message for the customer to announce something important to them.</span>
-            <button class="announcement-bar__close-button button-close" aria-label="Dismiss alert" type="button">
-                <span>Close</span>
-            </button>
-        </div>
+    <div class="off-canvas push-menu-left" aria-hidden="true">
+        <a class="button-close float-right" id="offCanvasCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
+            <span>close</span>
+        </a>
+        <ul class="off-canvas__menu">
+            <li>
+                <h3 class="off-canvas__heading">
+                    <span>Menu</span>
+                </h3>
+            </li>
+            <!-- twig here -->
+            <li class="off-canvas__sub-list">
+                <a href="/faqs">FAQs</a>
+            </li>
+            <li class="off-canvas__sub-list">
+                <a href="/contact-us">Contact Us</a>
+            </li>
+            <li class="off-canvas__sub-list">
+                <a href="/terms-conditions">Terms</a>
+            </li>
+            <li class="off-canvas__sub-list">
+                <a href="/delivery-information">Delivery</a>
+            </li>
+            <li class="off-canvas__sub-list">
+                <a href="/refund-policy">Refund</a>
+            </li>
+            <li class="off-canvas__sub-list">
+                <a href="/privacy-policy">Privacy</a>
+            </li>
+        </ul>
     </div>
-    <header class="relative">
-        <div class="sr-only">
-            <a href="#content">Skip to Main Content</a>
+    <div class="content">
+        <!-- {% block content %} -->
+        <noscript>
+            <div class="callout primary">
+                <p>
+                JavaScript appears to be disabled in your browser. JavaScript must be enabled in order to utilise the full functionalilty of this website.
+                </p>
+            </div>
+        </noscript>
+        <div class="announcement-bar main-container m-0">
+            <div class="announcement-bar__inner">
+                <!-- <span>{{ theme.text_snippet('announce') }}</span> -->
+                <span>Here is where you can write a message for the customer to announce something important to them.</span>
+                <button class="announcement-bar__close-button button-close" aria-label="Dismiss alert" type="button">
+                    <span>Close</span>
+                </button>
+            </div>
         </div>
-        <div class="header">
-            <div class="grid lg:grid-cols-3 collapse">
-                <div class="header__inner order-2 lg:order-1 flex flex-row items-center">
-                    <!-- {# burger menu button #} -->
-                    <a class="header__menu-toggle" data-toggle="offCanvasMobile">
-                        <!-- Pause icon -->
-                        <i class="sw-icon-pause-sign" aria-hidden="true"></i>
-                        <!-- Pause icon -->
-                        <span class="sr-only">menu</span>
-                    </a>
-                    <!-- {# search toggle #} -->
-                    <a class="header__search-toggle" data-toggle="header-search">
-                        <!-- Search icon -->
-                        <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
-                        <!-- Search icon -->
-                        <span class="sr-only">search</span>
-                    </a>
-                    <!-- {# wishlist button #} -->
-                    <a class="header__wishlist hidden lg:inline-block" href="/wishlist">
-                        <!-- Heart icon -->
-                        <i class="sw-icon-heart" aria-hidden="true"></i>
-                        <!-- Heart icon -->
-                        <span class="sr-only">my wishlist</span>
-                    </a>
-                    <!-- {# account menu toggle #} -->
-                    <a class="header__account-toggle hidden lg:inline-block" data-toggle="account-dropdown">
-                        <!-- User icon -->
-                        <i class="sw-icon-user" aria-hidden="true"></i>
-                        <!-- User icon -->
-                        <span class="sr-only">open account menu</span>
-                    </a>
-                    <!-- {# currency toggle #} -->
-                    <!-- {% if global.features.apps.currencies %} -->
-                        <a class="header__currency-toggle hidden lg:inline-block" data-toggle="offCanvasCurrency">
-                            <!-- {{ global.currency.name }} -->
-                            GBP
+
+        <header class="relative">
+            <div class="sr-only">
+                <a href="#content">Skip to Main Content</a>
+            </div>
+            <div class="header">
+                <div class="grid lg:grid-cols-3 collapse">
+                    <div class="header__inner order-2 lg:order-1 flex flex-row items-center">
+                        <!-- {# burger menu button #} -->
+                        <a class="header__menu-toggle" data-toggle="offCanvasMobile">
+                            <!-- Pause icon -->
+                            <i class="sw-icon-pause-sign" aria-hidden="true"></i>
+                            <!-- Pause icon -->
+                            <span class="sr-only">menu</span>
                         </a>
-                    <!-- {% endif %} -->
-                    <!-- {# mobile basket link #} -->
-                    <div class="header-mobile-right lg:hidden ml-auto flex items-stretch">
+                        <!-- {# search toggle #} -->
+                        <a class="header__search-toggle" data-toggle="header-search">
+                            <!-- Search icon -->
+                            <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
+                            <!-- Search icon -->
+                            <span class="sr-only">search</span>
+                        </a>
                         <!-- {# wishlist button #} -->
-                        <a class="header__wishlist" href="/wishlist">
+                        <a class="header__wishlist hidden lg:inline-block" href="/wishlist">
                             <!-- Heart icon -->
                             <i class="sw-icon-heart" aria-hidden="true"></i>
                             <!-- Heart icon -->
                             <span class="sr-only">my wishlist</span>
                         </a>
+                        <!-- {# account menu toggle #} -->
+                        <a class="header__account-toggle hidden lg:inline-block" data-toggle="account-dropdown">
+                            <!-- User icon -->
+                            <i class="sw-icon-user" aria-hidden="true"></i>
+                            <!-- User icon -->
+                            <span class="sr-only">open account menu</span>
+                        </a>
                         <!-- {# currency toggle #} -->
                         <!-- {% if global.features.apps.currencies %} -->
-                            <a class="header__currency-toggle" data-toggle="offCanvasCurrency">
+                            <a class="header__currency-toggle hidden lg:inline-block" data-toggle="offCanvasCurrency">
                                 <!-- {{ global.currency.name }} -->
                                 GBP
                             </a>
                         <!-- {% endif %} -->
-                        <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
-                            <!-- {{ theme.sw_icon('shopping-basket', 'shopping basket') }} -->
-                            <!-- Shopping basket icon -->
-                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
-                            <!-- Shopping basket icon -->
-                            <span class="sr-only">shopping basket</span>
-                        </a>
-                    </div>
-                    <!-- {{ block('header_account_dropdown') }} -->
-                </div>
-
-                <div class="header__inner order-1 lg:order-2 text-center">
-                    <!-- {# logo container #} -->
-                    <!-- {{ block('header_logo') }} 
-                    Taken from header.twig: -->
-                    <a href="/" class="header__logo">
-                        <img src="" alt="" class="header__logo-image">
-                        <span class="header__logo-text font-sans">
-                            Vivify
-                        </span>
-                    </a>
-                </div>
-
-                <div class="header__inner order-3 hidden lg:flex flex-row items-center justify-end">
-                <!-- {# header snippet #} -->
-                        <!-- {% if gts.text_header %} -->
-                        <span class="header-text">
-                            <strong>Free shipping</strong> - on all orders over £35
-                        </span>
-                    <!-- {% endif %} -->
-                    <!-- {# basket link #} -->
-                    <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
-                        <a class="header__basket" data-toggle="offCanvasBasket" aria-expanded="false" aria-controls="offCanvasBasket">
-                            <!-- Shopping basket icon -->
-                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
-                            <!-- Shopping basket icon -->
-                            <span class="sr-only">shopping basket</span>
-                        </a>
-                    </a>
-                </div>
-            </div> 
-        </div>
-        <!-- {{ block('header_navigation') }} -->
-        <div class="header__nav hidden lg:block">
-            <nav class="main-container">
-                <div class="header__nav-inner">
-                    <button type="button" class="mobile-menu-toggle lg:hidden" data-toggle="offCanvasMobile">
-                        <!-- {{ theme.sw_icon('bars') }} -->
-                        <!-- Pause icon -->
-                        <i class="sw-icon-pause" aria-hidden="true"></i>
-                        <!-- Pause icon -->
-                        <span class="sr-only">menu</span>
-                        Menu
-                    </button>
-                    <div class="header_mobile_right lg:hidden">
-                        <a class="header__mobile-basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
-                            <!-- {{ theme.sw_icon('shopping-bag', 'Shopping Basket') }} -->
-                            <!-- Shopping basket icon -->
-                            <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
-                            <!-- Shopping basket icon -->
-                            <span class="sr-only">shopping basket</span>
-                            <span class="hidden lg:block">Shopping basket</span>
-                            <!-- <span class="basket-count">{{ global.basket.items }}</span> -->
-                        </a>
-                        <button type="button" class="mobile-search-toggle" data-toggle="header-search">
-                            <!-- {{ theme.sw_icon('glass', 'Search') }} -->
-                            <!-- Search icon -->
-                            <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
-                            <!-- Search icon -->
-                            <span class="sr-only">search</span>
-                        </button>
-                        <!-- {% if global.features.apps.currencies %}
-                            {% include 'partials/currency_dropdown.twig' with { 'size': 'small' } %}
-                        {% endif %} -->
-                    </div>
-                    <!-- {# Render main navigation #} -->
-                    <div id="main-nav-wrapper" class="main-nav-wrapper{{ theme_config.nav_style == 1 ? ' click-drop' : '' }} hidden lg:block" data-toggler=".lg:block">
-                        <ul class="main-nav flex flex-col justify-center lg:flex-row menu"
-                            data-responsive-menu="accordion large-dropdown"
-                            data-close-on-click-inside
-                        >
-                            <!-- {# Render home link #} -->
-                            <li class="main-nav-home-link">
-                                <a href="/"{% if global.current_path == '/' %} class="active"{% endif %}>
-                                    Home
+                        <!-- {# mobile basket link #} -->
+                        <div class="header-mobile-right lg:hidden ml-auto flex items-stretch">
+                            <!-- {# wishlist button #} -->
+                            <a class="header__wishlist" href="/wishlist">
+                                <!-- Heart icon -->
+                                <i class="sw-icon-heart" aria-hidden="true"></i>
+                                <!-- Heart icon -->
+                                <span class="sr-only">my wishlist</span>
+                            </a>
+                            <!-- {# currency toggle #} -->
+                            <!-- {% if global.features.apps.currencies %} -->
+                                <a class="header__currency-toggle" data-toggle="offCanvasCurrency">
+                                    <!-- {{ global.currency.name }} -->
+                                    GBP
                                 </a>
-                            </li>
-                            <!-- {# Render category links #} -->
-                            <!-- {% for category in global.categories|slice(0, category_limit|default(20)) %}
-                                <li{% if theme_config.nav_style == 1 %} data-id="{{ category.id }}" class="{{ category.categories ? 'parent-with-sub' }}"{% endif %}>
-                                    <a href="{{ category.url }}" {% if category.url in global.current_url %}class="active" {% endif %}>
-                                        {{ category.title }}
+                            <!-- {% endif %} -->
+                            <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
+                                <!-- {{ theme.sw_icon('shopping-basket', 'shopping basket') }} -->
+                                <!-- Shopping basket icon -->
+                                <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                                <!-- Shopping basket icon -->
+                                <span class="sr-only">shopping basket</span>
+                            </a>
+                        </div>
+                        <!-- {{ block('header_account_dropdown') }} -->
+                    </div>
+
+                    <div class="header__inner order-1 lg:order-2 text-center">
+                        <!-- {# logo container #} -->
+                        <!-- {{ block('header_logo') }} 
+                        Taken from header.twig: -->
+                        <a href="/" class="header__logo">
+                            <img src="" alt="" class="header__logo-image">
+                            <span class="header__logo-text font-sans">
+                                Vivify
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="header__inner order-3 hidden lg:flex flex-row items-center justify-end">
+                    <!-- {# header snippet #} -->
+                            <!-- {% if gts.text_header %} -->
+                            <span class="header-text">
+                                <strong>Free shipping</strong> - on all orders over £35
+                            </span>
+                        <!-- {% endif %} -->
+                        <!-- {# basket link #} -->
+                        <a class="header__basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
+                            <a class="header__basket" data-toggle="offCanvasBasket" aria-expanded="false" aria-controls="offCanvasBasket">
+                                <!-- Shopping basket icon -->
+                                <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                                <!-- Shopping basket icon -->
+                                <span class="sr-only">shopping basket</span>
+                            </a>
+                        </a>
+                    </div>
+                </div> 
+            </div>
+            <!-- {{ block('header_navigation') }} -->
+            <div class="header__nav hidden lg:block">
+                <nav class="main-container">
+                    <div class="header__nav-inner">
+                        <button type="button" class="mobile-menu-toggle lg:hidden" data-toggle="offCanvasMobile">
+                            <!-- {{ theme.sw_icon('bars') }} -->
+                            <!-- Pause icon -->
+                            <i class="sw-icon-pause" aria-hidden="true"></i>
+                            <!-- Pause icon -->
+                            <span class="sr-only">menu</span>
+                            Menu
+                        </button>
+                        <div class="header_mobile_right lg:hidden">
+                            <a class="header__mobile-basket"{% if gts.offcanvas_basket and global.current_path != '/checkout/basket' %} data-toggle="offCanvasBasket"{% else %} href="/checkout/basket"{% endif %}>
+                                <!-- {{ theme.sw_icon('shopping-bag', 'Shopping Basket') }} -->
+                                <!-- Shopping basket icon -->
+                                <i class="sw-icon-shopping-basket" aria-hidden="true"></i>
+                                <!-- Shopping basket icon -->
+                                <span class="sr-only">shopping basket</span>
+                                <span class="hidden lg:block">Shopping basket</span>
+                                <!-- <span class="basket-count">{{ global.basket.items }}</span> -->
+                            </a>
+                            <button type="button" class="mobile-search-toggle" data-toggle="header-search">
+                                <!-- {{ theme.sw_icon('glass', 'Search') }} -->
+                                <!-- Search icon -->
+                                <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
+                                <!-- Search icon -->
+                                <span class="sr-only">search</span>
+                            </button>
+                            <!-- {% if global.features.apps.currencies %}
+                                {% include 'partials/currency_dropdown.twig' with { 'size': 'small' } %}
+                            {% endif %} -->
+                        </div>
+                        <!-- {# Render main navigation #} -->
+                        <div id="main-nav-wrapper" class="main-nav-wrapper{{ theme_config.nav_style == 1 ? ' click-drop' : '' }} hidden lg:block" data-toggler=".lg:block">
+                            <ul class="main-nav flex flex-col justify-center lg:flex-row menu"
+                                data-responsive-menu="accordion large-dropdown"
+                                data-close-on-click-inside
+                            >
+                                <!-- {# Render home link #} -->
+                                <li class="main-nav-home-link">
+                                    <a href="/"{% if global.current_path == '/' %} class="active"{% endif %}>
+                                        Home
                                     </a>
-                                    {% if category.categories and not theme_config.nav_style == 1 %} -->
-                                        <ul class="main-nav flex flex-col lg:flex-row">
-                                            <!-- {% for subcategory in category.categories %} -->
-                                                <li>
-                                                    <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
-                                                        Cool Tools
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
-                                                        <!-- {{ subcategory.title }} -->
-                                                        Gadgets
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
-                                                        <!-- {{ subcategory.title }} -->
-                                                        Gifts
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
-                                                        <!-- {{ subcategory.title }} -->
-                                                        Toys & Games
-                                                    </a>
-                                                </li>
-                                            <!-- {% endfor %} -->
-                                    <!-- {% endif %} -->
                                 </li>
-                            <!-- {% endfor %} 
-                            {% if global.categories|length > category_limit|default(20) %}
-                                <li>
-                                    <a href="/categories">
-                                        View All
-                                    </a>
-                                </li>
-                            {% endif %}
-                            {# category link list #}
-                            {% set category_add_list = global.theme.settings.list_category_add %}
-                            {% if category_add_list and category_add_list.links %}
-                                {# Render custom links #}
-                                {% for link in category_add_list.links %
-                                    <li {% if loop.first %} id="list_category_add"{% endif %}>
-                                        <a href="{{ link.url }}">
-                                            {{ link.title }}
+                                <!-- {# Render category links #} -->
+                                <!-- {% for category in global.categories|slice(0, category_limit|default(20)) %}
+                                    <li{% if theme_config.nav_style == 1 %} data-id="{{ category.id }}" class="{{ category.categories ? 'parent-with-sub' }}"{% endif %}>
+                                        <a href="{{ category.url }}" {% if category.url in global.current_url %}class="active" {% endif %}>
+                                            {{ category.title }}
+                                        </a>
+                                        {% if category.categories and not theme_config.nav_style == 1 %} -->
+                                            <ul class="main-nav flex flex-col lg:flex-row">
+                                                <!-- {% for subcategory in category.categories %} -->
+                                                    <li>
+                                                        <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
+                                                            Cool Tools
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
+                                                            <!-- {{ subcategory.title }} -->
+                                                            Gadgets
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
+                                                            <!-- {{ subcategory.title }} -->
+                                                            Gifts
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ subcategory.url }}" {% if global.current_url == subcategory.url %}class="active" {% endif %}>
+                                                            <!-- {{ subcategory.title }} -->
+                                                            Toys & Games
+                                                        </a>
+                                                    </li>
+                                                <!-- {% endfor %} -->
+                                        <!-- {% endif %} -->
+                                    </li>
+                                <!-- {% endfor %} 
+                                {% if global.categories|length > category_limit|default(20) %}
+                                    <li>
+                                        <a href="/categories">
+                                            View All
                                         </a>
                                     </li>
-                                {% endfor %}
-                            {% endif %}
-                            {# Render brand links #}
-                            {% if global.brands %} -->
-                                <li {% if theme_config.nav_style == 1 %} data-id="brands" class="parent-with-sub"{% endif %}>
-                                    <a href="/brands" {% if global.current_path == '/brands' %}class="active" {% endif %}>
-                                        Brands
-                                    </a> 
-                                    <!-- {% if not theme_config.nav_style == 1 %}
-                                        <ul class="vertical menu is-dropdown-submenu">
-                                            {% for brand in global.brands|slice(0, brand_limit|default(20)) %}
-                                                <li>
-                                                    <a href="{{ brand.url }}" {% if brand.url in global.current_path %}class="active" {% endif %}>
-                                                        {{ brand.title }}
-                                                    </a>
-                                                </li>
-                                            {% endfor %}
-                                            {% if global.brands|length > brand_limit|default(20) %} 
-                                                <li>
-                                                    <a href="/brands">
-                                                        View All
-                                                    </a>
-                                                </li>
-                                            {% endif %} -->
-                                        </ul>
-                                    <!-- {% endif %} -->
-                                </li>
-                            <!-- {% endif %}
-                            {# Render blog link #}
-                            {% if global.features.apps.blog %} -->
-                                <li>
-                                    <a href="/blog"{% if global.current_path == '/blog' %} class="active"{% endif %}>
-                                        Blog
-                                    </a>
-                                </li>
-                            <!-- {% endif %} -->
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <!-- {{ block('header_search') }} -->
-    </header>
-    <!-- {% endblock %}-->
-
-    <main>
-        <section class="slider-image main-container section-block flex flex-row md:flex-col">
-            <div class="slider-image__wrapper">
-                <!-- {% for category in featured_categories %} -->
-                <div class="slider-image__featured-box grid md:grid-cols-12">
-                    <div class="col-span-8">
-                        <div class="slider-image__shadow-box shadow-box">
-                            <a href="#">
-                                <img src="../assets/images/featured-category-img.png">
-                            </a>
+                                {% endif %}
+                                {# category link list #}
+                                {% set category_add_list = global.theme.settings.list_category_add %}
+                                {% if category_add_list and category_add_list.links %}
+                                    {# Render custom links #}
+                                    {% for link in category_add_list.links %
+                                        <li {% if loop.first %} id="list_category_add"{% endif %}>
+                                            <a href="{{ link.url }}">
+                                                {{ link.title }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
+                                {# Render brand links #}
+                                {% if global.brands %} -->
+                                    <li {% if theme_config.nav_style == 1 %} data-id="brands" class="parent-with-sub"{% endif %}>
+                                        <a href="/brands" {% if global.current_path == '/brands' %}class="active" {% endif %}>
+                                            Brands
+                                        </a> 
+                                        <!-- {% if not theme_config.nav_style == 1 %}
+                                            <ul class="vertical menu is-dropdown-submenu">
+                                                {% for brand in global.brands|slice(0, brand_limit|default(20)) %}
+                                                    <li>
+                                                        <a href="{{ brand.url }}" {% if brand.url in global.current_path %}class="active" {% endif %}>
+                                                            {{ brand.title }}
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                                {% if global.brands|length > brand_limit|default(20) %} 
+                                                    <li>
+                                                        <a href="/brands">
+                                                            View All
+                                                        </a>
+                                                    </li>
+                                                {% endif %} -->
+                                            </ul>
+                                        <!-- {% endif %} -->
+                                    </li>
+                                <!-- {% endif %}
+                                {# Render blog link #}
+                                {% if global.features.apps.blog %} -->
+                                    <li>
+                                        <a href="/blog"{% if global.current_path == '/blog' %} class="active"{% endif %}>
+                                            Blog
+                                        </a>
+                                    </li>
+                                <!-- {% endif %} -->
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-span-4 self-center">
-                        <div class="slider-image__heading">
-                            <h1>
-                                <a href="#">Toys & Games</a>
-                            </h1>
-                            <div class="hidden lg:block">
-                                <p>
-                                    Every ingredient that Herbivore includes in their products is there for a specific, therapeutic reason. They do not use fillers of any kind, meaning that almost eve;ry ingredient in their products is an “active” ingredient.
-                                </p>
+                </nav>
+            </div>
+            <!-- {{ block('header_search') }} -->
+        </header>
+        <!-- {% endblock %}-->
+
+        <main>
+            <section class="slider-image main-container section-block flex flex-row md:flex-col">
+                <div class="slider-image__wrapper">
+                    <!-- {% for category in featured_categories %} -->
+                    <div class="slider-image__featured-box grid md:grid-cols-12">
+                        <div class="col-span-8">
+                            <div class="slider-image__shadow-box shadow-box">
+                                <a href="#">
+                                    <img src="../assets/images/featured-category-img.png">
+                                </a>
                             </div>
                         </div>
-                        <div class="button-wrapper">
-                            <a href=#>
-                                <div class="slider-image__button button">
-                                    <span class="text-top">Browse</span>
+                        <div class="col-span-4 self-center">
+                            <div class="slider-image__heading">
+                                <h1>
+                                    <a href="#">Toys & Games</a>
+                                </h1>
+                                <div class="hidden lg:block">
+                                    <p>
+                                        Every ingredient that Herbivore includes in their products is there for a specific, therapeutic reason. They do not use fillers of any kind, meaning that almost eve;ry ingredient in their products is an “active” ingredient.
+                                    </p>
                                 </div>
-                            </a>
+                            </div>
+                            <div class="button-wrapper">
+                                <a href=#>
+                                    <div class="slider-image__button button">
+                                        <span class="text-top">Browse</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between">
+                        <button class="slider-arrow slider-image__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>
+                        <button class="slider-arrow slider-image__arrow-next "><i class="sw-icon-arrow" aria-hidden="true"></i></button>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <section class="featured-products main-container section-block">
+                <div class="product-cards-grid grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-16 lg:grid-cols-4">
+                    <!-- Use of grid anticipates users not wanted to use text-snippet here
+                    {% if gts.text_home_featured_title or gts.text_home_featured_paragraph %}-->
+                    <div class="products-cards-grid__heading sm:col-span-2 md:col-span-1">
+                        <div class="product-cards-grid__heading-inner">
+                            <h3>Favourites</h3>
+                            <p class="product-cards-grid__heading-description">
+                                Our first collection ETT, the Swedish word for one, uses a Swiss two-handed movement and is designed to be a careful, understated hybrid of the past and present. 
+                                <br><br>
+                                These are the best of the bunch! 
+                            </p>
+                        </div>
+                    </div>
+                    <!-- {% endif %} -->
+                    <!--- {% include item.twig with items: 'featured-product' %}-->
+                    <div class="product-cards-grid__card">
+                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                        <p class="product-cards-grid__card-price underline">£255.00</p>
+                    </div>
+                    <div class="product-cards-grid__card">
+                        <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
+                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                        <p class="product-cards-grid__card-price underline">£255.00</p>
+                    </div>
+                    <div class="product-cards-grid__card">
+                        <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
+                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                        <p class="product-cards-grid__card-price underline">£255.00</p>
+                    </div>
+                    <div class="product-cards-grid__card">
+                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                        <p class="product-cards-grid__card-price underline">£255.00</p>
+                    </div>
+                    <div class="product-cards-grid__card">
+                        <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
+                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                        <p class="product-cards-grid__card-price underline">£255.00</sp>
+                    </div>
+                    <div class="product-cards-grid__card">
+                        <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
+                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                        <p class="product-cards-grid__card-price underline">£255.00</p>
+                    </div>
+                    <div class="product-cards-grid__card">
+                        <img class="product-cards-grid__card-image" src="../assets/images/dad-set.png">
+                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                        <p class="product-cards-grid__card-price underline">£255.00</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="static-image section-block ">
+                <div class="grid grid-col-12">
+                    <div class="static-image__overlay col-span-12">
+                        <div class="static-image__shadow-box shadow-box">
+                            <div class="static-image__image">
+                                <div class="static-image__text-overlay main-container hidden md:block">
+                                    <div class="static-image__text-overlay-inner">
+                                        <h2 class="text-box-heading">This is an image</h2>
+                                        <p class="text-box-paragraph">We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
+                                        <div class="button-wrapper">
+                                            <a href=#>
+                                                <div class="static-image__button button">
+                                                    <span class="text-top">Shop Now</span>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img src="../assets/images/slider-img.png"> -->
+                        </div>
+                        <div class="static-image__text-mobile main-container md:hidden">
+                            <div class="static-image__text-mobile-inner">
+                                <h2 class="text-box-heading">This is an image</h2>
+                                <p class="text-box-heading">We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
+                                <div class="button-wrapper">
+                                    <div class="static-image__button button">
+                                        <a href=#>
+                                            <span class="text-top">Shop Now</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-between">
-                    <button class="slider-arrow slider-image__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>
-                    <button class="slider-arrow slider-image__arrow-next "><i class="sw-icon-arrow" aria-hidden="true"></i></button>
-                </div>
-                
-            </div>
-        </section>
+            </section>
 
-        <section class="featured-products main-container section-block">
-            <div class="product-cards-grid grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-16 lg:grid-cols-4">
-                <!-- Use of grid anticipates users not wanted to use text-snippet here
-                {% if gts.text_home_featured_title or gts.text_home_featured_paragraph %}-->
-                <div class="products-cards-grid__heading sm:col-span-2 md:col-span-1">
-                    <div class="product-cards-grid__heading-inner">
-                        <h3>Favourites</h3>
-                        <p class="product-cards-grid__heading-description">
-                            Our first collection ETT, the Swedish word for one, uses a Swiss two-handed movement and is designed to be a careful, understated hybrid of the past and present. 
-                            <br><br>
-                            These are the best of the bunch! 
-                        </p>
-                    </div>
-                </div>
-                <!-- {% endif %} -->
-                <!--- {% include item.twig with items: 'featured-product' %}-->
-                <div class="product-cards-grid__card">
-                    <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price underline">£255.00</p>
-                </div>
-                <div class="product-cards-grid__card">
-                    <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
-                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price underline">£255.00</p>
-                </div>
-                <div class="product-cards-grid__card">
-                    <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
-                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price underline">£255.00</p>
-                </div>
-                <div class="product-cards-grid__card">
-                    <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price underline">£255.00</p>
-                </div>
-                <div class="product-cards-grid__card">
-                    <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
-                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price underline">£255.00</sp>
-                </div>
-                <div class="product-cards-grid__card">
-                    <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
-                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price underline">£255.00</p>
-                </div>
-                <div class="product-cards-grid__card">
-                    <img class="product-cards-grid__card-image" src="../assets/images/dad-set.png">
-                    <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                    <p class="product-cards-grid__card-price underline">£255.00</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="static-image section-block ">
-            <div class="grid grid-col-12">
-                <div class="static-image__overlay col-span-12">
-                    <div class="static-image__shadow-box shadow-box">
-                        <div class="static-image__image">
-                            <div class="static-image__text-overlay main-container hidden md:block">
-                                <div class="static-image__text-overlay-inner">
-                                    <h2 class="text-box-heading">This is an image</h2>
-                                    <p class="text-box-paragraph">We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
+            <section class="image-with-text section-block">
+                <grid class="grid grid-col-12">
+                    <div class="image-with-text__wrapper">
+                        <div class="image-with-text__row flex flex-col md:flex-row">
+                            <div class="image-with-text__image shadow-box">
+                                <img src="../assets/images/image-with-text.png">
+                            </div>
+                            <div class="image-with-text__text main-container md:flex">
+                                <div class="image-with-text__text-inner md:self-center md:pt-0">
+                                    <h2 class="text-box-heading">Trends</h2>
+                                    <p class="text-box-paragraph">ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
                                     <div class="button-wrapper">
-                                        <a href=#>
-                                            <div class="static-image__button button">
+                                        <a href="#">
+                                            <div class="image-with-text__button button">
                                                 <span class="text-top">Shop Now</span>
                                             </div>
                                         </a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-                        <!-- <img src="../assets/images/slider-img.png"> -->
                     </div>
-                    <div class="static-image__text-mobile main-container md:hidden">
-                        <div class="static-image__text-mobile-inner">
-                            <h2 class="text-box-heading">This is an image</h2>
-                            <p class="text-box-heading">We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
-                            <div class="button-wrapper">
-                                <div class="static-image__button button">
-                                    <a href=#>
-                                        <span class="text-top">Shop Now</span>
-                                    </a>
-                                </div>
+                </grid>
+            </section>
+
+            <section class="image-with-text-columns section-block">
+                <div class="grid lg:grid-cols-2 lg:gap-16">
+                    <div class="image-with-text-columns__item flex flex-col md:flex-row">
+                        <div class="image-with-text-columns__item-image shadow-box">
+                            <img src="../assets/images/text-column-img-1.png">
+                        </div>
+                        <div class="image-with-text-columns__item-text">
+                            <div class="image-with-text-columns__item-text-inner">
+                                <h3 class="text-box-heading">FAQ</h3>
+                                <p class="text-box-paragraph">ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
+                                <a href="#" class="image-with-text-columns__read-more">
+                                    Read more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-with-text-columns__item flex flex-col md:flex-row">
+                        <div class="image-with-text-columns__item-image shadow-box">
+                            <img src="../assets/images/text-column-img-2.png">
+                        </div>
+                        <div class="image-with-text-columns__item-text">
+                            <div class="image-with-text-columns__item-text-inner">
+                                <h3 class="text-box-heading">Ethos</h3>
+                                <p class="text-box-paragraph">To us sustainability is a lifestyle and an ethos. We want to support independent businesses while introducing talented people to the UK. Of course we also want to do this in a responsible way by looking out for both the planet and the people who make our products.</p>
+                                <a href="#" class="image-with-text-columns__read-more">
+                                    Read more
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="image-with-text section-block">
-            <grid class="grid grid-col-12">
-                <div class="image-with-text__wrapper">
-                    <div class="image-with-text__row flex flex-col md:flex-row">
-                        <div class="image-with-text__image shadow-box">
-                            <img src="../assets/images/image-with-text.png">
-                        </div>
-                        <div class="image-with-text__text main-container md:flex">
-                            <div class="image-with-text__text-inner md:self-center md:pt-0">
-                                <h2 class="text-box-heading">Trends</h2>
-                                <p class="text-box-paragraph">ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
-                                <div class="button-wrapper">
+            <section class="gallery section-block">
+                <div class="grid grid-cols-2 md:grid-cols-4">
+                    <div class="gallery__image">
+                        <img src="../assets/images/gallery-img-1.png">
+                    </div>
+                    <div class="gallery__image">
+                        <img src="../assets/images/gallery-img-2.png">
+                    </div>
+                    <div class="gallery__image">
+                        <img src="../assets/images/gallery-img-3.png">
+                    </div>
+                    <div class="gallery__image">
+                        <img src="../assets/images/gallery-img-4.png">
+                    </div>
+                </div>
+            </section>
+
+            <section class="blog section-block">
+                <h2 class="md:text-center mb-8">Updates and product releases</h2>
+                <div class="blog__wrapper slider-wrapper">
+                    <div class="blog__slider">
+                        <article class="blog__article">
+                            <div class="blog__article-image">
+                                <img src="../assets/images/drone.png">
+                            </div>
+                            <div class="blog__info text-center">
+                                <p class="blog__info-heading font-bold">This is another demonstration post</p>
+                                <p class="blog__info-date">2nd April 2020</p>
+                                <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
+                                <div class="button-wrapper mx-auto">
                                     <a href="#">
-                                        <div class="image-with-text__button button">
-                                            <span class="text-top">Shop Now</span>
+                                        <div class="button">
+                                            <span class="text-top">Read</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </grid>
-        </section>
-
-        <section class="image-with-text-columns section-block">
-            <div class="grid lg:grid-cols-2 lg:gap-16">
-                <div class="image-with-text-columns__item flex flex-col md:flex-row">
-                    <div class="image-with-text-columns__item-image shadow-box">
-                        <img src="../assets/images/text-column-img-1.png">
-                    </div>
-                    <div class="image-with-text-columns__item-text">
-                        <div class="image-with-text-columns__item-text-inner">
-                            <h3 class="text-box-heading">FAQ</h3>
-                            <p class="text-box-paragraph">ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
-                            <a href="#" class="image-with-text-columns__read-more">
-                                Read more
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-with-text-columns__item flex flex-col md:flex-row">
-                    <div class="image-with-text-columns__item-image shadow-box">
-                        <img src="../assets/images/text-column-img-2.png">
-                    </div>
-                    <div class="image-with-text-columns__item-text">
-                        <div class="image-with-text-columns__item-text-inner">
-                            <h3 class="text-box-heading">Ethos</h3>
-                            <p class="text-box-paragraph">To us sustainability is a lifestyle and an ethos. We want to support independent businesses while introducing talented people to the UK. Of course we also want to do this in a responsible way by looking out for both the planet and the people who make our products.</p>
-                            <a href="#" class="image-with-text-columns__read-more">
-                                Read more
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="gallery section-block">
-            <div class="grid grid-cols-2 md:grid-cols-4">
-                <div class="gallery__image">
-                    <img src="../assets/images/gallery-img-1.png">
-                </div>
-                <div class="gallery__image">
-                    <img src="../assets/images/gallery-img-2.png">
-                </div>
-                <div class="gallery__image">
-                    <img src="../assets/images/gallery-img-3.png">
-                </div>
-                <div class="gallery__image">
-                    <img src="../assets/images/gallery-img-4.png">
-                </div>
-            </div>
-        </section>
-
-        <section class="blog section-block">
-            <h2 class="md:text-center mb-8">Updates and product releases</h2>
-            <div class="blog__wrapper slider-wrapper">
-                <div class="blog__slider">
-                    <article class="blog__article">
-                        <div class="blog__article-image">
-                            <img src="../assets/images/drone.png">
-                        </div>
-                        <div class="blog__info text-center">
-                            <p class="blog__info-heading font-bold">This is another demonstration post</p>
-                            <p class="blog__info-date">2nd April 2020</p>
-                            <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
-                            <div class="button-wrapper mx-auto">
-                                <a href="#">
-                                    <div class="button">
-                                        <span class="text-top">Read</span>
-                                    </div>
-                                </a>
+                        </article>
+                        <article class="blog__article">
+                            <div class="blog__article-image">
+                                <img src="../assets/images/drone.png">
                             </div>
-                        </div>
-                    </article>
-                    <article class="blog__article">
-                        <div class="blog__article-image">
-                            <img src="../assets/images/drone.png">
-                        </div>
-                        <div class="blog__info text-center">
-                            <p class="blog__info-heading font-bold">This is another demonstration post</p>
-                            <p class="blog__info-date">2nd April 2020</p>
-                            <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
-                            <div class="button-wrapper mx-auto">
-                                <a href="#">
-                                    <div class="button">
-                                        <span class="text-top">Read</span>
-                                    </div>
-                                </a>
+                            <div class="blog__info text-center">
+                                <p class="blog__info-heading font-bold">This is another demonstration post</p>
+                                <p class="blog__info-date">2nd April 2020</p>
+                                <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
+                                <div class="button-wrapper mx-auto">
+                                    <a href="#">
+                                        <div class="button">
+                                            <span class="text-top">Read</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="blog__article">
-                        <div class="blog__article-image">
-                            <img src="../assets/images/drone.png">
-                        </div>
-                        <div class="blog__info text-center">
-                            <p class="blog__info-heading font-bold">This is another demonstration post</p>
-                            <p class="blog__info-date">2nd April 2020</p>
-                            <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
-                            <div class="button-wrapper mx-auto">
-                                <a href="#">
-                                    <div class="button">
-                                        <span class="text-top">Read</span>
-                                    </div>
-                                </a>
+                        </article>
+                        <article class="blog__article">
+                            <div class="blog__article-image">
+                                <img src="../assets/images/drone.png">
                             </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            
-        </section>
-
-        <section class="testimonial section-block">
-            <h3 class="testimonial__title uppercase md:text-center text-box-heading">What our customers say</h3>
-            <div class="testimonial__wrapper slider-wrapper">
-                <div class="testimonial__slider">
-                    <article class="testimonial__item">
-                        <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                        <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                    </article>
-                    <article class="testimonial__item">
-                        <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                        <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                    </article>
-                    <article class="testimonial__item">
-                        <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                        <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                    </article>
-                </div>
-                <div class="testimonial__nav flex justify-between"></div>
-
-            </div>
-            
-        </section>
-
-        <section class="video section-block">
-            <div class="video__thumbnail">
-                <div class="video__thumbnail-overlay">
-                    <div class="video__icon text-center">
-                        <!-- video-camera icon -->
-                        <i class="sw-icon-film" aria-hidden="true"></i>
-                        <!-- video-camera icon -->
-                        <p class="uppercase font-bold text-center">Play video</p>
+                            <div class="blog__info text-center">
+                                <p class="blog__info-heading font-bold">This is another demonstration post</p>
+                                <p class="blog__info-date">2nd April 2020</p>
+                                <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
+                                <div class="button-wrapper mx-auto">
+                                    <a href="#">
+                                        <div class="button">
+                                            <span class="text-top">Read</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
-            </div>
-        </section>
+                
+            </section>
 
-        <section class="newsletter section-block">
-            <div class="newsletter__inner mx-auto">
-                <h2 class="text-center">Stay in the know!</h2>
-                <form action="#" class="newsletter__form-wrapper flex justify-center">
-                    <div class="newsletter__form flex">
-                        <!-- Envelope icon -->
-                        <i class="sw-icon-email inline-block" aria-hidden="true"></i>
-                        <!-- Envelope icon -->
-                        <input type="email" class="newsletter__form-email" placeholder="Enter your email address">
-                        <input class="ml-auto" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+            <section class="testimonial section-block">
+                <h3 class="testimonial__title uppercase md:text-center text-box-heading">What our customers say</h3>
+                <div class="testimonial__wrapper slider-wrapper">
+                    <div class="testimonial__slider">
+                        <article class="testimonial__item">
+                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
+                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
+                        </article>
+                        <article class="testimonial__item">
+                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
+                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
+                        </article>
+                        <article class="testimonial__item">
+                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
+                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
+                        </article>
                     </div>
-                </form>
-                <p class="text-center">We'll use your email to be in touch with you regarding product updates, exclusive offers and other relevant marketing</p>
-            </div>
+                    <div class="testimonial__nav flex justify-between"></div>
 
-        </section>
-    </main>
+                </div>
+                
+            </section>
 
-    <footer>
-        <div class="footer__grid grid grid-cols-1 lg:grid-cols-12">
-            <div class="footer__menu lg:col-span-2">
-                <h4 class="footer__menu-title">
-                    Info
-                </h4>
-                <ul>
-                    <li>
-                        <a href="#" class="footer__menu-link">Home</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer__menu-link">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer__menu-link">FAQs</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer__menu-link">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer__menu lg:col-span-2">
-                <h4 class="footer__menu-title">
-                    Legals
-                </h4>
-                <ul>
-                    <li>
-                        <a href="#" class="footer__menu-link">Delivery</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer__menu-link">Terms</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer__menu-link">Privacy</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer__menu-link">Refunds</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer__menu lg:col-span-2">
-                <h4 class="footer__menu-title">
-                    Customers
-                </h4>
-                <ul>
-                    <li>
-                        <a href="#" class="footer__menu-link">Your bag</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer__menu-link">Your Wishlist</a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer__menu-link">Your Account</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer__menu lg:col-span-3 lg:text-right">
-                <h4 class="footer__menu-title">
-                    Connect with us
-                </h4>
-                <ul>
-                    <form class="footer__email-form flex">
-                        <input type="email" class="footer__email-input" placeholder="Email address">
-                        <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+            <section class="video section-block">
+                <div class="video__thumbnail">
+                    <div class="video__thumbnail-overlay">
+                        <div class="video__icon text-center">
+                            <!-- video-camera icon -->
+                            <i class="sw-icon-film" aria-hidden="true"></i>
+                            <!-- video-camera icon -->
+                            <p class="uppercase font-bold text-center">Play video</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="newsletter section-block">
+                <div class="newsletter__inner mx-auto">
+                    <h2 class="text-center">Stay in the know!</h2>
+                    <form action="#" class="newsletter__form-wrapper flex justify-center">
+                        <div class="newsletter__form flex">
+                            <!-- Envelope icon -->
+                            <i class="sw-icon-email inline-block" aria-hidden="true"></i>
+                            <!-- Envelope icon -->
+                            <input type="email" class="newsletter__form-email" placeholder="Enter your email address">
+                            <input class="ml-auto" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                        </div>
                     </form>
-                    <ul class="social-icons">
+                    <p class="text-center">We'll use your email to be in touch with you regarding product updates, exclusive offers and other relevant marketing</p>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer__grid grid grid-cols-1 lg:grid-cols-12">
+                <div class="footer__menu lg:col-span-2">
+                    <h4 class="footer__menu-title">
+                        Info
+                    </h4>
+                    <ul>
                         <li>
-                            <a href="#">
-                                <!-- Facebook icon -->
-                                <i class="sw-icon-facebook-logo" aria-hidden="true"></i>
-                                <!-- Facebook icon -->
-                            </a>
+                            <a href="#" class="footer__menu-link">Home</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <!-- Twitter icon -->
-                                <i class="sw-icon-twitter" aria-hidden="true"></i>
-                                <!-- Twitter icon -->
-                            </a>
+                            <a href="#" class="footer__menu-link">About Us</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <!-- Linkedin icon -->
-                                <i class="sw-icon-linkedin" aria-hidden="true"></i>
-                                <!-- Linkedin icon -->
-                            </a>
+                            <a href="#" class="footer__menu-link">FAQs</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <!-- Pinterest icon -->
-                                <i class="sw-icon-pinterest" aria-hidden="true"></i>
-                                <!-- Linkedin icon -->
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <!-- Youtube icon -->
-                                <i class="sw-icon-youtube" aria-hidden="true"></i>
-                                <!-- Youtube icon -->
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <!-- Instagram icon -->
-                                <i class="sw-icon-instagram" aria-hidden="true"></i>
-                                <!-- Instagram icon -->
-                            </a>
+                            <a href="#" class="footer__menu-link">Contact Us</a>
                         </li>
                     </ul>
+                </div>
+                <div class="footer__menu lg:col-span-2">
+                    <h4 class="footer__menu-title">
+                        Legals
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="#" class="footer__menu-link">Delivery</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__menu-link">Terms</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__menu-link">Privacy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__menu-link">Refunds</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__menu lg:col-span-2">
+                    <h4 class="footer__menu-title">
+                        Customers
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="#" class="footer__menu-link">Your bag</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__menu-link">Your Wishlist</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__menu-link">Your Account</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__menu lg:col-span-3 lg:text-right">
+                    <h4 class="footer__menu-title">
+                        Connect with us
+                    </h4>
+                    <ul>
+                        <form class="footer__email-form flex">
+                            <input type="email" class="footer__email-input" placeholder="Email address">
+                            <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                        </form>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#">
+                                    <!-- Facebook icon -->
+                                    <i class="sw-icon-facebook-logo" aria-hidden="true"></i>
+                                    <!-- Facebook icon -->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <!-- Twitter icon -->
+                                    <i class="sw-icon-twitter" aria-hidden="true"></i>
+                                    <!-- Twitter icon -->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <!-- Linkedin icon -->
+                                    <i class="sw-icon-linkedin" aria-hidden="true"></i>
+                                    <!-- Linkedin icon -->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <!-- Pinterest icon -->
+                                    <i class="sw-icon-pinterest" aria-hidden="true"></i>
+                                    <!-- Linkedin icon -->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <!-- Youtube icon -->
+                                    <i class="sw-icon-youtube" aria-hidden="true"></i>
+                                    <!-- Youtube icon -->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <!-- Instagram icon -->
+                                    <i class="sw-icon-instagram" aria-hidden="true"></i>
+                                    <!-- Instagram icon -->
+                                </a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="footer__contact lg:order-first lg:col-span-3">
+                    <p class="footer__contact-telephone">
+                        <span class="footer__contact-label">Tel:</span>
+                        <a class="underline" href="tel:0330 111 2024">0330 111 2024</a>
+                    </p>
+                    <p class="footer__contact-email">
+                        <span class="footer__contact-label">Email:</span>
+                        <a class="underline" href="mailto:vivify-demo-1@ecommercethemes.uk">vivify-demo-1@ecommercethemes.uk</a>
+                    </p>
+                    <address class="footer__contact-address">
+                        Suite 3, 17 Wrens Court, Sutton Coldfield, B72 1RT
+                    </address>
+                </div>
+                <div class="footer__copy lg:col-span-6">
+                    <p>
+                        Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
+                    </p>
+                </div>
+                <ul class="footer__payment-list lg:col-span-6 lg:text-right">
+                    <li>
+                        <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
+                    </li>
+                    <li>
+                        <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_mastercard.png" alt="Mastercard">
+                    </li>
+                    <li>
+                        <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_visa.png" alt="Visa">
+                    </li>
+                    <li>
+                        <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_maestro.png" alt="Maestro">
+                    </li>
                 </ul>
             </div>
-            <div class="footer__contact lg:order-first lg:col-span-3">
-                <p class="footer__contact-telephone">
-                    <span class="footer__contact-label">Tel:</span>
-                    <a class="underline" href="tel:0330 111 2024">0330 111 2024</a>
-                </p>
-                <p class="footer__contact-email">
-                    <span class="footer__contact-label">Email:</span>
-                    <a class="underline" href="mailto:vivify-demo-1@ecommercethemes.uk">vivify-demo-1@ecommercethemes.uk</a>
-                </p>
-                <address class="footer__contact-address">
-                    Suite 3, 17 Wrens Court, Sutton Coldfield, B72 1RT
-                </address>
-            </div>
-            <div class="footer__copy lg:col-span-6">
-                <p>
-                    Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
-                </p>
-            </div>
-            <ul class="footer__payment-list lg:col-span-6 lg:text-right">
-                <li>
-                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
-                </li>
-                <li>
-                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_mastercard.png" alt="Mastercard">
-                </li>
-                <li>
-                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_visa.png" alt="Visa">
-                </li>
-                <li>
-                    <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_maestro.png" alt="Maestro">
-                </li>
-            </ul>
-        </div>
+        </footer>
         
-    </footer>
+        <div class="off-canvas-overlay invisible opacity-0"></div>
+
+    </div>
 
     <script>
+        $( ".announcement-bar__close-button ").click(function() {
+            $( ".announcement-bar").fadeOut(200);
+        }) 
+        // Off canvas menu
+        $( ".header__menu-toggle").click(function() {
+            $( ".off-canvas" ).toggleClass("push-menu-left")
+            $( ".content").toggleClass( "push-content-right" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#offCanvasCloseButton" ).click(function() {
+            $( ".off-canvas" ).toggleClass("push-menu-left")
+            $( ".content").toggleClass( "push-content-right" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+
         $(".blog__slider").slick({
-            prevArrow: $(".prev"),
-            nextArrow: $(".next"),
+            arrows: false,
             infinite: false,
             speed: 300,
             slidesToShow: 3,
