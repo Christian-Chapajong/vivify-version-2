@@ -1438,6 +1438,23 @@ hr {
   @include rem(padding-bottom, 25px);
 }
 
+select {
+    background-image: url(../images/select_arrow.svg);
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px 6px;
+    border: 1px solid #eee;
+    border-radius: 0;
+    box-shadow: none!important;
+    font-family: $sofia, sans-serif;
+    font-size: .873rem;
+    height: 3.2rem;
+    padding: .7rem 2rem .7rem 1rem !important;
+    width: 100%;
+    appearance: none;
+}
+
+
 // raw text styles
 
 .snippet-container {
@@ -1459,47 +1476,6 @@ hr {
   }
 }
 
-// SVG sprites
-.icon {
-  display: inline-block;
-  // Base height and width
-  height: 1.2rem;
-  width: 1.2rem;
-
-  &_pause,
-  &_love,
-  &_user {
-    height: 1.5rem;
-    width: 1.5rem;
-  }
-
-  &_magnifying-glass {
-    height: 1.3rem;
-    width: 1.3rem;
-  }
-
-  &_zoom-in {
-    height: 2.3rem;
-    width: 2.3rem;
-  }
-
-  &_minus,
-  &_plus {
-    height: 0.5rem;
-    width: 0.5rem;
-  }
-
-  &_shopping-basket {
-    height: 2rem;
-    width: 2rem;
-    vertical-align: -webkit-baseline-middle;
-
-    @media #{$lg} {
-      vertical-align: middle;
-    }
-  }
-}
-
 //===========================
 // _components.scss
 //===========================
@@ -1514,10 +1490,13 @@ body {
   background: $colour_bg;
 }
 
-.main-container {
-  padding-left: 2.1818181818rem;
-  padding-right: 2.1818181818rem;
+@layer utilities {
+  .main-container {
+    padding-left: 2.1818181818rem;
+    padding-right: 2.1818181818rem;
+  }
 }
+
 .announcement-bar {
   background-color: if(
     setting-value("announcement_bar_use_default_website_colors"),
@@ -2209,6 +2188,7 @@ body {
 .slick-track {
   display: flex;
   justify-content: center;
+  /* transform: translate3d(0, 0, 0); */
 }
 .blog {
   @include rem(padding, 0 15px);
@@ -2713,15 +2693,22 @@ footer {
 }
 .number-toggle {
   margin-right: 1rem;
+  width: min-content;
   button,
   input {
     width: 40px;
+    min-height: 40px;
     background-color: $white;
     text-align: center;
   }
-  .minus-icon,
-  .plus-icon {
+  i{
     display: inline-block;
+    font-size: .5rem;
+  }
+
+  &_bordered {
+    border: 1px solid #f9f9f9;
+    margin-right: 0;
   }
 }
 .cart-button {
@@ -2743,7 +2730,7 @@ footer {
   i {
     margin-right: 1.2rem;
     font-size: 2rem;
-    color: #bd1d45;
+    color: $color_global_red_accent;
   }
   &-highlight {
     color: $color_global_red_accent;
@@ -2761,6 +2748,232 @@ footer {
   text-underline-offset: 2px;
 }
 
+// ====================== Category page =======================//
+.category-heading-and-description {
+  margin-top: 3rem;
+
+  @media #{$md} {
+    margin-bottom: 5rem;
+  }
+}
+.category {
+  &__heading {
+    font-size: 2rem;
+    margin-bottom: 1.25rem
+  }
+  &__description {
+    margin-bottom: 1rem;
+  }
+  &__sort-form {
+    background: #f9f9f9;
+    margin: 1rem 0 3rem;
+    padding: 1rem 2.2rem;
+
+    i.sw-icon-equalizer-console-with-three-switches-at-different-levels {
+      font-size: 1.8rem;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+      margin-right: .75rem;
+        
+      }
+    span {
+        margin-right: 1.25rem;
+    }
+    select {
+        margin: 0;
+        max-width: 270px;
+    }
+  }
+}
+.pagination {
+    li { 
+        display: inline-block;
+        padding-left: 1.75rem;
+    }
+    i {
+        font-size: 1rem;
+    }
+    &_mobile {
+      margin-top: 1.75rem;
+      padding: 2rem;
+      background-color: $color_global_content_background;
+    }
+}
+
+
+// ======================== Basket page ====================== //
+.basket{
+  
+  &__header{
+    margin-bottom: 3.75rem;
+  }
+  &__heading-inner, &__table {
+    max-width: 1536px; //2xl
+  }
+  &__total {
+    span {
+      font-size: 2rem
+    }
+    &-price {
+      margin-left: 3rem;
+    }
+  }
+  &__items-container{
+    background-color: $color_global_content_background;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+  &__item td {
+    padding: .75rem;
+
+    &:first-child{
+      border-top: 25px solid $color_global_content_background;
+    }
+
+    @screen md{
+      @include rem(padding, 20px 10px);
+      vertical-align: top;
+      border-top: 25px solid $color_global_content_background;
+      width: 15%;
+    }
+
+    &.basket__item-info {
+      @screen md {
+        width: 25%;
+      }
+    }
+  }
+  @screen md {
+    .quantity, &__item-price, &__item-cost {
+      text-align: center;
+    }
+    &__item-remove {
+      text-align: right;
+    }
+  }
+  &__form{
+    margin-top: -2.5rem;
+  }
+  &__background{
+    background-color: #f9f9f9;
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+
+    @screen md{
+      box-shadow: 0px 49px 0px 0px rgba(255,255,255) inset;
+
+    }
+  }
+
+  &__table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    tbody {
+        display: flex;
+        flex-direction: column;
+    }
+    tr.basket__item {
+        display: flex;
+        flex-direction: column;
+    }
+    background-color: $white;
+    width: 100%;
+    margin-top: -2rem;
+
+    th{
+      padding: .5rem .625rem 1.5rem;
+    }
+    th:first-child{
+      padding-left: 0;
+    }
+    td:first-child {
+      padding-left: 20px;
+    }
+
+    @screen md {
+      display: revert; 
+
+      tbody, tr.basket__item {
+        display: revert;
+      }
+    }
+  }
+
+  &__headings, &__item-price{
+    display: none;
+
+    @screen md {
+      display: revert; //more convenient to perform with media query than with tailwind utitilites within HTML
+    }
+  }
+
+  &__item-title{
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+  &__item-title, &__item-options, .link-with-icon {
+    margin-bottom: 1rem;
+  }
+  &__item-image img{
+    min-width: 50px;
+  }
+  &__item-price, &__item-cost {
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+  &__bottom-container {
+    max-width: 1536px;
+  }
+  &__box {
+    background-color: $color_global_content_background;
+    padding: 2rem;
+
+    li {
+      padding: 0.5rem;
+    }
+
+    .basket__dropdown-label {
+      margin-bottom: .5rem;
+    }
+
+    .basket__sub-total{
+      font-weight: 700;
+    }
+    .remove-button{
+      color: $colour_bodytxt;
+    }
+  }
+  &__update {
+    font-size: 0.8rem;
+  }
+}
+.redeem-a-discount-link, .link-with-icon {
+  color: $colour_bodytxt
+}
+.extra-charge {
+  margin-top: 1.5rem;
+}
+.promo-code-container{
+  margin-bottom: 1rem;
+  background-color: $color_global_content_background;
+  max-width: 400px;
+  padding: .75rem 1.25rem;
+
+  .promo-code{
+    background-color: $color_global_content_background;
+  }
+  button {
+    margin-left: 1rem;
+  }
+}
+
+
+
+// ======================== Tailwind utilities ====================== //
 @media (min-width: 640px) {
   .sm\:col-span-2 {
     grid-column: span 2 / span 2;
@@ -2825,6 +3038,10 @@ footer {
   }
 
   .md\:text-center {
+    text-align: center;
+  }
+  //Custom utility
+  .md\:main-container {
     text-align: center;
   }
 }
@@ -2917,470 +3134,3 @@ footer {
   }
 }
 
-@media (min-width: 640px) {
-  .sm\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sm\:gap-4 {
-    gap: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
-  .md\:block {
-    display: block;
-  }
-
-  .md\:flex {
-    display: flex;
-  }
-
-  .md\:hidden {
-    display: none;
-  }
-
-  .md\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:flex-col {
-    flex-direction: column;
-  }
-
-  .md\:gap-16 {
-    gap: 4rem;
-  }
-
-  .md\:self-center {
-    align-self: center;
-  }
-
-  .md\:pt-0 {
-    padding-top: 0px;
-  }
-
-  .md\:text-center {
-    text-align: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:order-1 {
-    order: 1;
-  }
-
-  .lg\:order-2 {
-    order: 2;
-  }
-
-  .lg\:order-first {
-    order: -9999;
-  }
-
-  .lg\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .lg\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
-  .lg\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
-  .lg\:block {
-    display: block;
-  }
-
-  .lg\:inline-block {
-    display: inline-block;
-  }
-
-  .lg\:flex {
-    display: flex;
-  }
-
-  .lg\:hidden {
-    display: none;
-  }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-9 {
-    grid-template-columns: repeat(9, minmax(0, 1fr));
-  }
-
-  .lg\:flex-row {
-    flex-direction: row;
-  }
-
-  .lg\:gap-16 {
-    gap: 4rem;
-  }
-
-  .lg\:gap-x-16 {
-    -moz-column-gap: 4rem;
-    column-gap: 4rem;
-  }
-
-  .lg\:gap-x-12 {
-    -moz-column-gap: 3rem;
-    column-gap: 3rem;
-  }
-
-  .lg\:self-center {
-    align-self: center;
-  }
-
-  .lg\:text-right {
-    text-align: right;
-  }
-}
-//==================== tailwind media queries =======================// 
-@media (min-width: 640px) {
-  .sm\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sm\:gap-4 {
-    gap: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
-  .md\:block {
-    display: block;
-  }
-
-  .md\:flex {
-    display: flex;
-  }
-
-  .md\:hidden {
-    display: none;
-  }
-
-  .md\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:flex-col {
-    flex-direction: column;
-  }
-
-  .md\:gap-16 {
-    gap: 4rem;
-  }
-
-  .md\:self-center {
-    align-self: center;
-  }
-
-  .md\:pt-0 {
-    padding-top: 0px;
-  }
-
-  .md\:text-center {
-    text-align: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:order-1 {
-    order: 1;
-  }
-
-  .lg\:order-2 {
-    order: 2;
-  }
-
-  .lg\:order-first {
-    order: -9999;
-  }
-
-  .lg\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .lg\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
-  .lg\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
-  .lg\:block {
-    display: block;
-  }
-
-  .lg\:inline-block {
-    display: inline-block;
-  }
-
-  .lg\:flex {
-    display: flex;
-  }
-
-  .lg\:hidden {
-    display: none;
-  }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-9 {
-    grid-template-columns: repeat(9, minmax(0, 1fr));
-  }
-
-  .lg\:flex-row {
-    flex-direction: row;
-  }
-
-  .lg\:gap-16 {
-    gap: 4rem;
-  }
-
-  .lg\:gap-x-16 {
-    -moz-column-gap: 4rem;
-    column-gap: 4rem;
-  }
-
-  .lg\:gap-x-12 {
-    -moz-column-gap: 3rem;
-    column-gap: 3rem;
-  }
-
-  .lg\:self-center {
-    align-self: center;
-  }
-
-  .lg\:text-right {
-    text-align: right;
-  }
-}
-
-@media (min-width: 640px) {
-  .sm\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sm\:gap-4 {
-    gap: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
-  .md\:block {
-    display: block;
-  }
-
-  .md\:flex {
-    display: flex;
-  }
-
-  .md\:hidden {
-    display: none;
-  }
-
-  .md\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:flex-col {
-    flex-direction: column;
-  }
-
-  .md\:gap-16 {
-    gap: 4rem;
-  }
-
-  .md\:self-center {
-    align-self: center;
-  }
-
-  .md\:pt-0 {
-    padding-top: 0px;
-  }
-
-  .md\:text-center {
-    text-align: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:order-1 {
-    order: 1;
-  }
-
-  .lg\:order-2 {
-    order: 2;
-  }
-
-  .lg\:order-first {
-    order: -9999;
-  }
-
-  .lg\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .lg\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
-  .lg\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
-  .lg\:block {
-    display: block;
-  }
-
-  .lg\:inline-block {
-    display: inline-block;
-  }
-
-  .lg\:flex {
-    display: flex;
-  }
-
-  .lg\:hidden {
-    display: none;
-  }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-9 {
-    grid-template-columns: repeat(9, minmax(0, 1fr));
-  }
-
-  .lg\:flex-row {
-    flex-direction: row;
-  }
-
-  .lg\:gap-16 {
-    gap: 4rem;
-  }
-
-  .lg\:gap-x-16 {
-    -moz-column-gap: 4rem;
-    column-gap: 4rem;
-  }
-
-  .lg\:gap-x-12 {
-    -moz-column-gap: 3rem;
-    column-gap: 3rem;
-  }
-
-  .lg\:self-center {
-    align-self: center;
-  }
-
-  .lg\:text-right {
-    text-align: right;
-  }
-}

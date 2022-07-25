@@ -12,6 +12,7 @@
     <!-- Slick.js -->
     <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 </head>
+
 <body>
     <div class="off-canvas push-menu-left" aria-hidden="true">
         <a class="button-close float-right" id="offCanvasCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
@@ -307,372 +308,223 @@
         <!-- {% endblock %}-->
 
         <main>
-            <section class="slider-image main-container section-block flex flex-row md:flex-col">
-                <div class="slider-image__wrapper">
-                    <!-- {% for category in featured_categories %} -->
-                    <div class="slider-image__featured-box grid md:grid-cols-12">
-                        <div class="col-span-8">
-                            <div class="slider-image__shadow-box shadow-box">
-                                <a href="#">
-                                    <img src="../assets/images/featured-category-img.png">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-span-4 self-center">
-                            <div class="slider-image__heading">
-                                <h1>
-                                    <a href="#">Toys & Games</a>
-                                </h1>
-                                <div class="hidden lg:block">
-                                    <p>
-                                        Every ingredient that Herbivore includes in their products is there for a specific, therapeutic reason. They do not use fillers of any kind, meaning that almost eve;ry ingredient in their products is an “active” ingredient.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="button-wrapper">
-                                <a href=#>
-                                    <div class="slider-image__button button">
-                                        <span class="text-top">Browse</span>
-                                    </div>
-                                </a>
-                            </div>
+            <section class="basket section-block">
+                <div class="basket__header main-container">
+                    <div class="basket__heading-inner mx-auto">
+                        <h1 class="basket__heading font-normal inline-block">Shopping Bag</h1>
+                        <div class="basket__total md:float-right">
+                            <span class="basket__total-label">Total</span>
+                            <span class="basket__total-price font-bold">£3,110.00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between">
-                        <button class="slider-arrow slider-image__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>
-                        <button class="slider-arrow slider-image__arrow-next "><i class="sw-icon-arrow" aria-hidden="true"></i></button>
+                </div>
+                <div class="basket__background">
+                    <form action="#" method="post" class="basket__form main-container">
+                        <table class="basket__table mx-auto" role="grid">
+                            <tbody>
+                                <tr class="basket__headings">
+                                    <th class="text-left" colspan="2">Item (2 items)</th>
+                                    <th class="text-center">Quantity</th>
+                                    <th class="text-center">Price</th>
+                                    <th class="text-center">Subtotal</th>
+                                    <th class="text-right">Remove</th>
+                                </tr>
+                            
+                                <tr class="basket__item" data-min-quantity="0" data-max-quantity="0">
+                                    <td class="basket__item-image">
+                                        <a href="#" class="image-container" data-fit="0">
+                                            <img  src="../assets/images/dad-set.png" alt="">
+                                        </a>
+                                    </td>
+                                    <td class="basket__item-info">
+                                        <h4 class="basket__item-title">
+                                            The letter J supply 'Something Wonderful'
+                                        </h4>
+                                        <div class="basket__item-options">
+                                            <div>
+                                                Size <strong>Small</strong>
+                                                Color <strong>Blue</strong>
+                                                <p class="extra-charge"><strong>Mobile charger £10.00</strong></p>
+
+                                            </div>
+                                        </div>
+                                        <a href="#" class="link-with-icon">
+                                            <i class="sw-icon-heart inline-block" aria-hidden="true"></i>
+                                            <span class="move-to-wishlist underline">move to wishlist</span>
+                                        </a>
+                                    </td>
+                                    <td class="basket__item-qty" data-label="Quantity">
+                                        <div class="quantity w-fit md:mx-auto">
+                                            <div class="number-toggle number-toggle_bordered flex">
+                                                <button class="number-toggle__down">
+                                                    <!-- Minus icon -->
+                                                    <i class="sw-icon-minus" aria-hidden="true"></i>
+                                                    <!-- Minus icon -->
+                                                </button>
+                                                <input type="text" name="quantity" value="99" class="quantity-input">
+                                                <button class="number-toggle__up">
+                                                    <!-- Plus icon -->
+                                                    <i class="sw-icon-plus" aria-hidden="true"></i>
+                                                    <!-- Plus icon -->
+                                                </button>
+                                            </div>
+                                            <button class="basket__update underline" type="submit">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="basket__item-price" data-label="Price">
+                                        <div class="price">£380.00</div>
+                                    </td>
+                                    <td class="basket__item-cost" data-label="Cost">
+                                        <div class="price">
+                                            £760.00
+                                        </div>
+                                    </td>
+                                    <td class="basket__item-remove">
+                                        <div class="remove">
+                                            <a class="remove-button underline" href="">remove</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="basket__item" data-min-quantity="0" data-max-quantity="0">
+                                    <td class="basket__item-image">
+                                        <a href="#" class="image-container" data-fit="0">
+                                            <img src="../assets/images/dad-set.png" alt="">
+                                        </a>
+                                    </td>
+                                    <td class="basket__item-info">
+                                        <h4 class="basket__item-title">
+                                            The letter J supply 'Something Wonderful'
+                                        </h4>
+                                        <div class="basket__item-options">
+                                            <div>
+                                                Size <strong>Small</strong>
+                                                Color <strong>Blue</strong>
+                                                <p class="extra-charge"><strong>Mobile charger £10.00</strong></p>
+
+                                            </div>
+                                        </div>
+                                        <a href="#" class="link-with-icon">
+                                            <i class="sw-icon-heart inline-block" aria-hidden="true"></i>
+                                            <span class="move-to-wishlist underline">move to wishlist</span>
+                                        </a>
+                                    </td>
+                                    <td class="basket__item-qty" data-label="Quantity">
+                                        <div class="quantity w-fit md:mx-auto">
+                                            <div class="number-toggle number-toggle_bordered flex">
+                                                <button class="number-toggle__down">
+                                                    <!-- Minus icon -->
+                                                    <i class="sw-icon-minus" aria-hidden="true"></i>
+                                                    <!-- Minus icon -->
+                                                </button>
+                                                <input type="text" name="quantity" value="99" class="quantity-input">
+                                                <button class="number-toggle__up">
+                                                    <!-- Plus icon -->
+                                                    <i class="sw-icon-plus" aria-hidden="true"></i>
+                                                    <!-- Plus icon -->
+                                                </button>
+                                            </div>
+                                            <button class="basket__update underline" type="submit">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="basket__item-price" data-label="Price">
+                                        <div class="price">£380.00</div>
+                                    </td>
+                                    <td class="basket__item-cost" data-label="Cost">
+                                        <div class="price">
+                                            £760.00
+                                        </div>
+                                    </td>
+                                    <td class="basket__item-remove">
+                                        <div class="remove">
+                                            <a class="remove-button underline" href="">remove</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                    
+
+                <div class="main-container">
+                    <div class="basket__bottom-container flex flex-col mx-auto lg:flex-row">
+                        <div class="lg:w-1/2 ">
+                            <form action="#" class="">
+                                <div class="promo-code-container flex">
+                                    <input type="text" placeholder="Enter your voucher/promotion code" class="promo-code w-full">
+                                    <button class="cart-button button uppercase float-right min-height-min align-middle">apply</button>
+                                </div>
+    
+                            </form>
+    
+                            <div class="rewards">
+                                <!-- Premium badge icon -->
+                                <i class="sw-icon-premium-badge inline-block" aria-hidden="true"></i>
+                                <!-- Premium badge icon -->
+                                <span>You have <span class="rewards-highlight font-bold">324 reward points</span> <a class="redeem-a-discount-link underline" href="#">Redeem for a discount.</a> </span>
+                            </div>
+                        </div>
+
+                        <div class="bakset__box-container lg:w-1/2">
+                            <div class="basket__box">
+                                <ul>
+                                    <li>
+                                        <span>Subtotal</span>
+                                        <span class="basket__sub-total float-right">£1160.00</span>
+                                    </li>
+                                    <li>
+                                        <span class="basket__dropdown-label">Delivery country</span>
+                                        <select class="basket__delivery-country" id="delivery-country" >
+                                            <option value="" disabled selected>Please select ...</option>
+                                            <option value="UK">UK</option>
+                                            <option value="USA">USA</option>
+                                            <option value="France">France</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="Kenya">Kenya</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <span>Delivery rate</span>
+                                        <select class="basket__delivery-rate" id="delivery-rate" >
+                                            <option value="" disabled selected>Please select ...</option>
+                                            <option value="first-class">First class - £4.75 </option>
+                                            <option value="second-class">Second class - £2.50 </option>
+                                            <option value="standard">Standard delivery - £1.50 </option>
+        
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <span class="basket__dropdown-label">Delivery</span>
+                                        <span class="basket__sub-total float-right">£1160.00</span>
+                                    </li>
+                                    <li>
+                                        <span>Discounts</span>
+                                        <span class="remove">
+                                            <a class="remove-button underline" href="">remove</a>
+                                        </span>
+                                        <span class="basket__sub-total float-right">£11.00</span>
+                                    </li>
+                                    <li>
+                                        <span>Total</span>
+                                        <span class="basket__sub-total float-right">£1160.00</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     
-                </div>
-            </section>
 
-            <section class="featured-products main-container section-block">
-                <div class="product-cards-grid grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-16 lg:grid-cols-4">
-                    <!-- Use of grid anticipates users not wanted to use text-snippet here
-                    {% if gts.text_home_featured_title or gts.text_home_featured_paragraph %}-->
-                    <div class="products-cards-grid__heading sm:col-span-2 md:col-span-1">
-                        <div class="product-cards-grid__heading-inner">
-                            <h3>Favourites</h3>
-                            <p class="product-cards-grid__heading-description">
-                                Our first collection ETT, the Swedish word for one, uses a Swiss two-handed movement and is designed to be a careful, understated hybrid of the past and present. 
-                                <br><br>
-                                These are the best of the bunch! 
-                            </p>
-                        </div>
-                    </div>
-                    <!-- {% endif %} -->
-                    <!--- {% include item.twig with items: 'featured-product' %}-->
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/green-balls.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</sp>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/jigsaw.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/dad-set.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="static-image section-block ">
-                <div class="grid grid-col-12">
-                    <div class="static-image__overlay col-span-12">
-                        <div class="static-image__shadow-box shadow-box">
-                            <div class="static-image__image">
-                                <div class="static-image__text-overlay main-container hidden md:block">
-                                    <div class="static-image__text-overlay-inner">
-                                        <h2 class="text-box-heading">This is an image</h2>
-                                        <p class="text-box-paragraph">We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
-                                        <div class="button-wrapper">
-                                            <a href=#>
-                                                <div class="static-image__button button">
-                                                    <span class="text-top">Shop Now</span>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <img src="../assets/images/slider-img.png"> -->
-                        </div>
-                        <div class="static-image__text-mobile main-container md:hidden">
-                            <div class="static-image__text-mobile-inner">
-                                <h2 class="text-box-heading">This is an image</h2>
-                                <p class="text-box-heading">We're striving towards a world where food slows us down. A world where we can enjoy all the rich and wonderful experiences that good food and drink has to offer us.</p>
-                                <div class="button-wrapper">
-                                    <div class="static-image__button button">
-                                        <a href=#>
-                                            <span class="text-top">Shop Now</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="image-with-text section-block">
-                <grid class="grid grid-col-12">
-                    <div class="image-with-text__wrapper">
-                        <div class="image-with-text__row flex flex-col md:flex-row">
-                            <div class="image-with-text__image shadow-box">
-                                <img src="../assets/images/image-with-text.png">
-                            </div>
-                            <div class="image-with-text__text main-container md:flex">
-                                <div class="image-with-text__text-inner md:self-center md:pt-0">
-                                    <h2 class="text-box-heading">Trends</h2>
-                                    <p class="text-box-paragraph">ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
-                                    <div class="button-wrapper">
-                                        <a href="#">
-                                            <div class="image-with-text__button button">
-                                                <span class="text-top">Shop Now</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </grid>
-            </section>
-
-            <section class="image-with-text-columns section-block">
-                <div class="grid lg:grid-cols-2 lg:gap-16">
-                    <div class="image-with-text-columns__item flex flex-col md:flex-row">
-                        <div class="image-with-text-columns__item-image shadow-box">
-                            <img src="../assets/images/text-column-img-1.png">
-                        </div>
-                        <div class="image-with-text-columns__item-text">
-                            <div class="image-with-text-columns__item-text-inner">
-                                <h3 class="text-box-heading">FAQ</h3>
-                                <p class="text-box-paragraph">ShopWired offers a 20% discount on all our package pricing if you pay for one year's subscription payments upfront. If you pay for two years then we offer a 30% discount. Larger discounts are available if you're happy to commit for longer than 2 years.</p>
-                                <a href="#" class="image-with-text-columns__read-more">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-with-text-columns__item flex flex-col md:flex-row">
-                        <div class="image-with-text-columns__item-image shadow-box">
-                            <img src="../assets/images/text-column-img-2.png">
-                        </div>
-                        <div class="image-with-text-columns__item-text">
-                            <div class="image-with-text-columns__item-text-inner">
-                                <h3 class="text-box-heading">Ethos</h3>
-                                <p class="text-box-paragraph">To us sustainability is a lifestyle and an ethos. We want to support independent businesses while introducing talented people to the UK. Of course we also want to do this in a responsible way by looking out for both the planet and the people who make our products.</p>
-                                <a href="#" class="image-with-text-columns__read-more">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="gallery section-block">
-                <div class="grid grid-cols-2 md:grid-cols-4">
-                    <div class="gallery__image">
-                        <img src="../assets/images/gallery-img-1.png">
-                    </div>
-                    <div class="gallery__image">
-                        <img src="../assets/images/gallery-img-2.png">
-                    </div>
-                    <div class="gallery__image">
-                        <img src="../assets/images/gallery-img-3.png">
-                    </div>
-                    <div class="gallery__image">
-                        <img src="../assets/images/gallery-img-4.png">
-                    </div>
-                </div>
-            </section>
-
-            <section class="blog section-block">
-                <h2 class="md:text-center mb-8">Updates and product releases</h2>
-                <div class="blog__wrapper slider-wrapper">
-                    <div class="blog__slider">
-                        <article class="blog__article">
-                            <div class="blog__article-image">
-                                <img src="../assets/images/drone.png">
-                            </div>
-                            <div class="blog__info text-center">
-                                <p class="blog__info-heading font-bold">This is another demonstration post</p>
-                                <p class="blog__info-date">2nd April 2020</p>
-                                <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
-                                <div class="button-wrapper mx-auto">
-                                    <a href="#">
-                                        <div class="button">
-                                            <span class="text-top">Read</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="blog__article">
-                            <div class="blog__article-image">
-                                <img src="../assets/images/drone.png">
-                            </div>
-                            <div class="blog__info text-center">
-                                <p class="blog__info-heading font-bold">This is another demonstration post</p>
-                                <p class="blog__info-date">2nd April 2020</p>
-                                <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
-                                <div class="button-wrapper mx-auto">
-                                    <a href="#">
-                                        <div class="button">
-                                            <span class="text-top">Read</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="blog__article">
-                            <div class="blog__article-image">
-                                <img src="../assets/images/drone.png">
-                            </div>
-                            <div class="blog__info text-center">
-                                <p class="blog__info-heading font-bold">This is another demonstration post</p>
-                                <p class="blog__info-date">2nd April 2020</p>
-                                <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
-                                <div class="button-wrapper mx-auto">
-                                    <a href="#">
-                                        <div class="button">
-                                            <span class="text-top">Read</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="blog__article">
-                            <div class="blog__article-image">
-                                <img src="../assets/images/drone.png">
-                            </div>
-                            <div class="blog__info text-center">
-                                <p class="blog__info-heading font-bold">This is another demonstration post</p>
-                                <p class="blog__info-date">2nd April 2020</p>
-                                <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
-                                <div class="button-wrapper mx-auto">
-                                    <a href="#">
-                                        <div class="button">
-                                            <span class="text-top">Read</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="blog__article">
-                            <div class="blog__article-image">
-                                <img src="../assets/images/drone.png">
-                            </div>
-                            <div class="blog__info text-center">
-                                <p class="blog__info-heading font-bold">This is another demonstration post</p>
-                                <p class="blog__info-date">2nd April 2020</p>
-                                <p class="blog__info-preview">This is a sample blog post to demonstrate the blogging</p>
-                                <div class="button-wrapper mx-auto">
-                                    <a href="#">
-                                        <div class="button">
-                                            <span class="text-top">Read</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                    </div>
+                    
+                    
                 </div>
                 
             </section>
 
-            <section class="testimonial section-block">
-                <h3 class="testimonial__title uppercase md:text-center text-box-heading">What our customers say</h3>
-                <div class="testimonial__wrapper slider-wrapper">
-                    <div class="testimonial__slider">
-                        <article class="testimonial__item">
-                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                        </article>
-                        <article class="testimonial__item">
-                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                        </article>
-                        <article class="testimonial__item">
-                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                        </article>
-                        <article class="testimonial__item">
-                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                        </article>
-                        <article class="testimonial__item">
-                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                        </article>
-                        <article class="testimonial__item">
-                            <p class="testimonial__item-quote">“Love it and my wee one is starting to explore it too (it was her 1st birthday present). It won’t be long until I can’t play on it as she’ll be using it all the time!”</p>
-                            <p class="testimonial__item-author uppercase font-bold">- Calvin Reeves</p>
-                        </article>
-                    </div>
-                    <div class="testimonial__nav flex justify-between"></div>
-
-                </div>
-                
-            </section>
-
-            <section class="video section-block">
-                <div class="video__thumbnail">
-                    <div class="video__thumbnail-overlay">
-                        <div class="video__icon text-center">
-                            <!-- video-camera icon -->
-                            <i class="sw-icon-film" aria-hidden="true"></i>
-                            <!-- video-camera icon -->
-                            <p class="uppercase font-bold text-center">Play video</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="newsletter section-block">
-                <div class="newsletter__inner mx-auto">
-                    <h2 class="text-center">Stay in the know!</h2>
-                    <form action="#" class="newsletter__form-wrapper">
-                        <div class="newsletter__form flex">
-                            <!-- Envelope icon -->
-                            <i class="sw-icon-email inline-block" aria-hidden="true"></i>
-                            <!-- Envelope icon -->
-                            <input type="email" class="newsletter__form-email" placeholder="Enter your email address">
-                            <input class="ml-auto" type="submit" value=""><button class="sw-icon-arrow"></button></input>
-                        </div>
-                    </form>
-                    <p class="text-center">We'll use your email to be in touch with you regarding product updates, exclusive offers and other relevant marketing</p>
-                </div>
-
-            </section>
         </main>
 
         <footer>
@@ -820,9 +672,7 @@
                 </ul>
             </div>
         </footer>
-        
         <div class="off-canvas-overlay invisible opacity-0"></div>
-
     </div>
 
     <script>
@@ -841,81 +691,5 @@
             $( ".content").toggleClass( "push-content-right" )
             $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
         });
-
-
-        $(".blog__slider").slick({
-            arrows: false,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            swipeToSlide: true, //important variable
-            responsive: [
-                {
-                breakpoint: 1281,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: false
-                }
-                },
-                {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: false
-
-                }
-                },
-                {
-                breakpoint: 641,
-                settings: {
-                    slidesToShow: 1.25,
-                    slidesToScroll: 1.25,
-                    infinite: false
-
-                }
-                }
-            ]
-        });
-        $(".testimonial__slider").slick({
-            prevArrow: '<button class="slider-arrow testimonial__arrow-prev"><i class="sw-icon-arrow1" aria-hidden="true"></i></button>',
-            nextArrow: '<button class="slider-arrow testimonial__arrow-next"><i class="sw-icon-arrow" aria-hidden="true"></i></button>',
-            infinite: true,
-            dots: true,
-            arrows: true,
-            // speed: 300,
-            appendDots: '.testimonial__nav',
-            appendArrows: '.testimonial__nav',
-            slidesToShow: 2,
-            slidesToScroll: 0.5,
-            swipeToSlide: true,
-            responsive: [
-                {
-                breakpoint: 1281,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 0.5,
-                }
-                },
-                {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-
-                }
-                },
-                {
-                breakpoint: 641,
-                settings: {
-                    slidesToShow: 1.25,
-                    slidesToScroll: 1,
-                }
-                }
-            ]
-        });
     </script>
 </body>
-</html>
