@@ -1361,6 +1361,26 @@ $page_margins: (
     overflow-x: hidden;
   }
 }
+[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], select, textarea {
+    border: 1px solid #eee;
+    border-radius: 0;
+    box-shadow: none!important;
+    font-family: sofia-pro,sans-serif;
+    font-size: .873rem;
+    height: 3.2rem;
+    padding: .7rem 1rem;
+}
+[type=color]:focus, [type=date]:focus, [type=datetime-local]:focus, [type=datetime]:focus, [type=email]:focus, [type=month]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=time]:focus, [type=url]:focus, [type=week]:focus, textarea:focus {
+    background-color: #fefefe;
+    border: 1px solid #8a8a8a;
+    -webkit-box-shadow: 0 0 5px #cacaca;
+    box-shadow: 0 0 5px #cacaca;
+    outline: none;
+    -webkit-transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+    transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+    transition: box-shadow .5s,border-color .25s ease-in-out;
+    transition: box-shadow .5s,border-color .25s ease-in-out,-webkit-box-shadow .5s;
+}
 // headings
 
 h1 {
@@ -2700,6 +2720,10 @@ footer {
     min-height: 40px;
     background-color: $white;
     text-align: center;
+
+    border: none; //reverting styling from type["text"]
+    height: auto;
+    padding: 0;
   }
   i{
     display: inline-block;
@@ -2969,6 +2993,55 @@ footer {
   button {
     margin-left: 1rem;
   }
+}
+// ======================== contact page ====================== //
+.contact-info {
+  margin: 2.5rem 0 3rem;
+
+  &__heading {
+    margin-bottom: 3.5rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+}
+.contact-form{
+  background-color: $color_global_content_background;
+  padding: 2rem;
+
+  &__container{
+    max-width: 1536px;
+  }
+
+  &__heading {
+    @screen md {
+      padding-top: 2rem;
+      padding-right: 5rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  &__message {
+    margin-bottom: 1rem;
+  }
+
+  input {
+    margin-bottom: 1rem;
+  }
+  textarea{
+    height: auto;
+    min-height: 150px;
+    resize: none;
+  }
+  input, textarea{
+    width: 100%;
+  }
+
+}
+.field-label {
+  margin-bottom: .5rem;
 }
 
 

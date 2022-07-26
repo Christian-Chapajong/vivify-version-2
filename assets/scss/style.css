@@ -634,6 +634,14 @@ html, body {
   order: 3;
 }
 
+.col-span-1{
+  grid-column: span 1 / span 1;
+}
+
+.col-span-2{
+  grid-column: span 2 / span 2;
+}
+
 .col-span-8{
   grid-column: span 8 / span 8;
 }
@@ -1984,6 +1992,24 @@ video {
   content: "\eab9";
 }
 
+[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], select, textarea {
+  border: 1px solid #eee;
+  border-radius: 0;
+  box-shadow: none !important;
+  font-family: sofia-pro, sans-serif;
+  font-size: 0.873rem;
+  height: 3.2rem;
+  padding: 0.7rem 1rem;
+}
+
+[type=color]:focus, [type=date]:focus, [type=datetime-local]:focus, [type=datetime]:focus, [type=email]:focus, [type=month]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=time]:focus, [type=url]:focus, [type=week]:focus, textarea:focus {
+  background-color: #fefefe;
+  border: 1px solid #8a8a8a;
+  box-shadow: 0 0 5px #cacaca;
+  outline: none;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: bold;
@@ -3330,6 +3356,9 @@ footer .footer__payment-list li img {
   min-height: 40px;
   background-color: #fff;
   text-align: center;
+  border: none;
+  height: auto;
+  padding: 0;
 }
 
 .number-toggle i {
@@ -3629,6 +3658,60 @@ footer .footer__payment-list li img {
   margin-left: 1rem;
 }
 
+.contact-info {
+  margin: 2.5rem 0 3rem;
+}
+
+.contact-info__heading {
+  margin-bottom: 3.5rem;
+}
+
+.contact-info p {
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+.contact-form__container {
+  max-width: 1536px;
+}
+
+@media (min-width: 768px) {
+  .contact-form__heading {
+    padding-top: 2rem;
+    padding-right: 5rem;
+  }
+}
+
+.contact-form__heading h2 {
+  font-size: 2rem;
+}
+
+.contact-form__message {
+  margin-bottom: 1rem;
+}
+
+.contact-form input {
+  margin-bottom: 1rem;
+}
+
+.contact-form textarea {
+  height: auto;
+  min-height: 150px;
+  resize: none;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+}
+
+.field-label {
+  margin-bottom: 0.5rem;
+}
+
 @media (min-width: 640px) {
   .sm\:col-span-2 {
     grid-column: span 2/span 2;
@@ -3796,6 +3879,10 @@ footer .footer__payment-list li img {
 
   .sm\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:gap-10{
+    gap: 2.5rem;
   }
 
   .sm\:gap-4{
