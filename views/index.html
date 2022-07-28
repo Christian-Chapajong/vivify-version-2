@@ -136,7 +136,7 @@
                         <!-- {# logo container #} -->
                         <!-- {{ block('header_logo') }} 
                         Taken from header.twig: -->
-                        <a href="/" class="header__logo">
+                        <a href="/views/index.html" class="header__logo">
                             <img src="" alt="" class="header__logo-image">
                             <span class="header__logo-text font-sans">
                                 Vivify
@@ -204,7 +204,7 @@
                             >
                                 <!-- {# Render home link #} -->
                                 <li class="main-nav-home-link">
-                                    <a href="/"{% if global.current_path == '/' %} class="active"{% endif %}>
+                                    <a href="/views/index.html"{% if global.current_path == '/' %} class="active"{% endif %}>
                                         Home
                                     </a>
                                 </li>
@@ -308,41 +308,72 @@
 
         <main>
             <section class="slider-image main-container section-block flex flex-row md:flex-col">
-                <div class="slider-image__wrapper">
-                    <!-- {% for category in featured_categories %} -->
-                    <div class="slider-image__featured-box grid md:grid-cols-12">
-                        <div class="col-span-8">
-                            <div class="slider-image__shadow-box shadow-box">
-                                <a href="#">
-                                    <img src="../assets/images/featured-category-img.png">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-span-4 self-center">
-                            <div class="slider-image__heading">
-                                <h1>
-                                    <a href="#">Toys & Games</a>
-                                </h1>
-                                <div class="hidden lg:block">
-                                    <p>
-                                        Every ingredient that Herbivore includes in their products is there for a specific, therapeutic reason. They do not use fillers of any kind, meaning that almost eve;ry ingredient in their products is an “active” ingredient.
-                                    </p>
+                <div class="slider-wrapper">
+                    <div class="slider-image__slider">
+                        <!-- {% for category in featured_categories %} -->
+                        <div class="slider-image__featured-box grid md:grid-cols-12">
+                            <div class="col-span-8">
+                                <div class="slider-image__shadow-box shadow-box">
+                                    <a href="#">
+                                        <img src="../assets/images/featured-category-img.png">
+                                    </a>
                                 </div>
                             </div>
-                            <div class="button-wrapper">
-                                <a href=#>
-                                    <div class="slider-image__button button">
-                                        <span class="text-top">Browse</span>
+                            <div class="col-span-4 self-center">
+                                <div class="slider-image__heading">
+                                    <h1>
+                                        <a href="#">Toys & Games</a>
+                                    </h1>
+                                    <div class="hidden lg:block">
+                                        <p>
+                                            Every ingredient that Herbivore includes in their products is there for a specific, therapeutic reason. They do not use fillers of any kind, meaning that almost eve;ry ingredient in their products is an “active” ingredient.
+                                        </p>
                                     </div>
-                                </a>
+                                </div>
+                                <div class="button-wrapper">
+                                    <a href=#>
+                                        <div class="slider-image__button button">
+                                            <span class="text-top">Browse</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-image__slider">
+                            <!-- {% for category in featured_categories %} -->
+                            <div class="slider-image__featured-box grid md:grid-cols-12">
+                                <div class="col-span-8">
+                                    <div class="slider-image__shadow-box shadow-box">
+                                        <a href="#">
+                                            <img src="../assets/images/living-room.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-span-4 self-center">
+                                    <div class="slider-image__heading">
+                                        <h1>
+                                            <a href="#">Toys & Games</a>
+                                        </h1>
+                                        <div class="hidden lg:block">
+                                            <p>
+                                                Every ingredient that Herbivore includes in their products is there for a specific, therapeutic reason. They do not use fillers of any kind, meaning that almost eve;ry ingredient in their products is an “active” ingredient.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <a href=#>
+                                            <div class="slider-image__button button">
+                                                <span class="text-top">Browse</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex justify-between">
-                        <button class="slider-arrow slider-image__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>
-                        <button class="slider-arrow slider-image__arrow-next "><i class="sw-icon-arrow" aria-hidden="true"></i></button>
+                    <div class="slider-image__nav flex justify-between">
+                        <!-- slider arrows are appended here through Slick.js-->
                     </div>
-                    
                 </div>
             </section>
 
@@ -683,7 +714,7 @@
                     </h4>
                     <ul>
                         <li>
-                            <a href="#" class="footer__menu-link">Home</a>
+                            <a href="/views/index.html" class="footer__menu-link">Home</a>
                         </li>
                         <li>
                             <a href="#" class="footer__menu-link">About Us</a>
@@ -692,7 +723,7 @@
                             <a href="#" class="footer__menu-link">FAQs</a>
                         </li>
                         <li>
-                            <a href="#" class="footer__menu-link">Contact Us</a>
+                            <a href="/views/contact-us.html" class="footer__menu-link">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -842,6 +873,16 @@
             $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
         });
 
+        $(".slider-image__slider").slick({
+            arrows: true,
+            prevArrow: '<button class="slider-arrow slider-image__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>',
+            nextArrow: '<button class="slider-arrow slider-image__arrow-next"><i class="sw-icon-arrow " aria-hidden="true"></i></button>',
+            appendArrows: '.slider-image__nav',
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            swipeToSlide: true,
+        });
 
         $(".blog__slider").slick({
             arrows: false,
@@ -880,14 +921,13 @@
             ]
         });
         $(".testimonial__slider").slick({
+            arrows: true,
             prevArrow: '<button class="slider-arrow testimonial__arrow-prev"><i class="sw-icon-arrow1" aria-hidden="true"></i></button>',
             nextArrow: '<button class="slider-arrow testimonial__arrow-next"><i class="sw-icon-arrow" aria-hidden="true"></i></button>',
-            infinite: true,
-            dots: true,
-            arrows: true,
-            // speed: 300,
-            appendDots: '.testimonial__nav',
             appendArrows: '.testimonial__nav',
+            dots: true,
+            appendDots: '.testimonial__nav',
+            infinite: true,
             slidesToShow: 2,
             slidesToScroll: 0.5,
             swipeToSlide: true,

@@ -1361,7 +1361,7 @@ $page_margins: (
     overflow-x: hidden;
   }
 }
-[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], select, textarea {
+[type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], select, textarea {
     border: 1px solid #eee;
     border-radius: 0;
     box-shadow: none!important;
@@ -1370,7 +1370,7 @@ $page_margins: (
     height: 3.2rem;
     padding: .7rem 1rem;
 }
-[type=color]:focus, [type=date]:focus, [type=datetime-local]:focus, [type=datetime]:focus, [type=email]:focus, [type=month]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=time]:focus, [type=url]:focus, [type=week]:focus, textarea:focus {
+[type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=url]:focus, select:focus, textarea:focus {
     background-color: #fefefe;
     border: 1px solid #8a8a8a;
     -webkit-box-shadow: 0 0 5px #cacaca;
@@ -2046,6 +2046,14 @@ body {
       margin-left: 40px;
     }
   }
+
+  .slick-list {
+    margin: 0 -2rem;
+  }
+
+  .slick-slide{
+    padding: 0 2rem;
+  }
 }
 
 // Featured Products
@@ -2208,7 +2216,6 @@ body {
 .slick-track {
   display: flex;
   justify-content: center;
-  /* transform: translate3d(0, 0, 0); */
 }
 .blog {
   @include rem(padding, 0 15px);
@@ -2542,19 +2549,35 @@ footer {
   .slick-dots {
     padding: 0 2.5rem;
   }
-  .slick-dots li button {
-    border-radius: 50%;
-    background-color: $color_slider_dots;
-    color: transparent;
-    height: 12px;
-    width: 12px;
-    padding: 0;
+  .slick-dots li {
+    button {
+      border-radius: 50%;
+      background-color: $color_slider_dots;
+      color: transparent;
+      height: 12px;
+      width: 12px;
+      padding: 0;
+    }
+
+    &.slick-active button {
+      background-color: $color_global_yellow_accent;
+
+    }
+
+  }
+
+  .slick-vertical {
+    .slick-track {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  &__image {
+    height: 100%;
+    position: relative;
   }
   &__image-wrapper {
     position: relative;
-  }
-  li.slick-active button {
-    background-color: $color_global_yellow_accent;
   }
   &__price {
     font-size: 1.3rem;
@@ -2700,10 +2723,16 @@ footer {
   &__slider-arrow {
     font-size: 2rem;
     @include vertical-align(absolute, false);
+    z-index: 100;
 
     &_right {
       right: 0;
     }
+
+    @screen lg {
+      display: none !important; //override slick.js styling
+    }
+
   }
 }
 .wishlist-button {
@@ -2989,6 +3018,8 @@ footer {
 
   .promo-code{
     background-color: $color_global_content_background;
+    height: auto;
+    border: none;
   }
   button {
     margin-left: 1rem;

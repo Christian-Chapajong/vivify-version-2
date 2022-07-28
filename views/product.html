@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../assets/scss/style.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Slick.js -->
+    <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 </head>
 <body>
     <div class="off-canvas push-menu-left" aria-hidden="true">
@@ -124,7 +126,7 @@
                         <!-- {# logo container #} -->
                         <!-- {{ block('header_logo') }} 
                         Taken from header.twig: -->
-                        <a href="/" class="header__logo">
+                        <a href="/views/index.html" class="header__logo">
                             <img src="" alt="" class="header__logo-image">
                             <span class="header__logo-text font-sans">
                                 Vivify
@@ -192,7 +194,7 @@
                             >
                                 <!-- {# Render home link #} -->
                                 <li class="main-nav-home-link">
-                                    <a href="/"{% if global.current_path == '/' %} class="active"{% endif %}>
+                                    <a href="/views/index.html"{% if global.current_path == '/' %} class="active"{% endif %}>
                                         Home
                                     </a>
                                 </li>
@@ -296,39 +298,37 @@
         <main>
             <div class="main-container section-block">
                 <div class="product grid grid-cols-1 lg:gap-x-16 lg:grid-cols-9">
-                    <section class="product__image h-max col-span-5">
+                    <section class="product__image-container h-max col-span-5">
                         <div class="product__image-inner flex">
                             <ul class="slick-dots hidden lg:block lg:self-center" role="tablist">
-                                <li aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation20" id="slick-slide20">
-                                    <button type="button" data-role="none" role="button" tabindex="0">1</button>
-                                </li>
-                                <li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation21" id="slick-slide21">
-                                    <button type="button" data-role="none" role="button" tabindex="0">2</button>
-                                </li>
-                                <li class="slick-active" aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation21" id="slick-slide21">
-                                    <button type="button" data-role="none" role="button" tabindex="0">3</button>
-                                </li>
-                                <li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation21" id="slick-slide21">
-                                    <button type="button" data-role="none" role="button" tabindex="0">4</button>
-                                </li>
-                                <li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation21" id="slick-slide21">
-                                    <button type="button" data-role="none" role="button" tabindex="0">5</button>
-                                </li>
+                                <!-- Dots are appened here through Slick.js-->
                             </ul>
                             
-                            <div class="product__image-wrapper">
-                                <button class="zoom-in">
-                                    <!-- zoom in icon -->
-                                    <i class="sw-icon-plus-zoom" aria-hidden="true"></i>
-                                    <!-- zoom in icon -->
-                                </button>
-                                <button class="product__slider-arrow product__slider-arrow_left lg:hidden">
-                                    <i class="sw-icon-left-chevron"></i>
-                                </button>
-                                <button class="product__slider-arrow product__slider-arrow_right lg:hidden">
-                                    <i class="sw-icon-right-chevron"></i>
-                                </button>
-                                <img src="../assets/images/product-img.png">
+                            <div class="product__image-wrapper slider-wrapper">
+                                <div class="product__slider">
+                                    <div class="product__image">
+                                        <button class="zoom-in">
+                                            <!-- zoom in icon -->
+                                            <i class="sw-icon-plus-zoom" aria-hidden="true"></i>
+                                        </button>
+                                        <img src="../assets/images/product-img.png">
+                                    </div>
+                                    <div class="product__image">
+                                        <button class="zoom-in">
+                                            <!-- zoom in icon -->
+                                            <i class="sw-icon-plus-zoom" aria-hidden="true"></i>
+                                        </button>
+
+                                        <img src="../assets/images/dad-set-2.jpg">
+                                    </div>
+                                    <div class="product__image">
+                                        <button class="zoom-in">
+                                            <!-- zoom in icon -->
+                                            <i class="sw-icon-plus-zoom" aria-hidden="true"></i>
+                                        </button>
+                                        <img src="../assets/images/dad-set-3.jpg">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="play-video text-right">
@@ -383,12 +383,12 @@
                             </div>
                             <div class="product-form__field">
                                 <p class="product-form__field-name">Mobile phone charger</p>
-                                <input class="checkbox-round" id="mobile-phone-charger"type="checkbox" name="" value="">
+                                <input class="checkbox-round" id="mobile-phone-charger" type="checkbox" name="" value="">
                                 <label for="mobile-phone-charger">Yes (£10.00)</label>
                             </div>
                             <div class="product-form__field">
                                 <p class="product-form__field-name">Customisation field label</p>
-                                <input class="customisation-field-input w-full"></inp>
+                                <input type="text" class="customisation-field-input w-full"></inp>
                             </div>
                             <div class="product-form__field">
                                 <p class="product-form__field-name">QTY (Minimum order quantity 6. Maximum order quantity 12)</p>
@@ -539,7 +539,7 @@
                     </h4>
                     <ul>
                         <li>
-                            <a href="#" class="footer__menu-link">Home</a>
+                            <a href="/views/index.html" class="footer__menu-link">Home</a>
                         </li>
                         <li>
                             <a href="#" class="footer__menu-link">About Us</a>
@@ -548,7 +548,7 @@
                             <a href="#" class="footer__menu-link">FAQs</a>
                         </li>
                         <li>
-                            <a href="#" class="footer__menu-link">Contact Us</a>
+                            <a href="/views/contact-us.html" class="footer__menu-link">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -693,6 +693,33 @@
             $( ".content").toggleClass( "push-content-right" )
             $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
         });
+
+        $(".product__slider").slick ({
+            dots: true,
+            appendDots: '.slick-dots',
+            arrows: true,                   
+            prevArrow: '<button class="product__slider-arrow product__slider-arrow_left"><i class="sw-icon-left-chevron"></i></button>',
+            nextArrow: '<button class="product__slider-arrow product__slider-arrow_right"><i class="sw-icon-right-chevron"></i></button>',
+            appendArrows: '.product__image-wrapper',
+            vertical: true,
+            verticalSwiping: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            lazyLoad: 'ondemand',
+            initialSlide: 1,
+
+            responsive: [
+                {
+                breakpoint: 1025,
+                settings: {
+                    vertical: false,
+                    verticalSwiping: false,
+                }
+                }
+            ]
+        });
+
     </script>
 </body>
 </html>

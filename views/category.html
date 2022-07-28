@@ -136,7 +136,7 @@
                         <!-- {# logo container #} -->
                         <!-- {{ block('header_logo') }} 
                         Taken from header.twig: -->
-                        <a href="/" class="header__logo">
+                        <a href="/views/index.html" class="header__logo">
                             <img src="" alt="" class="header__logo-image">
                             <span class="header__logo-text font-sans">
                                 Vivify
@@ -204,7 +204,7 @@
                             >
                                 <!-- {# Render home link #} -->
                                 <li class="main-nav-home-link">
-                                    <a href="/"{% if global.current_path == '/' %} class="active"{% endif %}>
+                                    <a href="/views/index.html"{% if global.current_path == '/' %} class="active"{% endif %}>
                                         Home
                                     </a>
                                 </li>
@@ -418,7 +418,7 @@
                     </h4>
                     <ul>
                         <li>
-                            <a href="#" class="footer__menu-link">Home</a>
+                            <a href="/views/index.html" class="footer__menu-link">Home</a>
                         </li>
                         <li>
                             <a href="#" class="footer__menu-link">About Us</a>
@@ -427,7 +427,7 @@
                             <a href="#" class="footer__menu-link">FAQs</a>
                         </li>
                         <li>
-                            <a href="#" class="footer__menu-link">Contact Us</a>
+                            <a href="/views/contact-us.html" class="footer__menu-link">Contact Us</a>
                         </li>
                     </ul>
                 </div>
