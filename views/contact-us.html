@@ -29,7 +29,7 @@
                 <a href="/faqs">FAQs</a>
             </li>
             <li class="off-canvas__sub-list">
-                <a href="/contact-us">Contact Us</a>
+                <a href="/views/contact-us.html">Contact Us</a>
             </li>
             <li class="off-canvas__sub-list">
                 <a href="/terms-conditions">Terms</a>
@@ -44,6 +44,36 @@
                 <a href="/privacy-policy">Privacy</a>
             </li>
         </ul>
+    </div>
+    <div class="off-canvas off-canvas_basket push-basket-right" aria-hidden="true">
+        <div class="off-canvas__basket-heading">
+            <button id="off-canvas__basket-close" class="button-close" data-close="" type="button">
+                <span>Close</span>
+            </button>
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="summary">
+            <span class="off-canvas-basket__total-label uppercase">Subtotal</span>
+            <span class="off-canvas-basket__total-value float-right">
+                £0.00
+            </span>
+            <p class="subheader">Delivery costs and discount codes are added at checkout</p>
+
+            <div class="buttons grid grid-cols-1 lg:grid-cols-12 lg:gap-4 ">
+                <div class="lg:col-span-7 lg:order-last">
+                    <a href="/checkout/basket" class="button button_large uppercase proceed">
+                        PROCEED TO SECURE CHECKOUT
+                    </a>
+                </div>
+                <div class="lg:col-span-5">
+                    <a href="/checkout/basket" class="button button_large secondary">
+                        Continue shopping
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="content">
         <!-- {% block content %} -->
@@ -304,60 +334,84 @@
                 </nav>
             </div>
             <!-- {{ block('header_search') }} -->
+            <div class="header__search hidden" id="header__search" data-toggler=".hide" aria-expanded="false">
+                <div class="grid md:grid-cols-12 main-container">
+                    <div class="md:col-span-7">
+                        <form class="header__search-container" action="/search/products" method="get">
+                            <div class="header__search-inner inline-block">
+                                <div class="input-group relative flex place-content-between items-center mod-custom mod-search no-margin">
+                                    <span class="input-group-label">
+                                        <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
+                                    </span>
+                                    <input type="search" name="keywords" placeholder="Search by product name, code or category" class="header-search-input input-group-field">
+                                    <div class="input-group-button">
+                                        <button type="submit" class="button">Go</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="header__search-close button-close hidden lg:inline-block" data-toggle="header-search" aria-controls="header-search">
+                                <span>Close</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </header>
         <!-- {% endblock %}-->
 
         <main>
-            <section class="contact-info">
-                <div class="contact-info__inner mx-auto text-center">
-                    <h1 class="contact-info__heading font-normal">Contact Us</h1> 
-                    <p class="contact-info__address uppercase ">
-                        43 Coronet Street
-                        <br>
-                        London
-                        <br>
-                        N1 6HD
-                    </p>
-                    <p class="contact-info__telephone uppercase">
-                        TEL: 0121 243 8176
-                    </p>
-                    <p class="contact-info__email">
-                        <span class="uppercase">Email:</span> info@notanotherbill.com 
-                    </p>
-                </div>
-            </section>
-            <section class="contact-form">
-                <div class="contact-form__container mx-auto">
-                    <div class="contact-form__inner main-container grid grid-cols-1 md:grid-cols-3">
-                        <div class="contact-form__heading col-span-1">
-                            <h2>Contact Form</h2>
-                            <p class="contact-form__message">Complete the form and a member of our team will contact you within 24-48 hours.</p>
-                        </div>
-                        <div class="contact-form__form col-span-2">
-                            <form action="/contact-us" method="post">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-10">
+            <div id="main-content">
+                <section class="contact-info">
+                    <div class="contact-info__inner mx-auto text-center">
+                        <h1 class="contact-info__heading font-normal">Contact Us</h1> 
+                        <p class="contact-info__address uppercase ">
+                            43 Coronet Street
+                            <br>
+                            London
+                            <br>
+                            N1 6HD
+                        </p>
+                        <p class="contact-info__telephone uppercase">
+                            TEL: 0121 243 8176
+                        </p>
+                        <p class="contact-info__email">
+                            <span class="uppercase">Email:</span> info@notanotherbill.com 
+                        </p>
+                    </div>
+                </section>
+                <section class="contact-form">
+                    <div class="contact-form__container mx-auto">
+                        <div class="contact-form__inner main-container grid grid-cols-1 md:grid-cols-3">
+                            <div class="contact-form__heading col-span-1">
+                                <h2>Contact Form</h2>
+                                <p class="contact-form__message">Complete the form and a member of our team will contact you within 24-48 hours.</p>
+                            </div>
+                            <div class="contact-form__form col-span-2">
+                                <form action="/contact-us" method="post">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-10">
+                                        <label>
+                                            <p class="field-label">Your name</p>
+                                            <input type="text" name="name" aria-required="true">
+                                        </label>
+                                        <label>
+                                            <p class="field-label">Your telephone number</p>
+                                            <input  type="text" name="phone" aria-required="true">
+                                        </label>
+                                    </div>
                                     <label>
-                                        <p class="field-label">Your name</p>
-                                        <input type="text" name="name" aria-required="true">
+                                        <p class="field-label">Your email address</p>
+                                        <input type="text" name="email" aria-required="true">
                                     </label>
                                     <label>
-                                        <p class="field-label">Your telephone number</p>
-                                        <input  type="text" name="phone" aria-required="true">
+                                        <p class="field-label">Your enquiry</p>
+                                        <textarea cols="30" rows="3" name="message" aria-required="true"></textarea>
                                     </label>
-                                </div>
-                                <label>
-                                    <p class="field-label">Your email address</p>
-                                    <input type="text" name="email" aria-required="true">
-                                </label>
-                                <label>
-                                    <p class="field-label">Your enquiry</p>
-                                    <textarea cols="30" rows="3" name="message" aria-required="true"></textarea>
-                                </label>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
 
         <footer>
@@ -508,5 +562,43 @@
         <div class="off-canvas-overlay invisible opacity-0"></div>
     </div>
 
+    <script>
+                // Off canvas menu
+                $( ".header__menu-toggle").click(function() {
+            $( ".off-canvas" ).toggleClass("push-menu-left")
+            $( ".content").toggleClass( "push-content-right" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#offCanvasCloseButton" ).click(function() {
+            $( ".off-canvas" ).toggleClass("push-menu-left")
+            $( ".content").toggleClass( "push-content-right" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+        // Off canvas basket
+        $( ".header__basket").click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#off-canvas__basket-close" ).click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+        // Search
+        $( ".header__search-toggle ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
+
+        $( ".header__search-close ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
+    </script>
 
 </body>

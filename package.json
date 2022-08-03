@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "tailwind.config.js",
-  "dependencies": {},
+  "dependencies": {
+    "lightzoom": "^1.0.0"
+  },
   "devDependencies": {
     "prettier": "^2.7.1",
     "prettier-plugin-tailwind": "^2.2.12",
