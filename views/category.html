@@ -13,7 +13,7 @@
     <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 </head>
 <body>
-    <div class="off-canvas push-menu-left" aria-hidden="true">
+    <div class="off-canvas off-canvas_menu push-menu-left" aria-hidden="true">
         <a class="button-close float-right" id="offCanvasCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
             <span>close</span>
         </a>
@@ -28,7 +28,7 @@
                 <a href="/faqs">FAQs</a>
             </li>
             <li class="off-canvas__sub-list">
-                <a href="/contact-us">Contact Us</a>
+                <a href="/views/contact-us.html">Contact Us</a>
             </li>
             <li class="off-canvas__sub-list">
                 <a href="/terms-conditions">Terms</a>
@@ -44,6 +44,213 @@
             </li>
         </ul>
     </div>
+    <div class="off-canvas off-canvas_basket push-basket-right" aria-hidden="true">
+        <div class="off-canvas__basket-heading">
+            <button id="off-canvas__basket-close" class="button-close" data-close="" type="button">
+                <span>Close</span>
+            </button>
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="summary">
+            <span class="off-canvas-basket__total-label uppercase">Subtotal</span>
+            <span class="off-canvas-basket__total-value float-right">
+                £0.00
+            </span>
+            <p class="subheader">Delivery costs and discount codes are added at checkout</p>
+
+            <div class="buttons grid grid-cols-1 lg:grid-cols-12 lg:gap-4 ">
+                <div class="lg:col-span-7 lg:order-last">
+                    <a href="/checkout/basket" class="button button_large uppercase proceed">
+                        PROCEED TO SECURE CHECKOUT
+                    </a>
+                </div>
+                <div class="lg:col-span-5">
+                    <a href="/checkout/basket" class="button button_large secondary">
+                        Continue shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="off-canvas off-canvas_currency push-menu-left" aria-hidden="true">
+        <a class="button-close float-right" id="currencyCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
+            <span>close</span>
+        </a>
+        <div class="currency__header">
+            <h3 class="currency__heading">
+                <span>Currency selection</span>
+            </h3>
+            <p class="text-sm">
+                Prices are currently displayed in GBP (United Kingdom)
+                Select a new currency and country below
+            </p>
+        </div>
+
+        <ul class="currency-dropdown-list no-bullet text-left">
+            <li class="active"><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=222"><span
+                        class="currency-flag"><span class="flag gb" aria-hidden="true"></span></span><span
+                        class="currency-region">United Kingdom</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=6&amp;currency_country_id=223"><span
+                        class="currency-flag"><span class="flag us" aria-hidden="true"></span></span><span
+                        class="currency-region">United States</span><span class="currency-symbol">USD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=13"><span
+                        class="currency-flag"><span class="flag au" aria-hidden="true"></span></span><span
+                        class="currency-region">Australia</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=73"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">France</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=81"><span
+                        class="currency-flag"><span class="flag de" aria-hidden="true"></span></span><span
+                        class="currency-region">Germany</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=105"><span
+                        class="currency-flag"><span class="flag it" aria-hidden="true"></span></span><span
+                        class="currency-region">Italy</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=195"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Spain</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=5"><span
+                        class="currency-flag"><span class="flag ad" aria-hidden="true"></span></span><span
+                        class="currency-region">Andorra</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=14"><span
+                        class="currency-flag"><span class="flag at" aria-hidden="true"></span></span><span
+                        class="currency-region">Austria</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=260"><span
+                        class="currency-flag"><span class="flag pt" aria-hidden="true"></span></span><span
+                        class="currency-region">Azores</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=21"><span
+                        class="currency-flag"><span class="flag be" aria-hidden="true"></span></span><span
+                        class="currency-region">Belgium</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=31"><span
+                        class="currency-flag"><span class="flag gb" aria-hidden="true"></span></span><span
+                        class="currency-region">British Indian Ocean Territory</span><span class="currency-symbol">GBP</span></a>
+            </li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=248"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Canary Islands</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=45"><span
+                        class="currency-flag"><span class="flag au" aria-hidden="true"></span></span><span
+                        class="currency-region">Christmas Island</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=259"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">Corsica</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=55"><span
+                        class="currency-flag"><span class="flag cy" aria-hidden="true"></span></span><span
+                        class="currency-region">Cyprus</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=67"><span
+                        class="currency-flag"><span class="flag ee" aria-hidden="true"></span></span><span
+                        class="currency-region">Estonia</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=72"><span
+                        class="currency-flag"><span class="flag fi" aria-hidden="true"></span></span><span
+                        class="currency-region">Finland</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=75"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">French Guiana</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=83"><span
+                        class="currency-flag"><span class="flag gi" aria-hidden="true"></span></span><span
+                        class="currency-region">Gibraltar</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=84"><span
+                        class="currency-flag"><span class="flag gr" aria-hidden="true"></span></span><span
+                        class="currency-region">Greece</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=87"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">Guadeloupe</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=258"><span
+                        class="currency-flag"><span class="flag gg" aria-hidden="true"></span></span><span
+                        class="currency-region">Guernsey</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=264"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Ibiza</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=103"><span
+                        class="currency-flag"><span class="flag ie" aria-hidden="true"></span></span><span
+                        class="currency-region">Ireland</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=244"><span
+                        class="currency-flag"><span class="flag im" aria-hidden="true"></span></span><span
+                        class="currency-region">Isle of Man</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=257"><span
+                        class="currency-flag"><span class="flag je" aria-hidden="true"></span></span><span
+                        class="currency-region">Jersey</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=111"><span
+                        class="currency-flag"><span class="flag ki" aria-hidden="true"></span></span><span
+                        class="currency-region">Kiribati</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=249"><span
+                        class="currency-flag"><span class="flag rs" aria-hidden="true"></span></span><span
+                        class="currency-region">Kosovo</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=117"><span
+                        class="currency-flag"><span class="flag lv" aria-hidden="true"></span></span><span
+                        class="currency-region">Latvia</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=123"><span
+                        class="currency-flag"><span class="flag lt" aria-hidden="true"></span></span><span
+                        class="currency-region">Lithuania</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=124"><span
+                        class="currency-flag"><span class="flag lu" aria-hidden="true"></span></span><span
+                        class="currency-region">Luxembourg</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=261"><span
+                        class="currency-flag"><span class="flag pt" aria-hidden="true"></span></span><span
+                        class="currency-region">Madeira</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=263"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Mallorca</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=132"><span
+                        class="currency-flag"><span class="flag mt" aria-hidden="true"></span></span><span
+                        class="currency-region">Malta</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=134"><span
+                        class="currency-flag"><span class="flag mq" aria-hidden="true"></span></span><span
+                        class="currency-region">Martinique</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=265"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Menorca</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=141"><span
+                        class="currency-flag"><span class="flag mc" aria-hidden="true"></span></span><span
+                        class="currency-region">Monaco</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=250"><span
+                        class="currency-flag"><span class="flag me" aria-hidden="true"></span></span><span
+                        class="currency-region">Montenegro</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=148"><span
+                        class="currency-flag"><span class="flag nr" aria-hidden="true"></span></span><span
+                        class="currency-region">Nauru</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=150"><span
+                        class="currency-flag"><span class="flag nl" aria-hidden="true"></span></span><span
+                        class="currency-region">Netherlands</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=158"><span
+                        class="currency-flag"><span class="flag au" aria-hidden="true"></span></span><span
+                        class="currency-region">Norfolk Island</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=171"><span
+                        class="currency-flag"><span class="flag pt" aria-hidden="true"></span></span><span
+                        class="currency-region">Portugal</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=182"><span
+                        class="currency-flag"><span class="flag sm" aria-hidden="true"></span></span><span
+                        class="currency-region">San Marino</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=266"><span
+                        class="currency-flag"><span class="flag it" aria-hidden="true"></span></span><span
+                        class="currency-region">Sardinia</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=262"><span
+                        class="currency-flag"><span class="flag it" aria-hidden="true"></span></span><span
+                        class="currency-region">Sicily</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=189"><span
+                        class="currency-flag"><span class="flag sk" aria-hidden="true"></span></span><span
+                        class="currency-region">Slovakia (Slovak Republic)</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=190"><span
+                        class="currency-flag"><span class="flag si" aria-hidden="true"></span></span><span
+                        class="currency-region">Slovenia</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=194"><span
+                        class="currency-flag"><span class="flag gb" aria-hidden="true"></span></span><span
+                        class="currency-region">South Georgia and the South Sandwich Islands</span><span
+                        class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=198"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">St. Pierre and Miquelon</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=218"><span
+                        class="currency-flag"><span class="flag tv" aria-hidden="true"></span></span><span
+                        class="currency-region">Tuvalu</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=228"><span
+                        class="currency-flag"><span class="flag va" aria-hidden="true"></span></span><span
+                        class="currency-region">Vatican City State (Holy See)</span><span class="currency-symbol">EUR</span></a>
+            </li>
+        </ul>
+    </div>
+
     <div class="content">
         <!-- {% block content %} -->
         <noscript>
@@ -303,40 +510,121 @@
                 </nav>
             </div>
             <!-- {{ block('header_search') }} -->
+            <div class="header__search hidden" id="header__search" data-toggler=".hide" aria-expanded="false">
+                <div class="grid md:grid-cols-12 main-container">
+                    <div class="md:col-span-7">
+                        <form class="header__search-container" action="/search/products" method="get">
+                            <div class="header__search-inner inline-block">
+                                <div class="input-group relative flex place-content-between items-center mod-custom mod-search no-margin">
+                                    <span class="input-group-label">
+                                        <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
+                                    </span>
+                                    <input type="search" name="keywords" placeholder="Search by product name, code or category" class="header-search-input input-group-field">
+                                    <div class="input-group-button">
+                                        <button type="submit" class="button">Go</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="header__search-close button-close hidden lg:inline-block" data-toggle="header-search" aria-controls="header-search">
+                                <span>Close</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </header>
         <!-- {% endblock %}-->
 
         <main>
-            <section class="category-heading-and-description">
-                <div class="main-container">
-                    <h1 class="category__heading font-normal">Cool Tools</h1>
-                    <p class="category__description">We take the highest quality fruit and veg (yes, that includes the wonky ones) and combine it with industry-leading Cold-Pressed manufacturing techniques. Up to a kilo of fruit and veg goes into each of our 500ml juices, providing you with the best tasting juices with the highest concentration of nutrients that nature can supply.</p>
-                </div>
-                <div class="category__sort-form flex items-center">
-                    <i class="sw-icon-equalizer-console-with-three-switches-at-different-levels inline-block" aria-hidden="true"></i>
-                    <span class="font-bold">Filter</span>
-                    <select name="sort" class="sort-form__drop-down">
-                        <option value="sort_order_asc">
-                        Relevance
-                        </option>
-                        <option value="price_asc">
-                            Price (Low - High)
-                        </option>
-                        <option value="price_desc">
-                            Price (High - Low)
-                        </option>
-                        <option value="title_asc" selected="selected">
-                            Title (A - Z)
-                        </option>
-                        <option value="title_desc">
-                            Title (Z - A)
-                        </option>
-                        <option value="created">
-                            Newest First
-                        </option>
-                    </select>
-                    <div class="hidden md:block md:grow">
-                        <ul class="pagination md:float-right">
+            <div id="main-content">
+                <section class="category-heading-and-description">
+                    <div class="main-container">
+                        <h1 class="category__heading font-normal">Cool Tools</h1>
+                        <p class="category__description">We take the highest quality fruit and veg (yes, that includes the wonky ones) and combine it with industry-leading Cold-Pressed manufacturing techniques. Up to a kilo of fruit and veg goes into each of our 500ml juices, providing you with the best tasting juices with the highest concentration of nutrients that nature can supply.</p>
+                    </div>
+                    <div class="category__sort-form flex items-center">
+                        <i class="sw-icon-equalizer-console-with-three-switches-at-different-levels inline-block" aria-hidden="true"></i>
+                        <span class="font-bold">Filter</span>
+                        <select name="sort" class="sort-form__drop-down">
+                            <option value="sort_order_asc">
+                            Relevance
+                            </option>
+                            <option value="price_asc">
+                                Price (Low - High)
+                            </option>
+                            <option value="price_desc">
+                                Price (High - Low)
+                            </option>
+                            <option value="title_asc" selected="selected">
+                                Title (A - Z)
+                            </option>
+                            <option value="title_desc">
+                                Title (Z - A)
+                            </option>
+                            <option value="created">
+                                Newest First
+                            </option>
+                        </select>
+                        <div class="hidden md:block md:grow">
+                            <ul class="pagination md:float-right">
+                                <li><i class="sw-icon-arrow-pointing-to-left" aria-hidden="true"></i></li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li>8</li>
+                                <li><i class="sw-icon-arrow-pointing-to-right" aria-hidden="true"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="main-container product-cards-grid grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-16 lg:grid-cols-4">
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price underline">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price underline">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price underline">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price underline">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price underline">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price underline">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price underline">£255.00</p>
+                        </div>
+                        <div class="product-cards-grid__card">
+                            <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
+                            <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
+                            <p class="product-cards-grid__card-price underline">£255.00</p>
+                        </div>
+                    </div>
+                    <div class="text-center block md:hidden">
+                        <ul class="pagination pagination_mobile">
                             <li><i class="sw-icon-arrow-pointing-to-left" aria-hidden="true"></i></li>
                             <li>1</li>
                             <li>2</li>
@@ -349,65 +637,8 @@
                             <li><i class="sw-icon-arrow-pointing-to-right" aria-hidden="true"></i></li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="main-container product-cards-grid grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-16 lg:grid-cols-4">
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                    <div class="product-cards-grid__card">
-                        <img class="product-cards-grid__card-image" src="../assets/images/giraffe-bag.png">
-                        <p class="product-cards-grid__card-name">Giraffe bag containing a small giraffe</p>
-                        <p class="product-cards-grid__card-price underline">£255.00</p>
-                    </div>
-                </div>
-                <div class="text-center block md:hidden">
-                    <ul class="pagination pagination_mobile">
-                        <li><i class="sw-icon-arrow-pointing-to-left" aria-hidden="true"></i></li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li><i class="sw-icon-arrow-pointing-to-right" aria-hidden="true"></i></li>
-                    </ul>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
 
         <footer>
@@ -559,20 +790,49 @@
     </div>
 
     <script>
-        $( ".announcement-bar__close-button ").click(function() {
-            $( ".announcement-bar").fadeOut(200);
-        }) 
-        // Off canvas menu
-        $( ".header__menu-toggle").click(function() {
-            $( ".off-canvas" ).toggleClass("push-menu-left")
-            $( ".content").toggleClass( "push-content-right" )
-            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
-        })
-
-        $( "#offCanvasCloseButton" ).click(function() {
-            $( ".off-canvas" ).toggleClass("push-menu-left")
-            $( ".content").toggleClass( "push-content-right" )
-            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        $(document).ready(function() {
+            // Off canvas menu
+            $( ".header__menu-toggle").click(function() {
+                $( ".off-canvas_menu" ).toggleClass("push-menu-left")
+                $( ".content").toggleClass( "push-content-right" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            })
+            $( "#offCanvasCloseButton" ).click(function() {
+                $( ".off-canvas_menu" ).toggleClass("push-menu-left")
+                $( ".content").toggleClass( "push-content-right" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            });
+            // Search
+            $( ".header__search-toggle ").click( function () {
+                $( "#main-content" ).toggleClass("search-open");
+                $( ".header__search").toggleClass("hidden");
+            })
+            $( ".header__search-close ").click( function () {
+                $( "#main-content" ).toggleClass("search-open");
+                $( ".header__search").toggleClass("hidden");
+            })
+            // Off canvas currency selection
+            $( ".header__currency-toggle").click(function() {
+                $( ".off-canvas_currency" ).toggleClass("push-menu-left")
+                $( ".content").toggleClass( "push-content-right" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            })
+            $( "#currencyCloseButton" ).click(function() {
+                $( ".off-canvas_currency" ).toggleClass("push-menu-left")
+                $( ".content").toggleClass( "push-content-right" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            });
+            // Off canvas basket
+            $( ".header__basket").click(function() {
+                $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+                $( ".content").toggleClass( "push-content-left" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            })
+            $( "#off-canvas__basket-close" ).click(function() {
+                $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+                $( ".content").toggleClass( "push-content-left" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            });
         });
     </script>
 </body>

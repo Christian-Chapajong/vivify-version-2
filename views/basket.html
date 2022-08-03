@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="off-canvas push-menu-left" aria-hidden="true">
+    <div class="off-canvas off-canvas_menu push-menu-left" aria-hidden="true">
         <a class="button-close float-right" id="offCanvasCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
             <span>close</span>
         </a>
@@ -29,7 +29,7 @@
                 <a href="/faqs">FAQs</a>
             </li>
             <li class="off-canvas__sub-list">
-                <a href="/contact-us">Contact Us</a>
+                <a href="/views/contact-us.html">Contact Us</a>
             </li>
             <li class="off-canvas__sub-list">
                 <a href="/terms-conditions">Terms</a>
@@ -45,6 +45,213 @@
             </li>
         </ul>
     </div>
+    <div class="off-canvas off-canvas_basket push-basket-right" aria-hidden="true">
+        <div class="off-canvas__basket-heading">
+            <button id="off-canvas__basket-close" class="button-close" data-close="" type="button">
+                <span>Close</span>
+            </button>
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="summary">
+            <span class="off-canvas-basket__total-label uppercase">Subtotal</span>
+            <span class="off-canvas-basket__total-value float-right">
+                £0.00
+            </span>
+            <p class="subheader">Delivery costs and discount codes are added at checkout</p>
+
+            <div class="buttons grid grid-cols-1 lg:grid-cols-12 lg:gap-4 ">
+                <div class="lg:col-span-7 lg:order-last">
+                    <a href="/checkout/basket" class="button button_large uppercase proceed">
+                        PROCEED TO SECURE CHECKOUT
+                    </a>
+                </div>
+                <div class="lg:col-span-5">
+                    <a href="/checkout/basket" class="button button_large secondary">
+                        Continue shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="off-canvas off-canvas_currency push-menu-left" aria-hidden="true">
+        <a class="button-close float-right" id="currencyCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
+            <span>close</span>
+        </a>
+        <div class="currency__header">
+            <h3 class="currency__heading">
+                <span>Currency selection</span>
+            </h3>
+            <p class="text-sm">
+                Prices are currently displayed in GBP (United Kingdom)
+                Select a new currency and country below
+            </p>
+        </div>
+
+        <ul class="currency-dropdown-list no-bullet text-left">
+            <li class="active"><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=222"><span
+                        class="currency-flag"><span class="flag gb" aria-hidden="true"></span></span><span
+                        class="currency-region">United Kingdom</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=6&amp;currency_country_id=223"><span
+                        class="currency-flag"><span class="flag us" aria-hidden="true"></span></span><span
+                        class="currency-region">United States</span><span class="currency-symbol">USD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=13"><span
+                        class="currency-flag"><span class="flag au" aria-hidden="true"></span></span><span
+                        class="currency-region">Australia</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=73"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">France</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=81"><span
+                        class="currency-flag"><span class="flag de" aria-hidden="true"></span></span><span
+                        class="currency-region">Germany</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=105"><span
+                        class="currency-flag"><span class="flag it" aria-hidden="true"></span></span><span
+                        class="currency-region">Italy</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=195"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Spain</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=5"><span
+                        class="currency-flag"><span class="flag ad" aria-hidden="true"></span></span><span
+                        class="currency-region">Andorra</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=14"><span
+                        class="currency-flag"><span class="flag at" aria-hidden="true"></span></span><span
+                        class="currency-region">Austria</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=260"><span
+                        class="currency-flag"><span class="flag pt" aria-hidden="true"></span></span><span
+                        class="currency-region">Azores</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=21"><span
+                        class="currency-flag"><span class="flag be" aria-hidden="true"></span></span><span
+                        class="currency-region">Belgium</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=31"><span
+                        class="currency-flag"><span class="flag gb" aria-hidden="true"></span></span><span
+                        class="currency-region">British Indian Ocean Territory</span><span class="currency-symbol">GBP</span></a>
+            </li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=248"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Canary Islands</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=45"><span
+                        class="currency-flag"><span class="flag au" aria-hidden="true"></span></span><span
+                        class="currency-region">Christmas Island</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=259"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">Corsica</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=55"><span
+                        class="currency-flag"><span class="flag cy" aria-hidden="true"></span></span><span
+                        class="currency-region">Cyprus</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=67"><span
+                        class="currency-flag"><span class="flag ee" aria-hidden="true"></span></span><span
+                        class="currency-region">Estonia</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=72"><span
+                        class="currency-flag"><span class="flag fi" aria-hidden="true"></span></span><span
+                        class="currency-region">Finland</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=75"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">French Guiana</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=83"><span
+                        class="currency-flag"><span class="flag gi" aria-hidden="true"></span></span><span
+                        class="currency-region">Gibraltar</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=84"><span
+                        class="currency-flag"><span class="flag gr" aria-hidden="true"></span></span><span
+                        class="currency-region">Greece</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=87"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">Guadeloupe</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=258"><span
+                        class="currency-flag"><span class="flag gg" aria-hidden="true"></span></span><span
+                        class="currency-region">Guernsey</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=264"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Ibiza</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=103"><span
+                        class="currency-flag"><span class="flag ie" aria-hidden="true"></span></span><span
+                        class="currency-region">Ireland</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=244"><span
+                        class="currency-flag"><span class="flag im" aria-hidden="true"></span></span><span
+                        class="currency-region">Isle of Man</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=257"><span
+                        class="currency-flag"><span class="flag je" aria-hidden="true"></span></span><span
+                        class="currency-region">Jersey</span><span class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=111"><span
+                        class="currency-flag"><span class="flag ki" aria-hidden="true"></span></span><span
+                        class="currency-region">Kiribati</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=249"><span
+                        class="currency-flag"><span class="flag rs" aria-hidden="true"></span></span><span
+                        class="currency-region">Kosovo</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=117"><span
+                        class="currency-flag"><span class="flag lv" aria-hidden="true"></span></span><span
+                        class="currency-region">Latvia</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=123"><span
+                        class="currency-flag"><span class="flag lt" aria-hidden="true"></span></span><span
+                        class="currency-region">Lithuania</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=124"><span
+                        class="currency-flag"><span class="flag lu" aria-hidden="true"></span></span><span
+                        class="currency-region">Luxembourg</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=261"><span
+                        class="currency-flag"><span class="flag pt" aria-hidden="true"></span></span><span
+                        class="currency-region">Madeira</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=263"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Mallorca</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=132"><span
+                        class="currency-flag"><span class="flag mt" aria-hidden="true"></span></span><span
+                        class="currency-region">Malta</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=134"><span
+                        class="currency-flag"><span class="flag mq" aria-hidden="true"></span></span><span
+                        class="currency-region">Martinique</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=265"><span
+                        class="currency-flag"><span class="flag es" aria-hidden="true"></span></span><span
+                        class="currency-region">Menorca</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=141"><span
+                        class="currency-flag"><span class="flag mc" aria-hidden="true"></span></span><span
+                        class="currency-region">Monaco</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=250"><span
+                        class="currency-flag"><span class="flag me" aria-hidden="true"></span></span><span
+                        class="currency-region">Montenegro</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=148"><span
+                        class="currency-flag"><span class="flag nr" aria-hidden="true"></span></span><span
+                        class="currency-region">Nauru</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=150"><span
+                        class="currency-flag"><span class="flag nl" aria-hidden="true"></span></span><span
+                        class="currency-region">Netherlands</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=158"><span
+                        class="currency-flag"><span class="flag au" aria-hidden="true"></span></span><span
+                        class="currency-region">Norfolk Island</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=171"><span
+                        class="currency-flag"><span class="flag pt" aria-hidden="true"></span></span><span
+                        class="currency-region">Portugal</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=182"><span
+                        class="currency-flag"><span class="flag sm" aria-hidden="true"></span></span><span
+                        class="currency-region">San Marino</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=266"><span
+                        class="currency-flag"><span class="flag it" aria-hidden="true"></span></span><span
+                        class="currency-region">Sardinia</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=262"><span
+                        class="currency-flag"><span class="flag it" aria-hidden="true"></span></span><span
+                        class="currency-region">Sicily</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=189"><span
+                        class="currency-flag"><span class="flag sk" aria-hidden="true"></span></span><span
+                        class="currency-region">Slovakia (Slovak Republic)</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=190"><span
+                        class="currency-flag"><span class="flag si" aria-hidden="true"></span></span><span
+                        class="currency-region">Slovenia</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=1&amp;currency_country_id=194"><span
+                        class="currency-flag"><span class="flag gb" aria-hidden="true"></span></span><span
+                        class="currency-region">South Georgia and the South Sandwich Islands</span><span
+                        class="currency-symbol">GBP</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=198"><span
+                        class="currency-flag"><span class="flag fr" aria-hidden="true"></span></span><span
+                        class="currency-region">St. Pierre and Miquelon</span><span class="currency-symbol">EUR</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=4&amp;currency_country_id=218"><span
+                        class="currency-flag"><span class="flag tv" aria-hidden="true"></span></span><span
+                        class="currency-region">Tuvalu</span><span class="currency-symbol">AUD</span></a></li>
+            <li><a href="https://vivify-demo-1.ecommercethemes.uk/?currency_id=2&amp;currency_country_id=228"><span
+                        class="currency-flag"><span class="flag va" aria-hidden="true"></span></span><span
+                        class="currency-region">Vatican City State (Holy See)</span><span class="currency-symbol">EUR</span></a>
+            </li>
+        </ul>
+    </div>
+
     <div class="content">
         <!-- {% block content %} -->
         <noscript>
@@ -304,392 +511,456 @@
                 </nav>
             </div>
             <!-- {{ block('header_search') }} -->
+            <div class="header__search hidden" id="header__search" data-toggler=".hide" aria-expanded="false">
+                <div class="grid md:grid-cols-12 main-container">
+                    <div class="md:col-span-7">
+                        <form class="header__search-container" action="/search/products" method="get">
+                            <div class="header__search-inner inline-block">
+                                <div class="input-group relative flex place-content-between items-center mod-custom mod-search no-margin">
+                                    <span class="input-group-label">
+                                        <i class="sw-icon-musica-searcher" aria-hidden="true"></i>
+                                    </span>
+                                    <input type="search" name="keywords" placeholder="Search by product name, code or category" class="header-search-input input-group-field">
+                                    <div class="input-group-button">
+                                        <button type="submit" class="button">Go</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="header__search-close button-close hidden lg:inline-block" data-toggle="header-search" aria-controls="header-search">
+                                <span>Close</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </header>
         <!-- {% endblock %}-->
 
         <main>
-            <section class="basket section-block">
-                <div class="basket__header main-container">
-                    <div class="basket__heading-inner mx-auto">
-                        <h1 class="basket__heading font-normal inline-block">Shopping Bag</h1>
-                        <div class="basket__total md:float-right">
-                            <span class="basket__total-label">Total</span>
-                            <span class="basket__total-price font-bold">£3,110.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="basket__background">
-                    <form action="#" method="post" class="basket__form main-container">
-                        <table class="basket__table mx-auto" role="grid">
-                            <tbody>
-                                <tr class="basket__headings">
-                                    <th class="text-left" colspan="2">Item (2 items)</th>
-                                    <th class="text-center">Quantity</th>
-                                    <th class="text-center">Price</th>
-                                    <th class="text-center">Subtotal</th>
-                                    <th class="text-right">Remove</th>
-                                </tr>
-                            
-                                <tr class="basket__item" data-min-quantity="0" data-max-quantity="0">
-                                    <td class="basket__item-image">
-                                        <a href="#" class="image-container" data-fit="0">
-                                            <img  src="../assets/images/dad-set.png" alt="">
-                                        </a>
-                                    </td>
-                                    <td class="basket__item-info">
-                                        <h4 class="basket__item-title">
-                                            The letter J supply 'Something Wonderful'
-                                        </h4>
-                                        <div class="basket__item-options">
-                                            <div>
-                                                Size <strong>Small</strong>
-                                                Color <strong>Blue</strong>
-                                                <p class="extra-charge"><strong>Mobile charger £10.00</strong></p>
-
-                                            </div>
-                                        </div>
-                                        <a href="#" class="link-with-icon">
-                                            <i class="sw-icon-heart inline-block" aria-hidden="true"></i>
-                                            <span class="move-to-wishlist underline">move to wishlist</span>
-                                        </a>
-                                    </td>
-                                    <td class="basket__item-qty" data-label="Quantity">
-                                        <div class="quantity w-fit md:mx-auto">
-                                            <div class="number-toggle number-toggle_bordered flex">
-                                                <button class="number-toggle__down">
-                                                    <!-- Minus icon -->
-                                                    <i class="sw-icon-minus" aria-hidden="true"></i>
-                                                    <!-- Minus icon -->
-                                                </button>
-                                                <input type="text" name="quantity" value="99" class="quantity-input">
-                                                <button class="number-toggle__up">
-                                                    <!-- Plus icon -->
-                                                    <i class="sw-icon-plus" aria-hidden="true"></i>
-                                                    <!-- Plus icon -->
-                                                </button>
-                                            </div>
-                                            <button class="basket__update underline" type="submit">
-                                                Update
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td class="basket__item-price" data-label="Price">
-                                        <div class="price">£380.00</div>
-                                    </td>
-                                    <td class="basket__item-cost" data-label="Cost">
-                                        <div class="price">
-                                            £760.00
-                                        </div>
-                                    </td>
-                                    <td class="basket__item-remove">
-                                        <div class="remove">
-                                            <a class="remove-button underline" href="">remove</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="basket__item" data-min-quantity="0" data-max-quantity="0">
-                                    <td class="basket__item-image">
-                                        <a href="#" class="image-container" data-fit="0">
-                                            <img src="../assets/images/dad-set.png" alt="">
-                                        </a>
-                                    </td>
-                                    <td class="basket__item-info">
-                                        <h4 class="basket__item-title">
-                                            The letter J supply 'Something Wonderful'
-                                        </h4>
-                                        <div class="basket__item-options">
-                                            <div>
-                                                Size <strong>Small</strong>
-                                                Color <strong>Blue</strong>
-                                                <p class="extra-charge"><strong>Mobile charger £10.00</strong></p>
-
-                                            </div>
-                                        </div>
-                                        <a href="#" class="link-with-icon">
-                                            <i class="sw-icon-heart inline-block" aria-hidden="true"></i>
-                                            <span class="move-to-wishlist underline">move to wishlist</span>
-                                        </a>
-                                    </td>
-                                    <td class="basket__item-qty" data-label="Quantity">
-                                        <div class="quantity w-fit md:mx-auto">
-                                            <div class="number-toggle number-toggle_bordered flex">
-                                                <button class="number-toggle__down">
-                                                    <!-- Minus icon -->
-                                                    <i class="sw-icon-minus" aria-hidden="true"></i>
-                                                    <!-- Minus icon -->
-                                                </button>
-                                                <input type="text" name="quantity" value="99" class="quantity-input">
-                                                <button class="number-toggle__up">
-                                                    <!-- Plus icon -->
-                                                    <i class="sw-icon-plus" aria-hidden="true"></i>
-                                                    <!-- Plus icon -->
-                                                </button>
-                                            </div>
-                                            <button class="basket__update underline" type="submit">
-                                                Update
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td class="basket__item-price" data-label="Price">
-                                        <div class="price">£380.00</div>
-                                    </td>
-                                    <td class="basket__item-cost" data-label="Cost">
-                                        <div class="price">
-                                            £760.00
-                                        </div>
-                                    </td>
-                                    <td class="basket__item-remove">
-                                        <div class="remove">
-                                            <a class="remove-button underline" href="">remove</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
-                </div>
-                    
-
-                <div class="main-container">
-                    <div class="basket__bottom-container flex flex-col mx-auto lg:flex-row">
-                        <div class="lg:w-1/2 ">
-                            <form action="#" class="">
-                                <div class="promo-code-container flex">
-                                    <input type="text" placeholder="Enter your voucher/promotion code" class="promo-code w-full">
-                                    <button class="cart-button button uppercase float-right min-height-min align-middle">apply</button>
-                                </div>
-    
-                            </form>
-    
-                            <div class="rewards">
-                                <!-- Premium badge icon -->
-                                <i class="sw-icon-premium-badge inline-block" aria-hidden="true"></i>
-                                <!-- Premium badge icon -->
-                                <span>You have <span class="rewards-highlight font-bold">324 reward points</span> <a class="redeem-a-discount-link underline" href="#">Redeem for a discount.</a> </span>
-                            </div>
-                        </div>
-
-                        <div class="bakset__box-container lg:w-1/2">
-                            <div class="basket__box">
-                                <ul>
-                                    <li>
-                                        <span>Subtotal</span>
-                                        <span class="basket__sub-total float-right">£1160.00</span>
-                                    </li>
-                                    <li>
-                                        <span class="basket__dropdown-label">Delivery country</span>
-                                        <select class="basket__delivery-country" id="delivery-country" >
-                                            <option value="" disabled selected>Please select ...</option>
-                                            <option value="UK">UK</option>
-                                            <option value="USA">USA</option>
-                                            <option value="France">France</option>
-                                            <option value="Japan">Japan</option>
-                                            <option value="Japan">Japan</option>
-                                            <option value="Kenya">Kenya</option>
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <span>Delivery rate</span>
-                                        <select class="basket__delivery-rate" id="delivery-rate" >
-                                            <option value="" disabled selected>Please select ...</option>
-                                            <option value="first-class">First class - £4.75 </option>
-                                            <option value="second-class">Second class - £2.50 </option>
-                                            <option value="standard">Standard delivery - £1.50 </option>
-        
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <span class="basket__dropdown-label">Delivery</span>
-                                        <span class="basket__sub-total float-right">£1160.00</span>
-                                    </li>
-                                    <li>
-                                        <span>Discounts</span>
-                                        <span class="remove">
-                                            <a class="remove-button underline" href="">remove</a>
-                                        </span>
-                                        <span class="basket__sub-total float-right">£11.00</span>
-                                    </li>
-                                    <li>
-                                        <span>Total</span>
-                                        <span class="basket__sub-total float-right">£1160.00</span>
-                                    </li>
-                                </ul>
+            <div id="main-content">
+                <section class="basket section-block">
+                    <div class="basket__header main-container">
+                        <div class="basket__heading-inner mx-auto">
+                            <h1 class="basket__heading font-normal inline-block">Shopping Bag</h1>
+                            <div class="basket__total md:float-right">
+                                <span class="basket__total-label">Total</span>
+                                <span class="basket__total-price font-bold">£3,110.00</span>
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="basket__background">
+                        <form action="#" method="post" class="basket__form main-container">
+                            <table class="basket__table mx-auto" role="grid">
+                                <tbody>
+                                    <tr class="basket__headings">
+                                        <th class="text-left" colspan="2">Item (2 items)</th>
+                                        <th class="text-center">Quantity</th>
+                                        <th class="text-center">Price</th>
+                                        <th class="text-center">Subtotal</th>
+                                        <th class="text-right">Remove</th>
+                                    </tr>
+                                
+                                    <tr class="basket__item" data-min-quantity="0" data-max-quantity="0">
+                                        <td class="basket__item-image">
+                                            <a href="#" class="image-container" data-fit="0">
+                                                <img  src="../assets/images/dad-set.png" alt="">
+                                            </a>
+                                        </td>
+                                        <td class="basket__item-info">
+                                            <h4 class="basket__item-title">
+                                                The letter J supply 'Something Wonderful'
+                                            </h4>
+                                            <div class="basket__item-options">
+                                                <div>
+                                                    Size <strong>Small</strong>
+                                                    Color <strong>Blue</strong>
+                                                    <p class="extra-charge"><strong>Mobile charger £10.00</strong></p>
 
-                    
-                    
-                </div>
-                
-            </section>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="link-with-icon">
+                                                <i class="sw-icon-heart inline-block" aria-hidden="true"></i>
+                                                <span class="move-to-wishlist underline">move to wishlist</span>
+                                            </a>
+                                        </td>
+                                        <td class="basket__item-qty" data-label="Quantity">
+                                            <div class="quantity w-fit md:mx-auto">
+                                                <div class="number-toggle number-toggle_bordered flex">
+                                                    <button class="number-toggle__down">
+                                                        <!-- Minus icon -->
+                                                        <i class="sw-icon-minus" aria-hidden="true"></i>
+                                                        <!-- Minus icon -->
+                                                    </button>
+                                                    <input type="text" name="quantity" value="99" class="quantity-input">
+                                                    <button class="number-toggle__up">
+                                                        <!-- Plus icon -->
+                                                        <i class="sw-icon-plus" aria-hidden="true"></i>
+                                                        <!-- Plus icon -->
+                                                    </button>
+                                                </div>
+                                                <button class="basket__update underline" type="submit">
+                                                    Update
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="basket__item-price" data-label="Price">
+                                            <div class="price">£380.00</div>
+                                        </td>
+                                        <td class="basket__item-cost" data-label="Cost">
+                                            <div class="price">
+                                                £760.00
+                                            </div>
+                                        </td>
+                                        <td class="basket__item-remove">
+                                            <div class="remove">
+                                                <a class="remove-button underline" href="">remove</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="basket__item" data-min-quantity="0" data-max-quantity="0">
+                                        <td class="basket__item-image">
+                                            <a href="#" class="image-container" data-fit="0">
+                                                <img src="../assets/images/dad-set.png" alt="">
+                                            </a>
+                                        </td>
+                                        <td class="basket__item-info">
+                                            <h4 class="basket__item-title">
+                                                The letter J supply 'Something Wonderful'
+                                            </h4>
+                                            <div class="basket__item-options">
+                                                <div>
+                                                    Size <strong>Small</strong>
+                                                    Color <strong>Blue</strong>
+                                                    <p class="extra-charge"><strong>Mobile charger £10.00</strong></p>
 
-        </main>
-
-        <footer>
-            <div class="footer__grid grid grid-cols-1 lg:grid-cols-12">
-                <div class="footer__menu lg:col-span-2">
-                    <h4 class="footer__menu-title">
-                        Info
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="/views/index.html" class="footer__menu-link">Home</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__menu-link">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__menu-link">FAQs</a>
-                        </li>
-                        <li>
-                            <a href="/views/contact-us.html" class="footer__menu-link">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__menu lg:col-span-2">
-                    <h4 class="footer__menu-title">
-                        Legals
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="#" class="footer__menu-link">Delivery</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__menu-link">Terms</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__menu-link">Privacy</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__menu-link">Refunds</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__menu lg:col-span-2">
-                    <h4 class="footer__menu-title">
-                        Customers
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="#" class="footer__menu-link">Your bag</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__menu-link">Your Wishlist</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__menu-link">Your Account</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__menu lg:col-span-3 lg:text-right">
-                    <h4 class="footer__menu-title">
-                        Connect with us
-                    </h4>
-                    <ul>
-                        <form class="footer__email-form flex">
-                            <input type="email" class="footer__email-input" placeholder="Email address">
-                            <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="link-with-icon">
+                                                <i class="sw-icon-heart inline-block" aria-hidden="true"></i>
+                                                <span class="move-to-wishlist underline">move to wishlist</span>
+                                            </a>
+                                        </td>
+                                        <td class="basket__item-qty" data-label="Quantity">
+                                            <div class="quantity w-fit md:mx-auto">
+                                                <div class="number-toggle number-toggle_bordered flex">
+                                                    <button class="number-toggle__down">
+                                                        <!-- Minus icon -->
+                                                        <i class="sw-icon-minus" aria-hidden="true"></i>
+                                                        <!-- Minus icon -->
+                                                    </button>
+                                                    <input type="text" name="quantity" value="99" class="quantity-input">
+                                                    <button class="number-toggle__up">
+                                                        <!-- Plus icon -->
+                                                        <i class="sw-icon-plus" aria-hidden="true"></i>
+                                                        <!-- Plus icon -->
+                                                    </button>
+                                                </div>
+                                                <button class="basket__update underline" type="submit">
+                                                    Update
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="basket__item-price" data-label="Price">
+                                            <div class="price">£380.00</div>
+                                        </td>
+                                        <td class="basket__item-cost" data-label="Cost">
+                                            <div class="price">
+                                                £760.00
+                                            </div>
+                                        </td>
+                                        <td class="basket__item-remove">
+                                            <div class="remove">
+                                                <a class="remove-button underline" href="">remove</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </form>
-                        <ul class="social-icons">
+                    </div>
+                        
+
+                    <div class="main-container">
+                        <div class="basket__bottom-container flex flex-col mx-auto lg:flex-row">
+                            <div class="lg:w-1/2 ">
+                                <form action="#" class="">
+                                    <div class="promo-code-container flex">
+                                        <input type="text" placeholder="Enter your voucher/promotion code" class="promo-code w-full">
+                                        <button class="cart-button button uppercase float-right min-height-min align-middle">apply</button>
+                                    </div>
+        
+                                </form>
+        
+                                <div class="rewards">
+                                    <!-- Premium badge icon -->
+                                    <i class="sw-icon-premium-badge inline-block" aria-hidden="true"></i>
+                                    <!-- Premium badge icon -->
+                                    <span>You have <span class="rewards-highlight font-bold">324 reward points</span> <a class="redeem-a-discount-link underline" href="#">Redeem for a discount.</a> </span>
+                                </div>
+                            </div>
+
+                            <div class="bakset__box-container lg:w-1/2">
+                                <div class="basket__box">
+                                    <ul>
+                                        <li>
+                                            <span>Subtotal</span>
+                                            <span class="basket__sub-total float-right">£1160.00</span>
+                                        </li>
+                                        <li>
+                                            <span class="basket__dropdown-label">Delivery country</span>
+                                            <select class="basket__delivery-country" id="delivery-country" >
+                                                <option value="" disabled selected>Please select ...</option>
+                                                <option value="UK">UK</option>
+                                                <option value="USA">USA</option>
+                                                <option value="France">France</option>
+                                                <option value="Japan">Japan</option>
+                                                <option value="Japan">Japan</option>
+                                                <option value="Kenya">Kenya</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <span>Delivery rate</span>
+                                            <select class="basket__delivery-rate" id="delivery-rate" >
+                                                <option value="" disabled selected>Please select ...</option>
+                                                <option value="first-class">First class - £4.75 </option>
+                                                <option value="second-class">Second class - £2.50 </option>
+                                                <option value="standard">Standard delivery - £1.50 </option>
+            
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <span class="basket__dropdown-label">Delivery</span>
+                                            <span class="basket__sub-total float-right">£1160.00</span>
+                                        </li>
+                                        <li>
+                                            <span>Discounts</span>
+                                            <span class="remove">
+                                                <a class="remove-button underline" href="">remove</a>
+                                            </span>
+                                            <span class="basket__sub-total float-right">£11.00</span>
+                                        </li>
+                                        <li>
+                                            <span>Total</span>
+                                            <span class="basket__sub-total float-right">£1160.00</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        
+                        
+                    </div>
+                    
+                </section>
+
+            </main>
+
+            <footer>
+                <div class="footer__grid grid grid-cols-1 lg:grid-cols-12">
+                    <div class="footer__menu lg:col-span-2">
+                        <h4 class="footer__menu-title">
+                            Info
+                        </h4>
+                        <ul>
                             <li>
-                                <a href="#">
-                                    <!-- Facebook icon -->
-                                    <i class="sw-icon-facebook-logo" aria-hidden="true"></i>
-                                    <!-- Facebook icon -->
-                                </a>
+                                <a href="/views/index.html" class="footer__menu-link">Home</a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <!-- Twitter icon -->
-                                    <i class="sw-icon-twitter" aria-hidden="true"></i>
-                                    <!-- Twitter icon -->
-                                </a>
+                                <a href="#" class="footer__menu-link">About Us</a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <!-- Linkedin icon -->
-                                    <i class="sw-icon-linkedin" aria-hidden="true"></i>
-                                    <!-- Linkedin icon -->
-                                </a>
+                                <a href="#" class="footer__menu-link">FAQs</a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <!-- Pinterest icon -->
-                                    <i class="sw-icon-pinterest" aria-hidden="true"></i>
-                                    <!-- Linkedin icon -->
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <!-- Youtube icon -->
-                                    <i class="sw-icon-youtube" aria-hidden="true"></i>
-                                    <!-- Youtube icon -->
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <!-- Instagram icon -->
-                                    <i class="sw-icon-instagram" aria-hidden="true"></i>
-                                    <!-- Instagram icon -->
-                                </a>
+                                <a href="/views/contact-us.html" class="footer__menu-link">Contact Us</a>
                             </li>
                         </ul>
+                    </div>
+                    <div class="footer__menu lg:col-span-2">
+                        <h4 class="footer__menu-title">
+                            Legals
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#" class="footer__menu-link">Delivery</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__menu-link">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__menu-link">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__menu-link">Refunds</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu lg:col-span-2">
+                        <h4 class="footer__menu-title">
+                            Customers
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#" class="footer__menu-link">Your bag</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__menu-link">Your Wishlist</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__menu-link">Your Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu lg:col-span-3 lg:text-right">
+                        <h4 class="footer__menu-title">
+                            Connect with us
+                        </h4>
+                        <ul>
+                            <form class="footer__email-form flex">
+                                <input type="email" class="footer__email-input" placeholder="Email address">
+                                <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                            </form>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="#">
+                                        <!-- Facebook icon -->
+                                        <i class="sw-icon-facebook-logo" aria-hidden="true"></i>
+                                        <!-- Facebook icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Twitter icon -->
+                                        <i class="sw-icon-twitter" aria-hidden="true"></i>
+                                        <!-- Twitter icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Linkedin icon -->
+                                        <i class="sw-icon-linkedin" aria-hidden="true"></i>
+                                        <!-- Linkedin icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Pinterest icon -->
+                                        <i class="sw-icon-pinterest" aria-hidden="true"></i>
+                                        <!-- Linkedin icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Youtube icon -->
+                                        <i class="sw-icon-youtube" aria-hidden="true"></i>
+                                        <!-- Youtube icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Instagram icon -->
+                                        <i class="sw-icon-instagram" aria-hidden="true"></i>
+                                        <!-- Instagram icon -->
+                                    </a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="footer__contact lg:order-first lg:col-span-3">
+                        <p class="footer__contact-telephone">
+                            <span class="footer__contact-label">Tel:</span>
+                            <a class="underline" href="tel:0330 111 2024">0330 111 2024</a>
+                        </p>
+                        <p class="footer__contact-email">
+                            <span class="footer__contact-label">Email:</span>
+                            <a class="underline" href="mailto:vivify-demo-1@ecommercethemes.uk">vivify-demo-1@ecommercethemes.uk</a>
+                        </p>
+                        <address class="footer__contact-address">
+                            Suite 3, 17 Wrens Court, Sutton Coldfield, B72 1RT
+                        </address>
+                    </div>
+                    <div class="footer__copy lg:col-span-6">
+                        <p>
+                            Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
+                        </p>
+                    </div>
+                    <ul class="footer__payment-list lg:col-span-6 lg:text-right">
+                        <li>
+                            <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
+                        </li>
+                        <li>
+                            <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_mastercard.png" alt="Mastercard">
+                        </li>
+                        <li>
+                            <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_visa.png" alt="Visa">
+                        </li>
+                        <li>
+                            <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_maestro.png" alt="Maestro">
+                        </li>
                     </ul>
                 </div>
-                <div class="footer__contact lg:order-first lg:col-span-3">
-                    <p class="footer__contact-telephone">
-                        <span class="footer__contact-label">Tel:</span>
-                        <a class="underline" href="tel:0330 111 2024">0330 111 2024</a>
-                    </p>
-                    <p class="footer__contact-email">
-                        <span class="footer__contact-label">Email:</span>
-                        <a class="underline" href="mailto:vivify-demo-1@ecommercethemes.uk">vivify-demo-1@ecommercethemes.uk</a>
-                    </p>
-                    <address class="footer__contact-address">
-                        Suite 3, 17 Wrens Court, Sutton Coldfield, B72 1RT
-                    </address>
-                </div>
-                <div class="footer__copy lg:col-span-6">
-                    <p>
-                        Copyright © 2022. All Rights Reserved.&nbsp;<a class="underline" href="" target="_blank">Ecommerce</a> by Ecommerce Themes
-                    </p>
-                </div>
-                <ul class="footer__payment-list lg:col-span-6 lg:text-right">
-                    <li>
-                        <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_paypal.png" alt="Paypal">
-                    </li>
-                    <li>
-                        <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_mastercard.png" alt="Mastercard">
-                    </li>
-                    <li>
-                        <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_visa.png" alt="Visa">
-                    </li>
-                    <li>
-                        <img src="https://s3-eu-west-1.amazonaws.com/theme-card-logos/card_maestro.png" alt="Maestro">
-                    </li>
-                </ul>
-            </div>
-        </footer>
-        <div class="off-canvas-overlay invisible opacity-0"></div>
+            </footer>
+            <div class="off-canvas-overlay invisible opacity-0"></div>
+        </div>
     </div>
 
     <script>
-        $( ".announcement-bar__close-button ").click(function() {
-            $( ".announcement-bar").fadeOut(200);
-        }) 
-        // Off canvas menu
-        $( ".header__menu-toggle").click(function() {
-            $( ".off-canvas" ).toggleClass("push-menu-left")
-            $( ".content").toggleClass( "push-content-right" )
-            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
-        })
+        $(document).ready(function() {
+        
+            $( ".announcement-bar__close-button ").click(function() {
+                $( ".announcement-bar").fadeOut(200);
+            }) 
+            // Off canvas menu
+            $( ".header__menu-toggle").click(function() {
+                $( ".off-canvas_menu" ).toggleClass("push-menu-left")
+                $( ".content").toggleClass( "push-content-right" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            })
 
-        $( "#offCanvasCloseButton" ).click(function() {
-            $( ".off-canvas" ).toggleClass("push-menu-left")
-            $( ".content").toggleClass( "push-content-right" )
-            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            $( "#offCanvasCloseButton" ).click(function() {
+                $( ".off-canvas_menu" ).toggleClass("push-menu-left")
+                $( ".content").toggleClass( "push-content-right" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            });
+
+            // Search
+            $( ".header__search-toggle ").click( function () {
+                $( "#main-content" ).toggleClass("search-open");
+                $( ".header__search").toggleClass("hidden");
+            })
+
+            $( ".header__search-close ").click( function () {
+                $( "#main-content" ).toggleClass("search-open");
+                $( ".header__search").toggleClass("hidden");
+            })
+
+            // Off canvas currency selection
+            $( ".header__currency-toggle").click(function() {
+                $( ".off-canvas_currency" ).toggleClass("push-menu-left")
+                $( ".content").toggleClass( "push-content-right" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            })
+
+            $( "#currencyCloseButton" ).click(function() {
+                $( ".off-canvas_currency" ).toggleClass("push-menu-left")
+                $( ".content").toggleClass( "push-content-right" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            });
+
+            // Off canvas basket
+            $( ".header__basket").click(function() {
+                $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+                $( ".content").toggleClass( "push-content-left" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            })
+
+            $( "#off-canvas__basket-close" ).click(function() {
+                $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+                $( ".content").toggleClass( "push-content-left" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            });
         });
     </script>
 </body>
