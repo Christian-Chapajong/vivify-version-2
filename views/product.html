@@ -77,6 +77,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="off-canvas off-canvas_currency push-menu-left" aria-hidden="true">
         <a class="button-close float-right" id="currencyCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
             <span>close</span>
@@ -253,6 +254,8 @@
             </li>
         </ul>
     </div>
+=======
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
     
     <div class="content">
         <noscript>
@@ -917,17 +920,26 @@
         $(document).ready(function() {
             // Off canvas menu
             $( ".header__menu-toggle").click(function() {
+<<<<<<< HEAD
                 $( ".off-canvas_menu" ).toggleClass("push-menu-left")
+=======
+                $( ".off-canvas" ).toggleClass("push-menu-left")
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
                 $( ".content").toggleClass( "push-content-right" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             })
 
             $( "#offCanvasCloseButton" ).click(function() {
+<<<<<<< HEAD
                 $( ".off-canvas_menu" ).toggleClass("push-menu-left")
+=======
+                $( ".off-canvas" ).toggleClass("push-menu-left")
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
                 $( ".content").toggleClass( "push-content-right" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
 
+<<<<<<< HEAD
             // Search
             $( ".header__search-toggle ").click( function () {
                 $( "#main-content" ).toggleClass("search-open");
@@ -959,12 +971,34 @@
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             })
 
+=======
+            // Off canvas basket
+            $( ".header__basket").click(function() {
+                $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+                $( ".content").toggleClass( "push-content-left" )
+                $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+            })
+
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
             $( "#off-canvas__basket-close" ).click(function() {
                 $( ".off-canvas_basket" ).toggleClass("push-basket-right")
                 $( ".content").toggleClass( "push-content-left" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
 
+<<<<<<< HEAD
+=======
+            // Search
+            $( ".header__search-toggle ").click( function () {
+                $( "#main-content" ).toggleClass("search-open");
+                $( ".header__search").toggleClass("hidden");
+            })
+
+            $( ".header__search-close ").click( function () {
+                $( "#main-content" ).toggleClass("search-open");
+                $( ".header__search").toggleClass("hidden");
+            })
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
 
             $(".product__slider").slick ({
                 dots: true,

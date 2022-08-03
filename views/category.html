@@ -74,6 +74,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="off-canvas off-canvas_currency push-menu-left" aria-hidden="true">
         <a class="button-close float-right" id="currencyCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
             <span>close</span>
@@ -251,6 +252,8 @@
         </ul>
     </div>
 
+=======
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
     <div class="content">
         <!-- {% block content %} -->
         <noscript>
@@ -834,5 +837,29 @@
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
         });
+
+        // Off canvas basket
+        $( ".header__basket").click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#off-canvas__basket-close" ).click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+        // Search
+        $( ".header__search-toggle ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
+
+        $( ".header__search-close ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
     </script>
 </body>

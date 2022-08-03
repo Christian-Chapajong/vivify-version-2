@@ -75,6 +75,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="off-canvas off-canvas_currency push-menu-left" aria-hidden="true">
         <a class="button-close float-right" id="currencyCloseButton" data-toggle="offCanvas" aria-expanded="true" aria-controls="offCanvas" onclick="">
             <span>close</span>
@@ -252,6 +253,8 @@
         </ul>
     </div>
 
+=======
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
     <div class="content">
         <!-- {% block content %} -->
         <noscript>
@@ -794,9 +797,85 @@
                             </li>
                             <li>
                                 <a href="#" class="footer__menu-link">Refunds</a>
+<<<<<<< HEAD
                             </li>
                         </ul>
                     </div>
+                    <div class="footer__menu lg:col-span-2">
+                        <h4 class="footer__menu-title">
+                            Customers
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#" class="footer__menu-link">Your bag</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__menu-link">Your Wishlist</a>
+=======
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
+                            </li>
+                            <li>
+                                <a href="#" class="footer__menu-link">Your Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu lg:col-span-3 lg:text-right">
+                        <h4 class="footer__menu-title">
+                            Connect with us
+                        </h4>
+                        <ul>
+                            <form class="footer__email-form flex">
+                                <input type="email" class="footer__email-input" placeholder="Email address">
+                                <input class="ml-auto inline-block" type="submit" value=""><button class="sw-icon-arrow"></button></input>
+                            </form>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="#">
+                                        <!-- Facebook icon -->
+                                        <i class="sw-icon-facebook-logo" aria-hidden="true"></i>
+                                        <!-- Facebook icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Twitter icon -->
+                                        <i class="sw-icon-twitter" aria-hidden="true"></i>
+                                        <!-- Twitter icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Linkedin icon -->
+                                        <i class="sw-icon-linkedin" aria-hidden="true"></i>
+                                        <!-- Linkedin icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Pinterest icon -->
+                                        <i class="sw-icon-pinterest" aria-hidden="true"></i>
+                                        <!-- Linkedin icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Youtube icon -->
+                                        <i class="sw-icon-youtube" aria-hidden="true"></i>
+                                        <!-- Youtube icon -->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <!-- Instagram icon -->
+                                        <i class="sw-icon-instagram" aria-hidden="true"></i>
+                                        <!-- Instagram icon -->
+                                    </a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+<<<<<<< HEAD
+=======
                     <div class="footer__menu lg:col-span-2">
                         <h4 class="footer__menu-title">
                             Customers
@@ -868,6 +947,7 @@
                             </ul>
                         </ul>
                     </div>
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
                     <div class="footer__contact lg:order-first lg:col-span-3">
                         <p class="footer__contact-telephone">
                             <span class="footer__contact-label">Tel:</span>
@@ -962,5 +1042,29 @@
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
         });
+
+        // Off canvas basket
+        $( ".header__basket").click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#off-canvas__basket-close" ).click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+        // Search
+        $( ".header__search-toggle ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
+
+        $( ".header__search-close ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
     </script>
 </body>
