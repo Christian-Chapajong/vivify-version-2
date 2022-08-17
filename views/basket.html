@@ -252,6 +252,8 @@
         </ul>
     </div>
 
+=======
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
     <div class="content">
         <!-- {% block content %} -->
         <noscript>
@@ -868,6 +870,7 @@
                             </ul>
                         </ul>
                     </div>
+        
                     <div class="footer__contact lg:order-first lg:col-span-3">
                         <p class="footer__contact-telephone">
                             <span class="footer__contact-label">Tel:</span>
@@ -952,6 +955,29 @@
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
         });
-    
+
+        // Off canvas basket
+        $( ".header__basket").click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#off-canvas__basket-close" ).click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+        // Search
+        $( ".header__search-toggle ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
+
+        $( ".header__search-close ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
     </script>
 </body>

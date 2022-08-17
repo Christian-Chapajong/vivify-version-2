@@ -250,6 +250,10 @@
             </li>
         </ul>
     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
     
     <div class="content">
         <!-- {% block content %} -->
@@ -1091,6 +1095,7 @@
     </div>
 
     <script>
+<<<<<<< HEAD
         $(document).ready(function() {
 
             $( ".announcement-bar__close-button ").click(function() {
@@ -1108,6 +1113,71 @@
                 $( ".content").toggleClass( "push-content-right" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
+=======
+        $( ".announcement-bar__close-button ").click(function() {
+            $( ".announcement-bar").fadeOut(200);
+        }) 
+        // Off canvas menu
+        $( ".header__menu-toggle").click(function() {
+            $( ".off-canvas_menu" ).toggleClass("push-menu-left")
+            $( ".content").toggleClass( "push-content-right" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#offCanvasCloseButton" ).click(function() {
+            $( ".off-canvas_menu" ).toggleClass("push-menu-left")
+            $( ".content").toggleClass( "push-content-right" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+        // Search
+        $( ".header__search-toggle ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
+
+        $( ".header__search-close ").click( function () {
+            $( "#main-content" ).toggleClass("search-open");
+            $( ".header__search").toggleClass("hidden");
+        })
+
+        // Off canvas currency selection
+        $( ".header__currency-toggle").click(function() {
+            $( ".off-canvas_currency" ).toggleClass("push-menu-left")
+            $( ".content").toggleClass( "push-content-right" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#currencyCloseButton" ).click(function() {
+            $( ".off-canvas_currency" ).toggleClass("push-menu-left")
+            $( ".content").toggleClass( "push-content-right" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+        // Off canvas basket
+        $( ".header__basket").click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        })
+
+        $( "#off-canvas__basket-close" ).click(function() {
+            $( ".off-canvas_basket" ).toggleClass("push-basket-right")
+            $( ".content").toggleClass( "push-content-left" )
+            $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
+        });
+
+        $(".slider-image__slider").slick({
+            arrows: true,
+            prevArrow: '<button class="slider-arrow slider-image__arrow-prev"><i class="sw-icon-arrow1 " aria-hidden="true"></i></button>',
+            nextArrow: '<button class="slider-arrow slider-image__arrow-next"><i class="sw-icon-arrow " aria-hidden="true"></i></button>',
+            appendArrows: '.slider-image__nav',
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            swipeToSlide: true,
+        });
+>>>>>>> dad738405aec299528a69974376e4d36fc6b4b03
 
             // Search
             $( ".header__search-toggle ").click( function () {
