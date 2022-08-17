@@ -907,60 +907,51 @@
     </div>
 
     <script>
+
         $(document).ready(function() {
-        
-            $( ".announcement-bar__close-button ").click(function() {
-                $( ".announcement-bar").fadeOut(200);
-            }) 
             // Off canvas menu
             $( ".header__menu-toggle").click(function() {
                 $( ".off-canvas_menu" ).toggleClass("push-menu-left")
                 $( ".content").toggleClass( "push-content-right" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             })
-
             $( "#offCanvasCloseButton" ).click(function() {
                 $( ".off-canvas_menu" ).toggleClass("push-menu-left")
                 $( ".content").toggleClass( "push-content-right" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
-
             // Search
             $( ".header__search-toggle ").click( function () {
                 $( "#main-content" ).toggleClass("search-open");
                 $( ".header__search").toggleClass("hidden");
             })
-
             $( ".header__search-close ").click( function () {
                 $( "#main-content" ).toggleClass("search-open");
                 $( ".header__search").toggleClass("hidden");
             })
-
             // Off canvas currency selection
             $( ".header__currency-toggle").click(function() {
                 $( ".off-canvas_currency" ).toggleClass("push-menu-left")
                 $( ".content").toggleClass( "push-content-right" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             })
-
             $( "#currencyCloseButton" ).click(function() {
                 $( ".off-canvas_currency" ).toggleClass("push-menu-left")
                 $( ".content").toggleClass( "push-content-right" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
-
             // Off canvas basket
             $( ".header__basket").click(function() {
                 $( ".off-canvas_basket" ).toggleClass("push-basket-right")
                 $( ".content").toggleClass( "push-content-left" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             })
-
             $( "#off-canvas__basket-close" ).click(function() {
                 $( ".off-canvas_basket" ).toggleClass("push-basket-right")
                 $( ".content").toggleClass( "push-content-left" )
                 $( ".off-canvas-overlay" ).toggleClass("invisible opacity-0")
             });
         });
+    
     </script>
 </body>

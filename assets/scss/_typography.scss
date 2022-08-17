@@ -1,0 +1,150 @@
+//===========================
+// _typography.scss
+//===========================
+
+// generic
+@layer base {
+    html, body {
+      @include rem(font-size, $base-font-size + px);
+      line-height: 1.2;
+      font-family: "Sofia Pro", sans-serif !important; 
+      height: 100%;
+      overflow-x: hidden;
+    }
+  }
+  [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], select, textarea {
+      border: 1px solid #eee;
+      border-radius: 0;
+      box-shadow: none!important;
+      font-family: sofia-pro,sans-serif;
+      font-size: .873rem;
+      height: 3.2rem;
+      padding: .7rem 1rem;
+  }
+  [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=url]:focus, select:focus, textarea:focus {
+      background-color: #fefefe;
+      border: 1px solid #8a8a8a;
+      -webkit-box-shadow: 0 0 5px #cacaca;
+      box-shadow: 0 0 5px #cacaca;
+      outline: none;
+      -webkit-transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+      transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+      transition: box-shadow .5s,border-color .25s ease-in-out;
+      transition: box-shadow .5s,border-color .25s ease-in-out,-webkit-box-shadow .5s;
+  }
+  
+  
+  // headings
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 3.125rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    font-size: 1.875rem;
+    font-weight: bold;
+  }
+  h4 {
+    font-size: 0.945rem;
+    font-weight: bold;
+  }
+  h5 {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  h5 {
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  
+  // elements
+  
+  address {
+    font-style: normal;
+  }
+  
+  a {
+    color: if(
+      setting-value("website_colours_use_default_website_colors"),
+      $color_global_red_accent,
+      $color_website_accent
+    );
+    display: inline-block; //allows links to have width, height, margin, padding
+    @include is-active {
+      color: if(
+        setting-value("website_colours_use_default_website_colors"),
+        $color_global_red_accent,
+        $color_website_accent
+      );
+    }
+    @include is-active {
+      color: $color_global_red_accent
+    }
+  }
+  a:hover {
+    color: if(
+      setting-value("website_colours_use_default_website_colors"),
+      $color_global_red_accent,
+      $color_website_accent
+    ) !important;
+  }
+  p {
+    line-height: 22px;
+  }
+  // no highlight outline
+  
+  :focus {
+    outline: none;
+  }
+  
+  hr {
+    max-width: $site-width;
+  }
+  
+  .page-description {
+    @include rem(padding-bottom, 25px);
+  }
+  
+  select {
+      background-image: url(../images/select_arrow.svg);
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 10px 6px;
+      border: 1px solid #eee;
+      border-radius: 0;
+      box-shadow: none!important;
+      font-family: $sofia, sans-serif;
+      font-size: .873rem;
+      height: 3.2rem;
+      padding: .7rem 2rem .7rem 1rem !important;
+      width: 100%;
+      appearance: none;
+  }
+  
+  
+  // raw text styles
+  
+  .snippet-container {
+    a {
+      color: if(
+        setting-value("website_colours_use_default_website_colors"),
+        $color_global_black_text,
+        $color_website_text
+      );
+      text-decoration: underline;
+  
+      @include is-active {
+        color: if(
+          setting-value("website_colours_use_default_website_colors"),
+          $color_global_black_text,
+          $color_website_text
+        );
+      }
+    }
+  }
